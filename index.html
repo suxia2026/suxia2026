@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>🌈 自主识字闯关 · 教师/学生双模式</title>
+    <title>🌈 自主识字闯关 · 完整界面版</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js">
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js">
@@ -11,6 +11,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js">
     </script>
     <style>
+        /* ========== 全部样式完整保留 ========== */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -149,50 +150,6 @@
             min-width: 100px;
             justify-content: center;
         }
-        .qr-area {
-            position: absolute;
-            top: 12px;
-            right: 16px;
-            width: 96px;
-            height: 96px;
-            background: white;
-            border-radius: 16px;
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
-            border: 3px solid #ffb882;
-            z-index: 10;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 4px;
-        }
-        .qr-area canvas {
-            width: 100% !important;
-            height: 100% !important;
-        }
-        .qr-area .qr-placeholder {
-            font-size: 0.5rem;
-            text-align: center;
-            line-height: 1.2;
-            color: #8a6a4a;
-        }
-        @media (max-width:720px) {
-            .qr-area {
-                width: 72px;
-                height: 72px;
-                top: 8px;
-                right: 10px;
-            }
-        }
-        @media (max-width:480px) {
-            .qr-area {
-                width: 60px;
-                height: 60px;
-                top: 4px;
-                right: 6px;
-            }
-        }
-
         /* 登录页 */
         .login-box {
             max-width: 620px;
@@ -249,7 +206,7 @@
             margin-top: 30px;
         }
 
-        /* 通用云朵 */
+        /* 云朵 */
         .cloud {
             padding: 10px 22px;
             border-radius: 80px 80px 80px 12px;
@@ -302,47 +259,21 @@
             font-weight: 400;
             font-size: 0.8rem;
         }
-        .cloud-color-1 {
-            background: #f7c5cc;
-        }
-        .cloud-color-2 {
-            background: #b5d9e8;
-        }
-        .cloud-color-3 {
-            background: #c9e4b5;
-        }
-        .cloud-color-4 {
-            background: #f7e3a5;
-        }
-        .cloud-color-5 {
-            background: #e8c8f0;
-        }
-        .cloud-color-6 {
-            background: #fbc8a0;
-        }
-        .cloud-color-7 {
-            background: #a8d8d0;
-        }
-        .cloud-color-8 {
-            background: #f7b8a0;
-        }
-        .cloud-color-9 {
-            background: #d4c4a8;
-        }
-        .cloud-color-10 {
-            background: #f5c8d8;
-        }
-        .cloud-color-11 {
-            background: #b8d9e8;
-        }
-        .cloud-color-12 {
-            background: #d4e4b5;
-        }
-        .cloud-color-13 {
-            background: #f5d8b8;
-        }
+        .cloud-color-1 { background: #f7c5cc; }
+        .cloud-color-2 { background: #b5d9e8; }
+        .cloud-color-3 { background: #c9e4b5; }
+        .cloud-color-4 { background: #f7e3a5; }
+        .cloud-color-5 { background: #e8c8f0; }
+        .cloud-color-6 { background: #fbc8a0; }
+        .cloud-color-7 { background: #a8d8d0; }
+        .cloud-color-8 { background: #f7b8a0; }
+        .cloud-color-9 { background: #d4c4a8; }
+        .cloud-color-10 { background: #f5c8d8; }
+        .cloud-color-11 { background: #b8d9e8; }
+        .cloud-color-12 { background: #d4e4b5; }
+        .cloud-color-13 { background: #f5d8b8; }
 
-        /* 第二页 */
+        /* 第二页：自主识字 */
         .cloud-grid {
             display: flex;
             flex-wrap: wrap;
@@ -377,9 +308,7 @@
             align-items: center;
             gap: 6px;
         }
-        .import-area input[type="file"] {
-            display: none;
-        }
+        .import-area input[type="file"] { display: none; }
         .import-area .file-btn {
             background: #ffb882;
             border: none;
@@ -586,7 +515,7 @@
             gap: 6px;
         }
 
-        /* ========== 第三页：拼音搭配（新布局） ========== */
+        /* 第三页：拼音搭配 */
         .apple-tree-area {
             background: radial-gradient(ellipse at bottom, #7cb87a 0%, #4d8a4a 100%);
             border-radius: 100px 100px 40px 40px;
@@ -678,12 +607,8 @@
             opacity: 0.85;
         }
         @keyframes glowGreen {
-            0% {
-                box-shadow: 0 0 20px rgba(0, 255, 100, 0.4), 0 6px 0 #1a5a1a;
-            }
-            100% {
-                box-shadow: 0 0 50px rgba(0, 255, 100, 0.9), 0 6px 0 #1a5a1a;
-            }
+            0% { box-shadow: 0 0 20px rgba(0, 255, 100, 0.4), 0 6px 0 #1a5a1a; }
+            100% { box-shadow: 0 0 50px rgba(0, 255, 100, 0.9), 0 6px 0 #1a5a1a; }
         }
         .pinyin-pair .leaf {
             width: 64px;
@@ -705,9 +630,7 @@
             touch-action: none;
             user-select: none;
         }
-        .pinyin-pair .leaf:active {
-            cursor: grabbing;
-        }
+        .pinyin-pair .leaf:active { cursor: grabbing; }
         .pinyin-pair .leaf.dragging {
             opacity: 0.5;
             transform: scale(0.80) rotate(-10deg);
@@ -721,9 +644,7 @@
             pointer-events: none;
             transform: rotate(0deg) scale(0.88);
         }
-        .pinyin-pair .leaf.hidden-leaf {
-            display: none;
-        }
+        .pinyin-pair .leaf.hidden-leaf { display: none; }
         .pinyin-pair .answer-row {
             display: flex;
             gap: 6px;
@@ -737,15 +658,9 @@
             visibility: hidden;
             margin-top: 2px;
         }
-        .pinyin-pair .answer-row.show {
-            visibility: visible;
-        }
-        .pinyin-pair .answer-row .ans-char {
-            color: #1a5a1a;
-        }
-        .pinyin-pair .answer-row .ans-pinyin {
-            color: #b33a3a;
-        }
+        .pinyin-pair .answer-row.show { visibility: visible; }
+        .pinyin-pair .answer-row .ans-char { color: #1a5a1a; }
+        .pinyin-pair .answer-row .ans-pinyin { color: #b33a3a; }
         .pinyin-stats {
             display: flex;
             justify-content: center;
@@ -771,44 +686,8 @@
             line-height: 1.8;
             font-size: 1.2rem;
         }
-        @media (max-width:720px) {
-            .pinyin-pair .apple {
-                width: 62px;
-                height: 62px;
-                font-size: 1.4rem;
-            }
-            .pinyin-pair .leaf {
-                width: 52px;
-                height: 40px;
-                font-size: 0.8rem;
-            }
-            .apple-row {
-                gap: 20px 28px;
-            }
-            .leaf-row {
-                gap: 16px 24px;
-            }
-        }
-        @media (max-width:480px) {
-            .pinyin-pair .apple {
-                width: 50px;
-                height: 50px;
-                font-size: 1.1rem;
-            }
-            .pinyin-pair .leaf {
-                width: 44px;
-                height: 34px;
-                font-size: 0.7rem;
-            }
-            .apple-row {
-                gap: 14px 18px;
-            }
-            .leaf-row {
-                gap: 12px 16px;
-            }
-        }
 
-        /* ========== 第四页：词语寻宝 ========== */
+        /* 第四页：词语寻宝 */
         .word-search-area {
             background: rgba(200, 180, 140, 0.1);
             border-radius: 40px;
@@ -853,7 +732,6 @@
             background: #e8e0d0;
             border-color: #b8a890;
         }
-
         .manual-word-area {
             display: flex;
             flex-wrap: wrap;
@@ -921,7 +799,6 @@
             transform: translateY(4px);
             box-shadow: 0 0px 0 #b87a3a;
         }
-
         .word-stats {
             display: flex;
             flex-wrap: wrap;
@@ -962,7 +839,7 @@
             color: #1a5a1a;
         }
 
-        /* ========== 第五页：词语理解 ========== */
+        /* 第五页：词语理解 */
         .method-clouds {
             display: flex;
             flex-wrap: wrap;
@@ -1049,7 +926,6 @@
             border-color: #ff8c1a;
             box-shadow: 0 0 0 4px rgba(255, 140, 26, 0.2);
         }
-
         .treasure-box {
             background: #d4b08a;
             border-radius: 30px 30px 20px 20px;
@@ -1093,7 +969,7 @@
             box-shadow: 0 0 0 3px rgba(255, 140, 26, 0.2);
         }
 
-        /* 第六页 */
+        /* 第六页：寻求帮助 */
         .help-stats {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -1144,7 +1020,7 @@
             margin-right: 6px;
         }
 
-        /* 第七页 */
+        /* 第七页：自我评估 */
         .eval-group {
             display: flex;
             flex-wrap: wrap;
@@ -1193,15 +1069,9 @@
             max-height: 220px;
             overflow-y: auto;
         }
-        .report-area strong {
-            color: #4d2f12;
-        }
-        .report-area .good {
-            color: #2a7a2a;
-        }
-        .report-area .bad {
-            color: #b33a3a;
-        }
+        .report-area strong { color: #4d2f12; }
+        .report-area .good { color: #2a7a2a; }
+        .report-area .bad { color: #b33a3a; }
         .export-btn-wrap {
             display: flex;
             justify-content: center;
@@ -1220,26 +1090,12 @@
             display: inline-block;
             margin-bottom: 8px;
         }
-        .flex-center {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .gap-8 {
-            gap: 8px;
-        }
-        .gap-16 {
-            gap: 16px;
-        }
-        .mt-8 {
-            margin-top: 8px;
-        }
-        .mb-8 {
-            margin-bottom: 8px;
-        }
-        .text-center {
-            text-align: center;
-        }
+        .flex-center { display: flex; justify-content: center; align-items: center; }
+        .gap-8 { gap: 8px; }
+        .gap-16 { gap: 16px; }
+        .mt-8 { margin-top: 8px; }
+        .mb-8 { margin-bottom: 8px; }
+        .text-center { text-align: center; }
         .hint-text {
             font-size: 0.85rem;
             color: #6b4a2c;
@@ -1249,7 +1105,7 @@
             margin: 4px 0;
         }
 
-        /* 学生报告汇总页 & 班级总览 */
+        /* 班级总览 */
         .report-card {
             background: rgba(255, 248, 230, 0.7);
             border-radius: 30px;
@@ -1257,14 +1113,8 @@
             margin: 8px 0;
             border: 2px solid #dba570;
         }
-        .report-card h4 {
-            color: #4d2f12;
-            margin-bottom: 4px;
-        }
-        .report-card .detail {
-            font-size: 0.9rem;
-            color: #3d2a12;
-        }
+        .report-card h4 { color: #4d2f12; margin-bottom: 4px; }
+        .report-card .detail { font-size: 0.9rem; color: #3d2a12; }
         .class-overview {
             background: rgba(255, 240, 210, 0.4);
             border-radius: 30px;
@@ -1279,18 +1129,10 @@
             border-bottom: 1px dashed #dba570;
             padding: 8px 0;
         }
-        .class-overview .student-item:last-child {
-            border-bottom: none;
-        }
-        .class-overview .pro {
-            color: #2a7a2a;
-        }
-        .class-overview .imp {
-            color: #b33a3a;
-        }
-        .hidden-page {
-            display: none !important;
-        }
+        .class-overview .student-item:last-child { border-bottom: none; }
+        .class-overview .pro { color: #2a7a2a; }
+        .class-overview .imp { color: #b33a3a; }
+        .hidden-page { display: none !important; }
         .toggle-btn {
             background: #d4b08a;
             border: none;
@@ -1309,170 +1151,167 @@
             box-shadow: 0 0px 0 #8a6a4a;
         }
 
+        /* 学生管理表格 */
+        .user-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: rgba(255, 248, 230, 0.6);
+            border-radius: 20px;
+            overflow: hidden;
+        }
+        .user-table th,
+        .user-table td {
+            padding: 10px 16px;
+            border-bottom: 1px solid #dba570;
+            text-align: left;
+        }
+        .user-table th {
+            background: #d4b08a;
+            color: #4d2f12;
+        }
+        .user-table tr:last-child td { border-bottom: none; }
+        .user-table .del-btn {
+            background: #e8709a;
+            border: none;
+            padding: 2px 14px;
+            border-radius: 20px;
+            color: white;
+            font-weight: 700;
+            cursor: pointer;
+        }
+        .add-student-form {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            align-items: center;
+            background: rgba(255, 235, 200, 0.3);
+            padding: 12px 18px;
+            border-radius: 40px;
+            margin-bottom: 16px;
+            border: 2px solid #dba570;
+        }
+        .add-student-form input {
+            padding: 8px 14px;
+            border-radius: 30px;
+            border: 2px solid #dba570;
+            font-weight: 600;
+            background: rgba(255, 250, 240, 0.85);
+            outline: none;
+            font-size: 0.95rem;
+        }
+        .add-student-form input:focus {
+            border-color: #ff8c1a;
+            box-shadow: 0 0 0 3px rgba(255, 140, 26, 0.2);
+        }
+        .add-student-form .add-btn {
+            background: #8bc98e;
+            border: none;
+            padding: 6px 20px;
+            border-radius: 40px;
+            font-weight: 700;
+            color: #1a3d1f;
+            cursor: pointer;
+            box-shadow: 0 4px 0 #2f7a3d;
+            transition: 0.05s linear;
+        }
+        .add-student-form .add-btn:active {
+            transform: translateY(4px);
+            box-shadow: 0 0px 0 #2f7a3d;
+        }
+        .qr-cell {
+            cursor: pointer;
+            color: #4a9fc7;
+            font-weight: 700;
+        }
+        .qr-popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            z-index: 999;
+            border: 4px solid #ffb882;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+        .qr-popup.show { display: flex; }
+        .qr-popup .close-btn {
+            background: #e8709a;
+            border: none;
+            padding: 6px 20px;
+            border-radius: 30px;
+            color: white;
+            font-weight: 700;
+            cursor: pointer;
+        }
+        .qr-popup .qr-container {
+            width: 200px;
+            height: 200px;
+        }
+        .qr-popup .qr-container canvas {
+            width: 100% !important;
+            height: 100% !important;
+        }
+
+        /* 响应式 */
         @media (max-width:720px) {
-            .app-container {
-                padding: 12px 14px 14px;
-                border-radius: 32px;
-            }
-            .page-title {
-                font-size: 1.8rem;
-            }
-            .login-box {
-                padding: 24px 18px;
-                border-radius: 40px;
-            }
-            .cloud {
-                font-size: 0.85rem;
-                padding: 6px 14px;
-            }
-            .brick-wrapper {
-                min-width: 70px;
-            }
-            .brick {
-                width: 64px;
-                height: 50px;
-            }
-            .brick .brick-input {
-                font-size: 1.2rem;
-            }
-            .method-selector select {
-                font-size: 0.7rem;
-                max-width: 80px;
-            }
-            .word-chip {
-                font-size: 1rem;
-                padding: 6px 14px;
-            }
-            .understand-word {
-                font-size: 1.2rem;
-            }
-            .help-stats {
-                grid-template-columns: 1fr;
-            }
-            .qr-area {
-                width: 72px;
-                height: 72px;
-                top: 8px;
-                right: 10px;
-            }
-            .nav-row .btn {
-                font-size: 0.9rem;
-                padding: 8px 18px;
-                min-width: 70px;
-            }
-            .eval-option {
-                font-size: 0.95rem;
-                padding: 8px 18px;
-            }
-            .manual-word-area .manual-input-group input {
-                width: 80px;
-                font-size: 0.9rem;
-                min-width: 60px;
-            }
+            .app-container { padding: 12px 14px 14px; border-radius: 32px; }
+            .page-title { font-size: 1.8rem; }
+            .login-box { padding: 24px 18px; border-radius: 40px; }
+            .cloud { font-size: 0.85rem; padding: 6px 14px; }
+            .brick-wrapper { min-width: 70px; }
+            .brick { width: 64px; height: 50px; }
+            .brick .brick-input { font-size: 1.2rem; }
+            .method-selector select { font-size: 0.7rem; max-width: 80px; }
+            .word-chip { font-size: 1rem; padding: 6px 14px; }
+            .understand-word { font-size: 1.2rem; }
+            .help-stats { grid-template-columns: 1fr; }
+            .nav-row .btn { font-size: 0.9rem; padding: 8px 18px; min-width: 70px; }
+            .eval-option { font-size: 0.95rem; padding: 8px 18px; }
+            .manual-word-area .manual-input-group input { width: 80px; font-size: 0.9rem; min-width: 60px; }
         }
         @media (max-width:480px) {
-            .app-container {
-                padding: 8px 8px 12px;
-                border-radius: 24px;
-            }
-            .page-title {
-                font-size: 1.4rem;
-            }
-            .login-box input,
-            .login-box select {
-                font-size: 1rem;
-                padding: 10px 14px;
-            }
-            .cloud {
-                font-size: 0.75rem;
-                padding: 4px 10px;
-                min-height: 34px;
-            }
-            .brick-wrapper {
-                min-width: 60px;
-            }
-            .brick {
-                width: 56px;
-                height: 44px;
-            }
-            .brick .brick-input {
-                font-size: 1rem;
-            }
-            .method-selector select {
-                font-size: 0.6rem;
-                max-width: 70px;
-            }
-            .word-chip {
-                font-size: 0.9rem;
-                padding: 4px 12px;
-            }
-            .understand-word {
-                font-size: 1rem;
-            }
-            .nav-row .btn {
-                font-size: 0.8rem;
-                padding: 6px 14px;
-                min-width: 60px;
-            }
-            .qr-area {
-                width: 60px;
-                height: 60px;
-                top: 4px;
-                right: 6px;
-            }
-            .treasure-box .treasure-inputs input {
-                width: 80px;
-                font-size: 0.85rem;
-            }
-            .manual-word-area .manual-input-group input {
-                width: 70px;
-                font-size: 0.8rem;
-                min-width: 50px;
-                padding: 6px 8px;
-            }
+            .app-container { padding: 8px 8px 12px; border-radius: 24px; }
+            .page-title { font-size: 1.4rem; }
+            .login-box input, .login-box select { font-size: 1rem; padding: 10px 14px; }
+            .cloud { font-size: 0.75rem; padding: 4px 10px; min-height: 34px; }
+            .brick-wrapper { min-width: 60px; }
+            .brick { width: 56px; height: 44px; }
+            .brick .brick-input { font-size: 1rem; }
+            .method-selector select { font-size: 0.6rem; max-width: 70px; }
+            .word-chip { font-size: 0.9rem; padding: 4px 12px; }
+            .understand-word { font-size: 1rem; }
+            .nav-row .btn { font-size: 0.8rem; padding: 6px 14px; min-width: 60px; }
+            .treasure-box .treasure-inputs input { width: 80px; font-size: 0.85rem; }
+            .manual-word-area .manual-input-group input { width: 70px; font-size: 0.8rem; min-width: 50px; padding: 6px 8px; }
         }
-        .report-area::-webkit-scrollbar {
-            width: 6px;
-        }
-        .report-area::-webkit-scrollbar-track {
-            background: rgba(200, 180, 140, 0.2);
-            border-radius: 10px;
-        }
-        .report-area::-webkit-scrollbar-thumb {
-            background: #dba570;
-            border-radius: 10px;
-        }
+        .report-area::-webkit-scrollbar { width: 6px; }
+        .report-area::-webkit-scrollbar-track { background: rgba(200, 180, 140, 0.2); border-radius: 10px; }
+        .report-area::-webkit-scrollbar-thumb { background: #dba570; border-radius: 10px; }
     </style>
 </head>
 <body>
     <div class="app-container" id="app">
-        <!-- 二维码（学生专用） -->
-        <div class="qr-area" id="qrArea"></div>
-
-        <!-- ========== 登录页 ========== -->
+        <!-- 登录页 -->
         <div class="page active" id="page-login">
             <h1 class="page-title">📚 自主识字闯关</h1>
             <div class="text-center"><span class="page-sub">🌟 教师 / 学生 双模式</span></div>
             <div class="login-box">
-                <label>👤 姓名</label>
-                <input type="text" id="studentName" placeholder="输入你的名字" value="苏老师">
-                <label>📖 年级</label>
-                <select id="studentGrade">
-                    <option value="一年级">一年级</option><option value="二年级" selected>二年级</option>
-                    <option value="三年级">三年级</option><option value="四年级">四年级</option>
-                    <option value="五年级">五年级</option><option value="六年级">六年级</option>
-                </select>
-                <label>🏫 班级</label>
-                <input type="text" id="studentClass" placeholder="如：一班" value="二班">
-                <label>📘 学科</label>
-                <input type="text" id="studentSubject" placeholder="如：语文" value="语文">
-                <div class="date-display" id="loginDate">📅 2026-08-06</div>
-                <div class="login-btn-row"><button class="btn" id="loginBtn">🚀 进入闯关</button></div>
-                <div style="margin-top:12px;font-size:0.9rem;color:#6b4a2c;text-align:center;">💡 老师默认“苏老师”，学生扫码后自行填写姓名</div>
+                <label>👤 用户名</label>
+                <input type="text" id="loginUsername" placeholder="输入用户名" value="苏老师">
+                <label>🔑 密码</label>
+                <input type="password" id="loginPassword" placeholder="输入密码" value="123456">
+                <div style="margin-top:12px;font-size:0.9rem;color:#6b4a2c;text-align:center;">💡 教师默认账号：苏老师 / 密码：123456<br>学生可扫码或使用账号密码登录</div>
+                <div class="login-btn-row"><button class="btn" id="loginBtn">🚀 登录</button></div>
             </div>
         </div>
 
-        <!-- ========== 第二页：自主识字 ========== -->
+        <!-- 第二页：自主识字 -->
         <div class="page" id="page-literacy">
             <h1 class="page-title">🧩 自主识字闯关游戏</h1>
             <div class="text-center"><span class="attempt-badge" id="attemptBadge1">🏆 第 1 次</span></div>
@@ -1503,7 +1342,7 @@
             </div>
         </div>
 
-        <!-- ========== 第三页：拼音搭配 ========== -->
+        <!-- 第三页：拼音搭配 -->
         <div class="page" id="page-pinyin">
             <h1 class="page-title">🍎 拼音搭配游戏</h1>
             <div class="text-center"><span class="attempt-badge" id="attemptBadge2">🏆 第 1 次</span></div>
@@ -1528,7 +1367,7 @@
             </div>
         </div>
 
-        <!-- ========== 第四页：词语寻宝 ========== -->
+        <!-- 第四页：词语寻宝 -->
         <div class="page" id="page-words">
             <h1 class="page-title">🔎 词语寻宝游戏</h1>
             <div class="text-center"><span class="attempt-badge" id="attemptBadge3">🏆 第 1 次</span></div>
@@ -1542,7 +1381,6 @@
                     <span style="font-size:0.8rem;color:#6b4a2c;">自动提取词语并打乱顺序</span>
                 </div>
                 <div class="word-grid" id="wordGrid"></div>
-                <!-- 手动添加拓展词语 -->
                 <div class="manual-word-area" id="manualWordArea">
                     <span class="label">✏️ 拓展词语</span>
                     <div class="manual-input-group" id="manualInputGroup">
@@ -1566,7 +1404,7 @@
             </div>
         </div>
 
-        <!-- ========== 第五页：词语理解（升级版） ========== -->
+        <!-- 第五页：词语理解 -->
         <div class="page" id="page-understand">
             <h1 class="page-title">🎈 词语理解闯关</h1>
             <div class="text-center"><span class="attempt-badge" id="attemptBadge4">🏆 第 1 次</span></div>
@@ -1612,7 +1450,7 @@
             </div>
         </div>
 
-        <!-- ========== 第六页：寻求帮助 ========== -->
+        <!-- 第六页：寻求帮助 -->
         <div class="page" id="page-help">
             <h1 class="page-title">🤝 寻求帮助</h1>
             <div class="help-stats">
@@ -1638,7 +1476,7 @@
             </div>
         </div>
 
-        <!-- ========== 第七页：自我评估 ========== -->
+        <!-- 第七页：自我评估 -->
         <div class="page" id="page-eval">
             <h1 class="page-title">🌟 自我评估</h1>
             <div style="font-weight:700;color:#4d2f12;font-size:1.05rem;text-align:center;">本次闯关难度</div>
@@ -1667,12 +1505,32 @@
             </div>
             <div class="nav-row">
                 <button class="btn btn-secondary" id="evalBack">← 返回</button>
-                <!-- 教师进入班级总览的按钮 -->
                 <button class="btn btn-secondary" id="gotoClassOverviewBtn" style="background:linear-gradient(145deg,#b8d9a8,#7aaa6a);">📊 班级总览</button>
             </div>
         </div>
 
-        <!-- ========== 第八页：班级总览（可隐藏/显示） ========== -->
+        <!-- 第八页：学生管理（仅教师） -->
+        <div class="page hidden-page" id="page-student-management">
+            <h1 class="page-title">👥 学生管理</h1>
+            <div class="text-center"><span class="page-sub">👩‍🏫 管理本班学生账号</span></div>
+            <div class="add-student-form">
+                <input type="text" id="newStudentUsername" placeholder="学生用户名" value="小明">
+                <input type="password" id="newStudentPassword" placeholder="密码" value="123456">
+                <button class="add-btn" id="addStudentBtn">➕ 添加学生</button>
+                <button class="add-btn" id="resetAllStudentsBtn" style="background:#f7a1c4;box-shadow:0 4px 0 #b34a72;color:#3d1a28;">🔄 重置所有学生状态</button>
+            </div>
+            <div style="overflow-x:auto;">
+                <table class="user-table" id="studentTable">
+                    <thead><tr><th>用户名</th><th>年级</th><th>班级</th><th>二维码</th><th>操作</th></tr></thead>
+                    <tbody id="studentTableBody"></tbody>
+                </table>
+            </div>
+            <div class="nav-row">
+                <button class="btn btn-secondary" id="studentMgmtBack">← 返回</button>
+            </div>
+        </div>
+
+        <!-- 第九页：班级总览 -->
         <div class="page hidden-page" id="page-class-overview">
             <h1 class="page-title">📊 班级总览</h1>
             <div class="text-center">
@@ -1686,58 +1544,64 @@
                 <button class="btn btn-secondary" id="overviewBack">← 返回自我评估</button>
             </div>
         </div>
+
+        <!-- 二维码弹窗 -->
+        <div class="qr-popup" id="qrPopup">
+            <div class="qr-container" id="qrPopupContainer"></div>
+            <div style="font-weight:700;color:#4d2f12;" id="qrPopupLabel">学生二维码</div>
+            <button class="close-btn" id="qrPopupClose">关闭</button>
+        </div>
     </div>
 
     <script>
         // ====================================================================
-        //  全局状态
+        //  数据层 (localStorage)
         // ====================================================================
-        const STATE = {
-            teacher: { name: '苏老师', grade: '二年级', class: '二班', subject: '语文' },
-            role: 'teacher',
-            studentName: '苏老师',
+        function getUsers() { return JSON.parse(localStorage.getItem('users') || '[]'); }
+        function saveUsers(users) { localStorage.setItem('users', JSON.stringify(users)); }
+        function getReports() { return JSON.parse(localStorage.getItem('reports') || '[]'); }
+        function saveReports(reports) { localStorage.setItem('reports', JSON.stringify(reports)); }
+        function getTemplate() { return JSON.parse(localStorage.getItem('template') || 'null'); }
+        function saveTemplate(template) { localStorage.setItem('template', JSON.stringify(template)); }
+        function getStudentState(username) {
+            const key = 'student_state_' + username;
+            return JSON.parse(localStorage.getItem(key) || 'null');
+        }
+        function saveStudentState(username, state) {
+            const key = 'student_state_' + username;
+            localStorage.setItem(key, JSON.stringify(state));
+        }
+        function removeStudentState(username) {
+            localStorage.removeItem('student_state_' + username);
+        }
 
-            attempts: { literacy: 0, pinyin: 0, words: 0, understand: 0 },
-            maxAttempts: 3,
-            currentPage: 'page-login',
+        function initDefaultUsers() {
+            let users = getUsers();
+            if (users.length === 0) {
+                users = [
+                    { id: 1, username: '苏老师', password: '123456', role: 'teacher', grade: '二年级', class: '二班', subject: '语文' },
+                    { id: 2, username: '小智', password: '123456', role: 'student', grade: '二年级', class: '二班', subject: '语文' }
+                ];
+                saveUsers(users);
+                if (!getTemplate()) {
+                    saveTemplate(createDefaultTemplate());
+                }
+                const template = getTemplate();
+                if (template) {
+                    saveStudentState('小智', JSON.parse(JSON.stringify(template)));
+                }
+            }
+        }
+        initDefaultUsers();
 
-            bricks: [],
-            customMethods: ['', '', ''],
-            methods: [],
-
-            pinyinPairs: [],
-            pinyinMatchedCount: 0,
-
-            wordList: [],
-            wordFound: [],
-
-            understandMethods: [],
-            understandWords: [],
-            treasureWords: [],
-
-            pinyinErrorCount: {},
-            helpChosen: null,
-
-            difficulty: null,
-            feelings: [],
-            reportGenerated: false,
-
-            partnerName: '小雅',
-
-            // 学生报告汇总
-            studentReports: [],
-
-            // 班级总览页是否隐藏（默认隐藏）
-            overviewHidden: true,
-        };
+        let currentUser = null;
+        let currentState = null;
 
         // ====================================================================
         //  辅助工具
         // ====================================================================
         function $(sel, ctx = document) { return ctx.querySelector(sel); }
-
         function $$(sel, ctx = document) { return [...ctx.querySelectorAll(sel)]; }
-
         function shuffle(arr) {
             for (let i = arr.length - 1; i > 0; i--) {
                 const j = Math.floor(Math.random() * (i + 1));
@@ -1745,24 +1609,19 @@
             }
             return arr;
         }
-
         function getDateStr() {
             const d = new Date();
-            return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2,
-                '0');
+            return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
         }
-
         const CLOUD_CLASSES = [
             'cloud-color-1', 'cloud-color-2', 'cloud-color-3', 'cloud-color-4',
             'cloud-color-5', 'cloud-color-6', 'cloud-color-7', 'cloud-color-8',
             'cloud-color-9', 'cloud-color-10', 'cloud-color-11', 'cloud-color-12', 'cloud-color-13'
         ];
-
         const DEFAULT_METHODS = [
             '字理识字', '形声字', '偏旁归类', '加一加', '减一减',
             '换偏旁', '比较识字', '生活中识字', '图片识字', '语境识字'
         ];
-
         function playMatchSound() {
             try {
                 const ctx = new(window.AudioContext || window.webkitAudioContext)();
@@ -1779,38 +1638,79 @@
             } catch (e) { /* ignore */ }
         }
 
+        function createDefaultTemplate() {
+            const bricks = [];
+            for (let i = 0; i < 20; i++) bricks.push({ char: '', methodIndex: null });
+            const methods = DEFAULT_METHODS.map((name, idx) => ({ name, colorClass: CLOUD_CLASSES[idx % CLOUD_CLASSES.length] }));
+            const pinyinPairs = ['日', '月', '花', '鸟', '树', '山', '水', '火'].map((ch, i) => ({
+                char: ch,
+                pinyin: ['ri', 'yue', 'hua', 'niao', 'shu', 'shan', 'shui', 'huo'][i] || '?',
+                matched: false
+            }));
+            shuffle(pinyinPairs);
+            const wordList = shuffle(['太阳', '月亮', '花朵', '小鸟', '大树', '草地', '快乐', '美丽', '勇敢', '善良']);
+            const understandMethods = [
+                { name: '借图理解', colorClass: CLOUD_CLASSES[0] },
+                { name: '联系上下文', colorClass: CLOUD_CLASSES[1] },
+                { name: '联系实际生活', colorClass: CLOUD_CLASSES[2] },
+                { name: '拆字理解', colorClass: CLOUD_CLASSES[3] },
+                { name: '语境联想', colorClass: CLOUD_CLASSES[4] },
+                { name: '', colorClass: CLOUD_CLASSES[5] },
+                { name: '', colorClass: CLOUD_CLASSES[6] }
+            ];
+            const understandWords = ['太阳', '月亮', '花朵', '小鸟', '大树', '草地', '快乐', '美丽'].map(w => ({ word: w, methodIndex: null }));
+            return {
+                bricks, methods, customMethods: ['', '', ''],
+                pinyinPairs, wordList, wordFound: new Array(wordList.length).fill(false),
+                understandMethods, understandWords, treasureWords: [],
+                pinyinErrorCount: {}, partnerName: '小雅', difficulty: null, feelings: []
+            };
+        }
+
         // ====================================================================
-        //  页面导航
+        //  导航
         // ====================================================================
         const pageOrder = ['page-login', 'page-literacy', 'page-pinyin', 'page-words', 'page-understand', 'page-help',
-            'page-eval', 'page-class-overview'
+            'page-eval', 'page-student-management', 'page-class-overview'
         ];
 
         function showPage(id) {
-            $$('.page').forEach(p => p.classList.remove('active'));
+            $$('.page').forEach(p => {
+                p.classList.remove('active');
+                p.classList.add('hidden-page');
+            });
             const el = $(`#${id}`);
             if (el) {
                 el.classList.remove('hidden-page');
                 el.classList.add('active');
             }
-            STATE.currentPage = id;
-            updateQRCode();
+            updateTopNav();
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
+        function currentPageId() {
+            for (let p of pageOrder) {
+                const el = $(`#${p}`);
+                if (el && el.classList.contains('active') && !el.classList.contains('hidden-page')) return p;
+            }
+            return 'page-login';
+        }
+
         function goNext() {
-            const idx = pageOrder.indexOf(STATE.currentPage);
+            const idx = pageOrder.indexOf(currentPageId());
             if (idx < pageOrder.length - 1) {
                 const next = pageOrder[idx + 1];
-                const pageKey = {
-                    'page-literacy': 'literacy',
-                    'page-pinyin': 'pinyin',
-                    'page-words': 'words',
-                    'page-understand': 'understand'
-                } [next];
-                if (pageKey && STATE.attempts[pageKey] >= STATE.maxAttempts) {
-                    alert(`⚠️ 这一关你已经完成了 ${STATE.maxAttempts} 次，不能再闯了！`);
-                    return;
+                if (next === 'page-student-management' || next === 'page-class-overview') {
+                    if (currentUser && currentUser.role === 'teacher') {
+                        showPage(next);
+                        if (next === 'page-student-management') initStudentManagement();
+                        else if (next === 'page-class-overview') initClassOverviewPage();
+                        return;
+                    } else {
+                        showPage('page-eval');
+                        initEvalPage();
+                        return;
+                    }
                 }
                 showPage(next);
                 if (next === 'page-literacy') initLiteracyPage();
@@ -1819,12 +1719,11 @@
                 else if (next === 'page-understand') initUnderstandPage();
                 else if (next === 'page-help') initHelpPage();
                 else if (next === 'page-eval') initEvalPage();
-                else if (next === 'page-class-overview') initClassOverviewPage();
             }
         }
 
         function goBack() {
-            const idx = pageOrder.indexOf(STATE.currentPage);
+            const idx = pageOrder.indexOf(currentPageId());
             if (idx > 0) {
                 const prev = pageOrder[idx - 1];
                 showPage(prev);
@@ -1834,167 +1733,158 @@
                 else if (prev === 'page-understand') initUnderstandPage();
                 else if (prev === 'page-help') initHelpPage();
                 else if (prev === 'page-eval') initEvalPage();
+                else if (prev === 'page-student-management') initStudentManagement();
                 else if (prev === 'page-class-overview') initClassOverviewPage();
             }
         }
 
         // ====================================================================
-        //  二维码
+        //  顶部导航
         // ====================================================================
-        let qrInstance = null;
+        function updateTopNav() {
+            if (currentPageId() === 'page-login' || !currentUser) {
+                const nav = document.getElementById('topNav');
+                if (nav) nav.style.display = 'none';
+                return;
+            }
+            let nav = document.getElementById('topNav');
+            if (!nav) {
+                nav = document.createElement('div');
+                nav.id = 'topNav';
+                nav.style.cssText = 'display:flex;justify-content:space-between;align-items:center;background:rgba(255,235,200,0.6);border-radius:50px;padding:8px 20px;margin-bottom:12px;border:2px solid #ffd699;flex-wrap:wrap;';
+                document.querySelector('.app-container').prepend(nav);
+            }
+            nav.style.display = 'flex';
+            nav.innerHTML = `
+                <div class="user-info">
+                    <span>👤 ${currentUser.username}</span>
+                    <span style="background:#ffb882;padding:2px 12px;border-radius:30px;font-size:0.8rem;">${currentUser.role === 'teacher' ? '老师' : '学生'}</span>
+                </div>
+                <div class="nav-buttons" style="display:flex;gap:8px;flex-wrap:wrap;">
+                    ${currentUser.role === 'teacher' ? `
+                        <button class="btn-small teacher" onclick="showPage('page-student-management');initStudentManagement();" style="background:#7ec8e3;border:none;padding:4px 14px;border-radius:30px;font-weight:700;color:#0d2b3a;cursor:pointer;font-size:0.85rem;box-shadow:0 3px 0 #2a6f8f;">👥 学生管理</button>
+                        <button class="btn-small teacher" onclick="showPage('page-class-overview');initClassOverviewPage();" style="background:#7ec8e3;border:none;padding:4px 14px;border-radius:30px;font-weight:700;color:#0d2b3a;cursor:pointer;font-size:0.85rem;box-shadow:0 3px 0 #2a6f8f;">📊 班级总览</button>
+                    ` : ''}
+                    <button class="btn-small" onclick="showPage('page-literacy');initLiteracyPage();" style="background:#ffb882;border:none;padding:4px 14px;border-radius:30px;font-weight:700;color:#4d2f12;cursor:pointer;font-size:0.85rem;box-shadow:0 3px 0 #b87a3a;">🏠 闯关</button>
+                    <button class="btn-small logout" onclick="logout();" style="background:#f7a1c4;border:none;padding:4px 14px;border-radius:30px;font-weight:700;color:#3d1a28;cursor:pointer;font-size:0.85rem;box-shadow:0 3px 0 #b34a72;">🚪 退出</button>
+                </div>
+            `;
+        }
 
-        function updateQRCode() {
-            const container = $('#qrArea');
-            container.innerHTML = '';
-            const url = window.location.href;
-            const size = Math.min(container.clientWidth || 96, 96);
-            try {
-                qrInstance = new QRCode(container, {
-                    text: url,
-                    width: size,
-                    height: size,
-                    colorDark: '#2d1a06',
-                    colorLight: '#ffffff',
-                    correctLevel: QRCode.CorrectLevel.H
-                });
-            } catch (e) {
-                container.innerHTML = '<div class="qr-placeholder">📱 扫码<br>进入</div>';
+        function logout() {
+            if (confirm('确定要退出吗？')) {
+                currentUser = null;
+                currentState = null;
+                showPage('page-login');
+                initLogin();
             }
         }
-        window.addEventListener('resize', () => { if (STATE.currentPage !== 'page-login') updateQRCode(); });
 
         // ====================================================================
         //  登录
         // ====================================================================
         function initLogin() {
-            $('#loginDate').textContent = '📅 ' + getDateStr();
-            $('#studentName').value = STATE.teacher.name || '苏老师';
-            $('#studentGrade').value = STATE.teacher.grade || '二年级';
-            $('#studentClass').value = STATE.teacher.class || '二班';
-            $('#studentSubject').value = STATE.teacher.subject || '语文';
+            $('#loginUsername').value = '苏老师';
+            $('#loginPassword').value = '123456';
+            // 检测URL参数 ?student=xxx
+            const params = new URLSearchParams(window.location.search);
+            const student = params.get('student');
+            if (student) {
+                const users = getUsers();
+                const user = users.find(u => u.username === student && u.role === 'student');
+                if (user) {
+                    $('#loginUsername').value = student;
+                    $('#loginPassword').value = user.password || '123456';
+                    setTimeout(() => { $('#loginBtn').click(); }, 300);
+                } else {
+                    alert('未找到该学生账号，请使用账号密码登录。');
+                }
+                history.replaceState(null, '', window.location.pathname);
+            }
         }
 
         $('#loginBtn').addEventListener('click', function() {
-            const name = $('#studentName').value.trim() || '苏老师';
-            const grade = $('#studentGrade').value;
-            const cls = $('#studentClass').value.trim() || '一班';
-            const subject = $('#studentSubject').value.trim() || '语文';
-
-            if (name === '苏老师') {
-                STATE.role = 'teacher';
-                STATE.studentName = '苏老师';
-                STATE.teacher = { name: '苏老师', grade, class: cls, subject };
-            } else {
-                STATE.role = 'student';
-                STATE.studentName = name;
-                STATE.teacher = { name: '苏老师', grade, class: cls, subject };
+            const username = $('#loginUsername').value.trim();
+            const password = $('#loginPassword').value.trim();
+            const users = getUsers();
+            const user = users.find(u => u.username === username && u.password === password);
+            if (!user) {
+                alert('❌ 用户名或密码错误！');
+                return;
             }
-
-            initAllData();
-            showPage('page-literacy');
-            initLiteracyPage();
-
-            if (STATE.role === 'teacher') {
-                console.log('👩‍🏫 教师模式：苏老师，您可以导入文档预设内容，学生将看到相同题目。');
+            currentUser = user;
+            if (user.role === 'teacher') {
+                let template = getTemplate();
+                if (!template) {
+                    template = createDefaultTemplate();
+                    saveTemplate(template);
+                }
+                currentState = template;
+                showPage('page-literacy');
+                initLiteracyPage();
             } else {
-                console.log(`🧑‍🎓 学生模式：${STATE.studentName}，您的报告将独立记录。`);
+                let state = getStudentState(user.username);
+                if (!state) {
+                    const template = getTemplate();
+                    state = template ? JSON.parse(JSON.stringify(template)) : createDefaultTemplate();
+                    saveStudentState(user.username, state);
+                }
+                currentState = state;
+                showPage('page-literacy');
+                initLiteracyPage();
             }
         });
 
         // ====================================================================
-        //  数据初始化
+        //  保存当前状态
         // ====================================================================
-        function initAllData() {
-            STATE.bricks = [];
-            for (let i = 0; i < 20; i++) STATE.bricks.push({ char: '', methodIndex: null });
-            STATE.customMethods = ['', '', ''];
-            STATE.methods = DEFAULT_METHODS.map((name, idx) => ({
-                name,
-                colorClass: CLOUD_CLASSES[idx % CLOUD_CLASSES.length]
-            }));
-
-            if (STATE.pinyinPairs.length === 0) {
-                const defaultChars = ['日', '月', '花', '鸟', '树', '山', '水', '火'];
-                const defaultPinyins = ['ri', 'yue', 'hua', 'niao', 'shu', 'shan', 'shui', 'huo'];
-                STATE.pinyinPairs = defaultChars.map((ch, i) => ({
-                    char: ch,
-                    pinyin: defaultPinyins[i] || '?',
-                    matched: false
-                }));
-                shuffle(STATE.pinyinPairs);
+        function saveCurrentState() {
+            if (!currentUser || !currentState) return;
+            if (currentUser.role === 'teacher') {
+                saveTemplate(currentState);
+            } else {
+                saveStudentState(currentUser.username, currentState);
             }
-            STATE.pinyinMatchedCount = 0;
-
-            if (STATE.wordList.length === 0) {
-                STATE.wordList = shuffle(['太阳', '月亮', '花朵', '小鸟', '大树', '草地', '快乐', '美丽', '勇敢', '善良']);
-                STATE.wordFound = new Array(STATE.wordList.length).fill(false);
-            }
-
-            STATE.understandMethods = [
-                { name: '借图理解', colorClass: CLOUD_CLASSES[0] },
-                { name: '联系上下文', colorClass: CLOUD_CLASSES[1] },
-                { name: '联系实际生活', colorClass: CLOUD_CLASSES[2] },
-                { name: '拆字理解', colorClass: CLOUD_CLASSES[3] },
-                { name: '语境联想', colorClass: CLOUD_CLASSES[4] },
-                { name: '', colorClass: CLOUD_CLASSES[5] },
-                { name: '', colorClass: CLOUD_CLASSES[6] }
-            ];
-            if (STATE.understandWords.length === 0) {
-                const defaultWords = ['太阳', '月亮', '花朵', '小鸟', '大树', '草地', '快乐', '美丽'];
-                STATE.understandWords = defaultWords.map(w => ({ word: w, methodIndex: null }));
-            }
-            STATE.treasureWords = [];
-
-            STATE.pinyinErrorCount = {};
-            STATE.helpChosen = null;
-            STATE.difficulty = null;
-            STATE.feelings = [];
-            STATE.reportGenerated = false;
         }
 
         // ====================================================================
         //  第二页：自主识字
         // ====================================================================
         function initLiteracyPage() {
-            const attempt = STATE.attempts.literacy + 1;
+            if (!currentUser || !currentState) return;
+            const state = currentState;
+            const attempt = 1;
             $('#attemptBadge1').textContent = `🏆 第 ${attempt} 次`;
-            if (STATE.attempts.literacy >= STATE.maxAttempts) {
-                $('#attemptBadge1').textContent = `🏁 已完成 ${STATE.maxAttempts} 次`;
-            }
-            updateMethodsFromCustom();
-            renderClouds();
-            renderBricks();
-            renderPairStats();
-            setupFileImport();
+            updateMethodsFromCustom(state);
+            renderClouds(state);
+            renderBricks(state);
+            renderPairStats(state);
+            setupFileImport(state);
             $$('.custom-method-input').forEach((inp, idx) => {
-                inp.value = STATE.customMethods[idx] || '';
+                inp.value = state.customMethods[idx] || '';
+                inp.removeEventListener('change', function() {});
                 inp.addEventListener('change', function() {
-                    STATE.customMethods[idx] = this.value.trim();
-                    updateMethodsFromCustom();
-                    renderClouds();
-                    renderBricks();
-                    renderPairStats();
+                    state.customMethods[idx] = this.value.trim();
+                    updateMethodsFromCustom(state);
+                    renderClouds(state);
+                    renderBricks(state);
+                    renderPairStats(state);
+                    saveCurrentState();
                 });
             });
         }
 
-        function updateMethodsFromCustom() {
-            const base = DEFAULT_METHODS.map((name, idx) => ({
-                name,
-                colorClass: CLOUD_CLASSES[idx % CLOUD_CLASSES.length]
-            }));
-            const customNames = STATE.customMethods.filter(m => m.trim() !== '');
-            const customMethods = customNames.map((name, idx) => ({
-                name,
-                colorClass: CLOUD_CLASSES[(base.length + idx) % CLOUD_CLASSES.length]
-            }));
-            STATE.methods = [...base, ...customMethods];
+        function updateMethodsFromCustom(state) {
+            const base = DEFAULT_METHODS.map((name, idx) => ({ name, colorClass: CLOUD_CLASSES[idx % CLOUD_CLASSES.length] }));
+            const customNames = state.customMethods.filter(m => m.trim() !== '');
+            const customMethods = customNames.map((name, idx) => ({ name, colorClass: CLOUD_CLASSES[(base.length + idx) % CLOUD_CLASSES.length] }));
+            state.methods = [...base, ...customMethods];
         }
 
-        function renderClouds() {
+        function renderClouds(state) {
             const grid = $('#cloudGrid');
             grid.innerHTML = '';
-            STATE.methods.forEach((method, index) => {
+            state.methods.forEach((method, index) => {
                 const span = document.createElement('span');
                 span.className = `cloud ${method.colorClass}`;
                 const idxSpan = document.createElement('span');
@@ -2015,30 +1905,31 @@
                 inp.placeholder = '自创方法';
                 inp.className = 'custom-method-input';
                 inp.dataset.idx = i;
-                inp.value = STATE.customMethods[i] || '';
+                inp.value = state.customMethods[i] || '';
                 inp.addEventListener('change', function() {
-                    STATE.customMethods[i] = this.value.trim();
-                    updateMethodsFromCustom();
-                    renderClouds();
-                    renderBricks();
-                    renderPairStats();
+                    state.customMethods[i] = this.value.trim();
+                    updateMethodsFromCustom(state);
+                    renderClouds(state);
+                    renderBricks(state);
+                    renderPairStats(state);
+                    saveCurrentState();
                 });
                 span.appendChild(inp);
                 grid.appendChild(span);
             }
         }
 
-        function renderBricks() {
+        function renderBricks(state) {
             const grid = $('#brickGrid');
             grid.innerHTML = '';
-            STATE.bricks.forEach((brick, idx) => {
+            state.bricks.forEach((brick, idx) => {
                 const wrapper = document.createElement('div');
                 wrapper.className = 'brick-wrapper' + (brick.methodIndex !== null ? ' paired' : '');
                 const div = document.createElement('div');
                 div.className = 'brick';
                 let bg = '#c9b091';
-                if (brick.methodIndex !== null && brick.methodIndex < STATE.methods.length) {
-                    const method = STATE.methods[brick.methodIndex];
+                if (brick.methodIndex !== null && brick.methodIndex < state.methods.length) {
+                    const method = state.methods[brick.methodIndex];
                     const cls = method.colorClass;
                     const el = document.createElement('span');
                     el.className = cls;
@@ -2055,10 +1946,11 @@
                 inp.value = brick.char || '';
                 inp.addEventListener('input', function(e) {
                     const val = this.value.trim().slice(0, 1);
-                    STATE.bricks[idx].char = val;
-                    STATE.bricks[idx].methodIndex = null;
-                    renderBricks();
-                    renderPairStats();
+                    state.bricks[idx].char = val;
+                    state.bricks[idx].methodIndex = null;
+                    renderBricks(state);
+                    renderPairStats(state);
+                    saveCurrentState();
                 });
                 inp.addEventListener('mousedown', e => e.stopPropagation());
                 inp.addEventListener('touchstart', e => e.stopPropagation());
@@ -2066,10 +1958,10 @@
                 inp.style.pointerEvents = 'auto';
                 inp.style.touchAction = 'auto';
                 div.appendChild(inp);
-                if (brick.methodIndex !== null && brick.methodIndex < STATE.methods.length) {
+                if (brick.methodIndex !== null && brick.methodIndex < state.methods.length) {
                     const label = document.createElement('div');
                     label.className = 'method-label';
-                    label.textContent = STATE.methods[brick.methodIndex].name;
+                    label.textContent = state.methods[brick.methodIndex].name;
                     div.appendChild(label);
                 }
                 wrapper.appendChild(div);
@@ -2080,7 +1972,7 @@
                 emptyOpt.value = '';
                 emptyOpt.textContent = '选择';
                 select.appendChild(emptyOpt);
-                STATE.methods.forEach((method, mIdx) => {
+                state.methods.forEach((method, mIdx) => {
                     const opt = document.createElement('option');
                     opt.value = mIdx;
                     opt.textContent = (mIdx + 1) + '.' + method.name;
@@ -2089,15 +1981,16 @@
                 });
                 select.addEventListener('change', function() {
                     const val = this.value;
-                    if (val === '') { STATE.bricks[idx].methodIndex = null; } else {
+                    if (val === '') { state.bricks[idx].methodIndex = null; } else {
                         const mIdx = parseInt(val);
-                        if (!isNaN(mIdx) && mIdx < STATE.methods.length) {
-                            STATE.bricks[idx].methodIndex = mIdx;
+                        if (!isNaN(mIdx) && mIdx < state.methods.length) {
+                            state.bricks[idx].methodIndex = mIdx;
                             playMatchSound();
                         }
                     }
-                    renderBricks();
-                    renderPairStats();
+                    renderBricks(state);
+                    renderPairStats(state);
+                    saveCurrentState();
                 });
                 selector.appendChild(select);
                 wrapper.appendChild(selector);
@@ -2105,21 +1998,21 @@
             });
         }
 
-        function renderPairStats() {
+        function renderPairStats(state) {
             const statsContainer = $('#pairStats');
             const listContainer = $('#pairList');
             const countSpan = $('#pairCount');
             const stats = {};
-            STATE.methods.forEach((m, idx) => { stats[idx] = []; });
-            STATE.bricks.forEach(b => {
-                if (b.char && b.methodIndex !== null && b.methodIndex < STATE.methods.length) {
+            state.methods.forEach((m, idx) => { stats[idx] = []; });
+            state.bricks.forEach(b => {
+                if (b.char && b.methodIndex !== null && b.methodIndex < state.methods.length) {
                     stats[b.methodIndex].push(b.char);
                 }
             });
             let total = 0;
             let htmlStats = '';
             let htmlList = '';
-            STATE.methods.forEach((method, idx) => {
+            state.methods.forEach((method, idx) => {
                 const chars = stats[idx] || [];
                 const count = chars.length;
                 total += count;
@@ -2141,7 +2034,7 @@
             countSpan.textContent = total;
         }
 
-        function setupFileImport() {
+        function setupFileImport(state) {
             const fileInput = $('#fileInput');
             const selectBtn = $('#fileSelectBtn');
             const status = $('#importStatus');
@@ -2182,17 +2075,18 @@
                         status.style.color = '#b33a3a';
                         return;
                     }
-                    const count = Math.min(chineseChars.length, STATE.bricks.length);
+                    const count = Math.min(chineseChars.length, state.bricks.length);
                     for (let i = 0; i < count; i++) {
-                        STATE.bricks[i].char = chineseChars[i];
-                        STATE.bricks[i].methodIndex = null;
+                        state.bricks[i].char = chineseChars[i];
+                        state.bricks[i].methodIndex = null;
                     }
-                    for (let i = count; i < STATE.bricks.length; i++) {
-                        STATE.bricks[i].char = '';
-                        STATE.bricks[i].methodIndex = null;
+                    for (let i = count; i < state.bricks.length; i++) {
+                        state.bricks[i].char = '';
+                        state.bricks[i].methodIndex = null;
                     }
-                    renderBricks();
-                    renderPairStats();
+                    renderBricks(state);
+                    renderPairStats(state);
+                    saveCurrentState();
                     status.textContent = `✅ 成功导入 ${count} 个汉字`;
                     status.style.color = '#2a7a2a';
                 } catch (err) {
@@ -2204,12 +2098,11 @@
             });
         }
 
-        $('#literacyBack').addEventListener('click', () => { showPage('page-login');
-            initLogin(); });
+        $('#literacyBack').addEventListener('click', () => { showPage('page-login'); initLogin(); });
         $('#literacyNext').addEventListener('click', function() {
-            const filled = STATE.bricks.filter(b => b.char).length;
+            if (!currentState) return;
+            const filled = currentState.bricks.filter(b => b.char).length;
             if (filled < 5) { alert('至少输入5个汉字到砖块中才能继续！'); return; }
-            STATE.attempts.literacy++;
             goNext();
         });
 
@@ -2217,34 +2110,28 @@
         //  第三页：拼音搭配
         // ====================================================================
         function initPinyinPage() {
-            const attempt = STATE.attempts.pinyin + 1;
-            $('#attemptBadge2').textContent = `🏆 第 ${attempt} 次`;
-            if (STATE.attempts.pinyin >= STATE.maxAttempts) {
-                $('#attemptBadge2').textContent = `🏁 已完成 ${STATE.maxAttempts} 次`;
-            }
-            if (STATE.pinyinPairs.length === 0) {
+            if (!currentState) return;
+            const state = currentState;
+            if (!state.pinyinPairs || state.pinyinPairs.length === 0) {
                 const defaultChars = ['日', '月', '花', '鸟', '树', '山', '水', '火'];
                 const defaultPinyins = ['ri', 'yue', 'hua', 'niao', 'shu', 'shan', 'shui', 'huo'];
-                STATE.pinyinPairs = defaultChars.map((ch, i) => ({
-                    char: ch,
-                    pinyin: defaultPinyins[i] || '?',
-                    matched: false
-                }));
-                shuffle(STATE.pinyinPairs);
+                state.pinyinPairs = defaultChars.map((ch, i) => ({ char: ch, pinyin: defaultPinyins[i] || '?', matched: false }));
+                shuffle(state.pinyinPairs);
+                saveCurrentState();
             }
-            renderPinyinTreeNew();
-            updatePinyinStats();
-            setupPinyinDragNew();
-            setupPinyinFileImport();
+            renderPinyinTreeNew(state);
+            updatePinyinStats(state);
+            setupPinyinDragNew(state);
+            setupPinyinFileImport(state);
         }
 
-        function renderPinyinTreeNew() {
+        function renderPinyinTreeNew(state) {
             const canopy = $('#treeCanopy');
             canopy.innerHTML = '';
             const appleRow = document.createElement('div');
             appleRow.className = 'apple-row';
             appleRow.id = 'appleRow';
-            STATE.pinyinPairs.forEach((pair, idx) => {
+            state.pinyinPairs.forEach((pair, idx) => {
                 const wrapper = document.createElement('div');
                 wrapper.className = 'pinyin-pair';
                 wrapper.dataset.idx = idx;
@@ -2273,7 +2160,7 @@
             leafRow.appendChild(label);
 
             const unmatched = [];
-            STATE.pinyinPairs.forEach((pair, idx) => {
+            state.pinyinPairs.forEach((pair, idx) => {
                 if (!pair.matched) {
                     unmatched.push({ idx, pinyin: pair.pinyin, char: pair.char });
                 }
@@ -2295,24 +2182,22 @@
             });
             if (unmatched.length === 0) {
                 const doneMsg = document.createElement('div');
-                doneMsg.style.cssText =
-                    'width:100%;text-align:center;font-size:1.2rem;font-weight:700;color:#d4f0c8;padding:12px 0;';
+                doneMsg.style.cssText = 'width:100%;text-align:center;font-size:1.2rem;font-weight:700;color:#d4f0c8;padding:12px 0;';
                 doneMsg.textContent = '🎉 太棒啦！所有拼音都已匹配！点击下方「下一关」继续～';
                 leafRow.appendChild(doneMsg);
             }
             canopy.appendChild(leafRow);
         }
 
-        function updatePinyinStats() {
-            const matched = STATE.pinyinPairs.filter(p => p.matched).length;
-            const total = STATE.pinyinPairs.length;
+        function updatePinyinStats(state) {
+            const matched = state.pinyinPairs.filter(p => p.matched).length;
+            const total = state.pinyinPairs.length;
             $('#pinyinMatchCount').textContent = matched;
             $('#pinyinTotalCount').textContent = total;
         }
 
         let leafDragDataNew = null;
-
-        function setupPinyinDragNew() {
+        function setupPinyinDragNew(state) {
             const leaves = $$('.leaf:not(.matched)');
             leaves.forEach(el => {
                 el.removeEventListener('mousedown', onLeafStartNew);
@@ -2332,99 +2217,103 @@
                 el.removeEventListener('click', onMatchedAppleClickNew);
                 el.addEventListener('click', onMatchedAppleClickNew);
             });
-        }
+            window._pinyinState = state;
 
-        function onLeafStartNew(e) {
-            e.preventDefault();
-            const el = e.currentTarget;
-            if (el.classList.contains('matched')) return;
-            const idx = parseInt(el.dataset.idx);
-            if (isNaN(idx)) return;
-            const pair = STATE.pinyinPairs[idx];
-            if (!pair || pair.matched) return;
-            leafDragDataNew = { idx, pinyin: pair.pinyin, char: pair.char, el };
-            el.classList.add('dragging');
-            const clone = el.cloneNode(true);
-            clone.style.position = 'fixed';
-            clone.style.pointerEvents = 'none';
-            clone.style.zIndex = '9999';
-            clone.style.width = el.offsetWidth + 'px';
-            clone.style.height = el.offsetHeight + 'px';
-            clone.style.opacity = '0.8';
-            clone.id = 'leafCloneNew';
-            document.body.appendChild(clone);
-            moveLeafCloneNew(e);
-        }
+            function onLeafStartNew(e) {
+                e.preventDefault();
+                const el = e.currentTarget;
+                if (el.classList.contains('matched')) return;
+                const idx = parseInt(el.dataset.idx);
+                if (isNaN(idx)) return;
+                const pair = state.pinyinPairs[idx];
+                if (!pair || pair.matched) return;
+                leafDragDataNew = { idx, pinyin: pair.pinyin, char: pair.char, el };
+                el.classList.add('dragging');
+                const clone = el.cloneNode(true);
+                clone.style.position = 'fixed';
+                clone.style.pointerEvents = 'none';
+                clone.style.zIndex = '9999';
+                clone.style.width = el.offsetWidth + 'px';
+                clone.style.height = el.offsetHeight + 'px';
+                clone.style.opacity = '0.8';
+                clone.id = 'leafCloneNew';
+                document.body.appendChild(clone);
+                moveLeafCloneNew(e);
+            }
 
-        function moveLeafCloneNew(e) {
-            const clone = document.getElementById('leafCloneNew');
-            if (!clone) return;
-            const cx = e.clientX || e.touches?.[0]?.clientX || 0;
-            const cy = e.clientY || e.touches?.[0]?.clientY || 0;
-            clone.style.left = (cx - 28) + 'px';
-            clone.style.top = (cy - 24) + 'px';
-        }
-        document.addEventListener('mousemove', moveLeafCloneNew);
-        document.addEventListener('touchmove', moveLeafCloneNew, { passive: false });
+            function moveLeafCloneNew(e) {
+                const clone = document.getElementById('leafCloneNew');
+                if (!clone) return;
+                const cx = e.clientX || e.touches?.[0]?.clientX || 0;
+                const cy = e.clientY || e.touches?.[0]?.clientY || 0;
+                clone.style.left = (cx - 28) + 'px';
+                clone.style.top = (cy - 24) + 'px';
+            }
+            document.addEventListener('mousemove', moveLeafCloneNew);
+            document.addEventListener('touchmove', moveLeafCloneNew, { passive: false });
 
-        function onLeafDropNew(e) {
-            if (!leafDragDataNew) return;
-            e.preventDefault();
-            const targetEl = e.currentTarget;
-            const idx = parseInt(targetEl.dataset.idx);
-            if (isNaN(idx)) return;
-            const targetPair = STATE.pinyinPairs[idx];
-            if (!targetPair || targetPair.matched) {
+            function onLeafDropNew(e) {
+                if (!leafDragDataNew) return;
+                e.preventDefault();
+                const targetEl = e.currentTarget;
+                const idx = parseInt(targetEl.dataset.idx);
+                if (isNaN(idx)) return;
+                const targetPair = state.pinyinPairs[idx];
+                if (!targetPair || targetPair.matched) {
+                    cleanupLeafDragNew();
+                    return;
+                }
+                if (leafDragDataNew.pinyin === targetPair.pinyin) {
+                    targetPair.matched = true;
+                    playMatchSound();
+                    state.pinyinErrorCount[targetPair.char] = 0;
+                    renderPinyinTreeNew(state);
+                    updatePinyinStats(state);
+                    setupPinyinDragNew(state);
+                    saveCurrentState();
+                    if (state.pinyinPairs.every(p => p.matched)) {
+                        setTimeout(() => alert('🎉 太棒了！所有拼音都搭配正确！'), 300);
+                    }
+                } else {
+                    const char = targetPair.char;
+                    state.pinyinErrorCount[char] = (state.pinyinErrorCount[char] || 0) + 1;
+                    targetEl.style.transform = 'scale(0.85)';
+                    setTimeout(() => { targetEl.style.transform = ''; }, 200);
+                    if (state.pinyinErrorCount[char] >= 3) {
+                        setTimeout(() => alert(`💡 "${char}" 已经错了3次，可以寻求帮助哦！`), 300);
+                    }
+                    saveCurrentState();
+                }
                 cleanupLeafDragNew();
-                return;
             }
-            if (leafDragDataNew.pinyin === targetPair.pinyin) {
-                targetPair.matched = true;
-                playMatchSound();
-                STATE.pinyinErrorCount[targetPair.char] = 0;
-                renderPinyinTreeNew();
-                updatePinyinStats();
-                setupPinyinDragNew();
-                if (STATE.pinyinPairs.every(p => p.matched)) {
-                    setTimeout(() => alert('🎉 太棒了！所有拼音都搭配正确！'), 300);
-                }
-            } else {
-                const char = targetPair.char;
-                STATE.pinyinErrorCount[char] = (STATE.pinyinErrorCount[char] || 0) + 1;
-                targetEl.style.transform = 'scale(0.85)';
-                setTimeout(() => { targetEl.style.transform = ''; }, 200);
-                if (STATE.pinyinErrorCount[char] >= 3) {
-                    setTimeout(() => alert(`💡 "${char}" 已经错了3次，可以寻求帮助哦！`), 300);
+
+            function onMatchedAppleClickNew(e) {
+                const el = e.currentTarget;
+                const idx = parseInt(el.dataset.idx);
+                if (isNaN(idx)) return;
+                const pair = state.pinyinPairs[idx];
+                if (pair && pair.matched) {
+                    pair.matched = false;
+                    renderPinyinTreeNew(state);
+                    updatePinyinStats(state);
+                    setupPinyinDragNew(state);
+                    saveCurrentState();
                 }
             }
-            cleanupLeafDragNew();
-        }
 
-        function onMatchedAppleClickNew(e) {
-            const el = e.currentTarget;
-            const idx = parseInt(el.dataset.idx);
-            if (isNaN(idx)) return;
-            const pair = STATE.pinyinPairs[idx];
-            if (pair && pair.matched) {
-                pair.matched = false;
-                renderPinyinTreeNew();
-                updatePinyinStats();
-                setupPinyinDragNew();
+            function cleanupLeafDragNew() {
+                const clone = document.getElementById('leafCloneNew');
+                if (clone) clone.remove();
+                if (leafDragDataNew && leafDragDataNew.el) {
+                    leafDragDataNew.el.classList.remove('dragging');
+                }
+                leafDragDataNew = null;
             }
+            document.addEventListener('mouseup', cleanupLeafDragNew);
+            document.addEventListener('touchend', cleanupLeafDragNew);
         }
 
-        function cleanupLeafDragNew() {
-            const clone = document.getElementById('leafCloneNew');
-            if (clone) clone.remove();
-            if (leafDragDataNew && leafDragDataNew.el) {
-                leafDragDataNew.el.classList.remove('dragging');
-            }
-            leafDragDataNew = null;
-        }
-        document.addEventListener('mouseup', cleanupLeafDragNew);
-        document.addEventListener('touchend', cleanupLeafDragNew);
-
-        function setupPinyinFileImport() {
+        function setupPinyinFileImport(state) {
             const fileInput = $('#pinyinFileInput');
             const selectBtn = $('#pinyinFileBtn');
             const status = $('#pinyinImportStatus');
@@ -2472,10 +2361,11 @@
                         pairs.push({ char: chineseMatches[i], pinyin: pinyinMatches[i].toLowerCase(), matched: false });
                     }
                     shuffle(pairs);
-                    STATE.pinyinPairs = pairs;
-                    renderPinyinTreeNew();
-                    updatePinyinStats();
-                    setupPinyinDragNew();
+                    state.pinyinPairs = pairs;
+                    renderPinyinTreeNew(state);
+                    updatePinyinStats(state);
+                    setupPinyinDragNew(state);
+                    saveCurrentState();
                     status.textContent = `✅ 成功导入 ${count} 个拼音配对（叶子已打乱）`;
                     status.style.color = '#2a7a2a';
                 } catch (err) {
@@ -2487,12 +2377,11 @@
             });
         }
 
-        $('#pinyinBack').addEventListener('click', () => { showPage('page-literacy');
-            initLiteracyPage(); });
+        $('#pinyinBack').addEventListener('click', () => { showPage('page-literacy'); initLiteracyPage(); });
         $('#pinyinNext').addEventListener('click', function() {
-            const matched = STATE.pinyinPairs.filter(p => p.matched).length;
+            if (!currentState) return;
+            const matched = currentState.pinyinPairs.filter(p => p.matched).length;
             if (matched < 2) { alert('至少正确匹配2个拼音才能继续！'); return; }
-            STATE.attempts.pinyin++;
             goNext();
         });
 
@@ -2500,36 +2389,35 @@
         //  第四页：词语寻宝
         // ====================================================================
         function initWordsPage() {
-            const attempt = STATE.attempts.words + 1;
-            $('#attemptBadge3').textContent = `🏆 第 ${attempt} 次`;
-            if (STATE.attempts.words >= STATE.maxAttempts) {
-                $('#attemptBadge3').textContent = `🏁 已完成 ${STATE.maxAttempts} 次`;
+            if (!currentState) return;
+            const state = currentState;
+            if (!state.wordList || state.wordList.length === 0) {
+                state.wordList = shuffle(['太阳', '月亮', '花朵', '小鸟', '大树', '草地', '快乐', '美丽', '勇敢', '善良']);
+                state.wordFound = new Array(state.wordList.length).fill(false);
+                saveCurrentState();
             }
-            if (STATE.wordList.length === 0) {
-                STATE.wordList = shuffle(['太阳', '月亮', '花朵', '小鸟', '大树', '草地', '快乐', '美丽', '勇敢', '善良']);
-                STATE.wordFound = new Array(STATE.wordList.length).fill(false);
-            }
-            renderWordGrid();
-            updateWordStats();
-            setupWordFileImport();
-            setupManualWords();
+            renderWordGrid(state);
+            updateWordStats(state);
+            setupWordFileImport(state);
+            setupManualWords(state);
             $$('.manual-word-input').forEach(inp => inp.value = '');
         }
 
-        function renderWordGrid() {
+        function renderWordGrid(state) {
             const grid = $('#wordGrid');
             grid.innerHTML = '';
-            STATE.wordList.forEach((word, idx) => {
+            state.wordList.forEach((word, idx) => {
                 const chip = document.createElement('span');
-                chip.className = 'word-chip' + (STATE.wordFound[idx] ? ' found' : '');
+                chip.className = 'word-chip' + (state.wordFound[idx] ? ' found' : '');
                 chip.textContent = word;
                 chip.dataset.idx = idx;
                 chip.addEventListener('click', function() {
                     const i = parseInt(this.dataset.idx);
-                    STATE.wordFound[i] = !STATE.wordFound[i];
-                    renderWordGrid();
-                    updateWordStats();
-                    if (STATE.wordFound.every(f => f)) {
+                    state.wordFound[i] = !state.wordFound[i];
+                    renderWordGrid(state);
+                    updateWordStats(state);
+                    saveCurrentState();
+                    if (state.wordFound.every(f => f)) {
                         setTimeout(() => alert('🎉 你找到了所有词语！太棒啦！'), 300);
                     }
                 });
@@ -2537,15 +2425,15 @@
             });
         }
 
-        function updateWordStats() {
-            const found = STATE.wordFound.filter(f => f).length;
-            const total = STATE.wordList.length;
+        function updateWordStats(state) {
+            const found = state.wordFound.filter(f => f).length;
+            const total = state.wordList.length;
             $('#wordFoundCount').textContent = found;
             $('#wordTotalCount').textContent = total;
             const list = $('#wordFoundList');
             list.innerHTML = '';
-            STATE.wordList.forEach((word, idx) => {
-                if (STATE.wordFound[idx]) {
+            state.wordList.forEach((word, idx) => {
+                if (state.wordFound[idx]) {
                     const item = document.createElement('span');
                     item.className = 'word-found-item';
                     item.textContent = word;
@@ -2554,7 +2442,7 @@
             });
         }
 
-        function setupWordFileImport() {
+        function setupWordFileImport(state) {
             const fileInput = $('#wordFileInput');
             const selectBtn = $('#wordFileBtn');
             const status = $('#wordImportStatus');
@@ -2598,10 +2486,11 @@
                     }
                     const unique = [...new Set(words.map(w => w.trim()))];
                     shuffle(unique);
-                    STATE.wordList = unique;
-                    STATE.wordFound = new Array(STATE.wordList.length).fill(false);
-                    renderWordGrid();
-                    updateWordStats();
+                    state.wordList = unique;
+                    state.wordFound = new Array(state.wordList.length).fill(false);
+                    renderWordGrid(state);
+                    updateWordStats(state);
+                    saveCurrentState();
                     status.textContent = `✅ 成功导入 ${unique.length} 个词语`;
                     status.style.color = '#2a7a2a';
                 } catch (err) {
@@ -2613,7 +2502,7 @@
             });
         }
 
-        function setupManualWords() {
+        function setupManualWords(state) {
             const addBtn = $('#addManualWordBtn');
             const inputs = $$('.manual-word-input');
             const newAddBtn = addBtn.cloneNode(true);
@@ -2622,7 +2511,7 @@
                 const values = [];
                 inputs.forEach(inp => {
                     const val = inp.value.trim();
-                    if (val && !STATE.wordList.includes(val)) {
+                    if (val && !state.wordList.includes(val)) {
                         values.push(val);
                     }
                     inp.value = '';
@@ -2631,17 +2520,18 @@
                     alert('请输入至少一个不重复的词语！');
                     return;
                 }
-                STATE.wordList.push(...values);
-                STATE.wordFound.push(...new Array(values.length).fill(false));
-                shuffle(STATE.wordList);
-                const newFound = new Array(STATE.wordList.length).fill(false);
-                const oldWords = STATE.wordList.slice(0, STATE.wordList.length - values.length);
-                const oldFound = STATE.wordFound.slice(0, oldWords.length);
+                state.wordList.push(...values);
+                state.wordFound.push(...new Array(values.length).fill(false));
+                shuffle(state.wordList);
+                const newFound = new Array(state.wordList.length).fill(false);
+                const oldWords = state.wordList.slice(0, state.wordList.length - values.length);
+                const oldFound = state.wordFound.slice(0, oldWords.length);
                 const wordMap = {};
                 oldWords.forEach((w, i) => { wordMap[w] = oldFound[i]; });
-                STATE.wordFound = STATE.wordList.map(w => wordMap[w] || false);
-                renderWordGrid();
-                updateWordStats();
+                state.wordFound = state.wordList.map(w => wordMap[w] || false);
+                renderWordGrid(state);
+                updateWordStats(state);
+                saveCurrentState();
                 inputs.forEach(inp => inp.value = '');
                 playMatchSound();
             });
@@ -2655,27 +2545,20 @@
             });
         }
 
-        $('#wordsBack').addEventListener('click', () => { showPage('page-pinyin');
-            initPinyinPage(); });
-        $('#wordsNext').addEventListener('click', function() {
-            STATE.attempts.words++;
-            goNext();
-        });
+        $('#wordsBack').addEventListener('click', () => { showPage('page-pinyin'); initPinyinPage(); });
+        $('#wordsNext').addEventListener('click', function() { goNext(); });
 
         // ====================================================================
         //  第五页：词语理解
         // ====================================================================
         function initUnderstandPage() {
-            const attempt = STATE.attempts.understand + 1;
-            $('#attemptBadge4').textContent = `🏆 第 ${attempt} 次`;
-            if (STATE.attempts.understand >= STATE.maxAttempts) {
-                $('#attemptBadge4').textContent = `🏁 已完成 ${STATE.maxAttempts} 次`;
-            }
-            $('#partnerName').value = STATE.partnerName || '小雅';
-            STATE.partnerName = $('#partnerName').value;
+            if (!currentState) return;
+            const state = currentState;
+            $('#partnerName').value = state.partnerName || '小雅';
+            state.partnerName = $('#partnerName').value;
 
-            if (STATE.understandMethods.length < 7) {
-                STATE.understandMethods = [
+            if (!state.understandMethods || state.understandMethods.length < 7) {
+                state.understandMethods = [
                     { name: '借图理解', colorClass: CLOUD_CLASSES[0] },
                     { name: '联系上下文', colorClass: CLOUD_CLASSES[1] },
                     { name: '联系实际生活', colorClass: CLOUD_CLASSES[2] },
@@ -2685,26 +2568,27 @@
                     { name: '', colorClass: CLOUD_CLASSES[6] }
                 ];
             }
-            if (STATE.understandWords.length === 0) {
-                const defaultWords = ['太阳', '月亮', '花朵', '小鸟', '大树', '草地', '快乐', '美丽'];
-                STATE.understandWords = defaultWords.map(w => ({ word: w, methodIndex: null }));
+            if (!state.understandWords || state.understandWords.length === 0) {
+                state.understandWords = ['太阳', '月亮', '花朵', '小鸟', '大树', '草地', '快乐', '美丽'].map(w => ({ word: w, methodIndex: null }));
             }
-            renderUnderstandMethods();
-            renderUnderstandGrid();
-            renderUnderstandStats();
-            setupUnderstandFileImport();
-            setupUnderstandManualWords();
-            renderTreasureInputs();
+            renderUnderstandMethods(state);
+            renderUnderstandGrid(state);
+            renderUnderstandStats(state);
+            setupUnderstandFileImport(state);
+            setupUnderstandManualWords(state);
+            renderTreasureInputs(state);
+            saveCurrentState();
 
             $('#partnerName').addEventListener('change', function() {
-                STATE.partnerName = this.value.trim() || '小雅';
+                state.partnerName = this.value.trim() || '小雅';
+                saveCurrentState();
             });
         }
 
-        function renderUnderstandMethods() {
+        function renderUnderstandMethods(state) {
             const container = $('#methodClouds');
             container.innerHTML = '';
-            STATE.understandMethods.forEach((method, index) => {
+            state.understandMethods.forEach((method, index) => {
                 if (method.name.trim() === '') return;
                 const span = document.createElement('span');
                 span.className = `cloud ${method.colorClass}`;
@@ -2727,38 +2611,39 @@
                 inp.placeholder = '自创方法';
                 inp.className = 'understand-custom-input';
                 inp.dataset.idx = i;
-                inp.value = STATE.understandMethods[idx]?.name || '';
+                inp.value = state.understandMethods[idx]?.name || '';
                 inp.addEventListener('change', function() {
                     const val = this.value.trim();
                     if (val) {
-                        STATE.understandMethods[idx].name = val;
+                        state.understandMethods[idx].name = val;
                     } else {
-                        STATE.understandMethods[idx].name = '';
+                        state.understandMethods[idx].name = '';
                     }
-                    renderUnderstandMethods();
-                    renderUnderstandGrid();
-                    renderUnderstandStats();
+                    renderUnderstandMethods(state);
+                    renderUnderstandGrid(state);
+                    renderUnderstandStats(state);
+                    saveCurrentState();
                 });
                 span.appendChild(inp);
                 container.appendChild(span);
             }
         }
 
-        function renderUnderstandGrid() {
+        function renderUnderstandGrid(state) {
             const grid = $('#understandGrid');
             grid.innerHTML = '';
-            STATE.understandWords.forEach((item, idx) => {
+            state.understandWords.forEach((item, idx) => {
                 const wrapper = document.createElement('div');
                 wrapper.className = 'understand-wrapper' + (item.methodIndex !== null ? ' paired' : '');
                 const wordDiv = document.createElement('div');
                 wordDiv.className = 'understand-word';
                 wordDiv.textContent = item.word;
                 wrapper.appendChild(wordDiv);
-                if (item.methodIndex !== null && item.methodIndex < STATE.understandMethods.length &&
-                    STATE.understandMethods[item.methodIndex].name.trim() !== '') {
+                if (item.methodIndex !== null && item.methodIndex < state.understandMethods.length &&
+                    state.understandMethods[item.methodIndex].name.trim() !== '') {
                     const label = document.createElement('div');
                     label.className = 'understand-method-label';
-                    label.textContent = STATE.understandMethods[item.methodIndex].name;
+                    label.textContent = state.understandMethods[item.methodIndex].name;
                     wrapper.appendChild(label);
                 }
                 const selector = document.createElement('div');
@@ -2768,7 +2653,7 @@
                 emptyOpt.value = '';
                 emptyOpt.textContent = '选择';
                 select.appendChild(emptyOpt);
-                STATE.understandMethods.forEach((method, mIdx) => {
+                state.understandMethods.forEach((method, mIdx) => {
                     if (method.name.trim() === '') return;
                     const opt = document.createElement('option');
                     opt.value = mIdx;
@@ -2779,17 +2664,18 @@
                 select.addEventListener('change', function() {
                     const val = this.value;
                     if (val === '') {
-                        STATE.understandWords[idx].methodIndex = null;
+                        state.understandWords[idx].methodIndex = null;
                     } else {
                         const mIdx = parseInt(val);
-                        if (!isNaN(mIdx) && mIdx < STATE.understandMethods.length &&
-                            STATE.understandMethods[mIdx].name.trim() !== '') {
-                            STATE.understandWords[idx].methodIndex = mIdx;
+                        if (!isNaN(mIdx) && mIdx < state.understandMethods.length &&
+                            state.understandMethods[mIdx].name.trim() !== '') {
+                            state.understandWords[idx].methodIndex = mIdx;
                             playMatchSound();
                         }
                     }
-                    renderUnderstandGrid();
-                    renderUnderstandStats();
+                    renderUnderstandGrid(state);
+                    renderUnderstandStats(state);
+                    saveCurrentState();
                 });
                 selector.appendChild(select);
                 wrapper.appendChild(selector);
@@ -2797,22 +2683,22 @@
             });
         }
 
-        function renderUnderstandStats() {
+        function renderUnderstandStats(state) {
             const statsContainer = $('#understandStats');
             const listContainer = $('#understandList');
             const countSpan = $('#understandCount');
             const stats = {};
-            STATE.understandMethods.forEach((m, idx) => { stats[idx] = []; });
-            STATE.understandWords.forEach(item => {
-                if (item.word && item.methodIndex !== null && item.methodIndex < STATE.understandMethods.length &&
-                    STATE.understandMethods[item.methodIndex].name.trim() !== '') {
+            state.understandMethods.forEach((m, idx) => { stats[idx] = []; });
+            state.understandWords.forEach(item => {
+                if (item.word && item.methodIndex !== null && item.methodIndex < state.understandMethods.length &&
+                    state.understandMethods[item.methodIndex].name.trim() !== '') {
                     stats[item.methodIndex].push(item.word);
                 }
             });
             let total = 0;
             let htmlStats = '';
             let htmlList = '';
-            STATE.understandMethods.forEach((method, idx) => {
+            state.understandMethods.forEach((method, idx) => {
                 if (method.name.trim() === '') return;
                 const words = stats[idx] || [];
                 const count = words.length;
@@ -2835,22 +2721,24 @@
             countSpan.textContent = total;
         }
 
-        function renderTreasureInputs() {
+        function renderTreasureInputs(state) {
             const container = $('#treasureInputs');
             container.innerHTML = '';
+            if (!state.treasureWords) state.treasureWords = [];
             for (let i = 0; i < 3; i++) {
                 const inp = document.createElement('input');
                 inp.type = 'text';
                 inp.placeholder = '不理解的词';
-                inp.value = STATE.treasureWords[i] || '';
+                inp.value = state.treasureWords[i] || '';
                 inp.addEventListener('change', function() {
-                    STATE.treasureWords[i] = this.value.trim();
+                    state.treasureWords[i] = this.value.trim();
+                    saveCurrentState();
                 });
                 container.appendChild(inp);
             }
         }
 
-        function setupUnderstandFileImport() {
+        function setupUnderstandFileImport(state) {
             const fileInput = $('#understandFileInput');
             const selectBtn = $('#understandFileBtn');
             const status = $('#understandImportStatus');
@@ -2894,9 +2782,10 @@
                     }
                     const unique = [...new Set(words.map(w => w.trim()))];
                     shuffle(unique);
-                    STATE.understandWords = unique.map(w => ({ word: w, methodIndex: null }));
-                    renderUnderstandGrid();
-                    renderUnderstandStats();
+                    state.understandWords = unique.map(w => ({ word: w, methodIndex: null }));
+                    renderUnderstandGrid(state);
+                    renderUnderstandStats(state);
+                    saveCurrentState();
                     status.textContent = `✅ 成功导入 ${unique.length} 个词语`;
                     status.style.color = '#2a7a2a';
                 } catch (err) {
@@ -2908,7 +2797,7 @@
             });
         }
 
-        function setupUnderstandManualWords() {
+        function setupUnderstandManualWords(state) {
             const addBtn = $('#addUnderstandManualBtn');
             const inputs = $$('.understand-manual-input');
             const newAddBtn = addBtn.cloneNode(true);
@@ -2917,7 +2806,7 @@
                 const values = [];
                 inputs.forEach(inp => {
                     const val = inp.value.trim();
-                    if (val && !STATE.understandWords.some(item => item.word === val)) {
+                    if (val && !state.understandWords.some(item => item.word === val)) {
                         values.push(val);
                     }
                     inp.value = '';
@@ -2927,10 +2816,11 @@
                     return;
                 }
                 values.forEach(w => {
-                    STATE.understandWords.push({ word: w, methodIndex: null });
+                    state.understandWords.push({ word: w, methodIndex: null });
                 });
-                renderUnderstandGrid();
-                renderUnderstandStats();
+                renderUnderstandGrid(state);
+                renderUnderstandStats(state);
+                saveCurrentState();
                 playMatchSound();
             });
             inputs.forEach(inp => {
@@ -2943,15 +2833,14 @@
             });
         }
 
-        $('#understandBack').addEventListener('click', () => { showPage('page-words');
-            initWordsPage(); });
+        $('#understandBack').addEventListener('click', () => { showPage('page-words'); initWordsPage(); });
         $('#understandNext').addEventListener('click', function() {
-            const hasPaired = STATE.understandWords.some(item => item.methodIndex !== null);
+            if (!currentState) return;
+            const hasPaired = currentState.understandWords.some(item => item.methodIndex !== null);
             if (!hasPaired) {
                 alert('请至少为一个词语选择一种理解方法！');
                 return;
             }
-            STATE.attempts.understand++;
             goNext();
         });
 
@@ -2959,98 +2848,109 @@
         //  第六页：寻求帮助
         // ====================================================================
         function initHelpPage() {
-            const errors = Object.entries(STATE.pinyinErrorCount).filter(([_, count]) => count >= 3).map(([char]) => char);
+            if (!currentState) return;
+            const state = currentState;
+            const errors = Object.entries(state.pinyinErrorCount || {}).filter(([_, count]) => count >= 3).map(([char]) => char);
             const errorEl = $('#helpPinyinErrors');
             if (errors.length === 0) errorEl.innerHTML = '<span style="color:#2a7a2a;">✅ 没有错3次以上的字</span>';
             else errorEl.innerHTML = errors.map(c => `<span>${c}</span>`).join(' ');
             const treasureEl = $('#helpTreasureWords');
-            const treasureWords = STATE.treasureWords.filter(w => w.trim() !== '');
+            const treasureWords = (state.treasureWords || []).filter(w => w.trim() !== '');
             if (treasureWords.length === 0) treasureEl.innerHTML = '<span style="color:#2a7a2a;">📦 百宝箱是空的</span>';
             else treasureEl.innerHTML = treasureWords.map(w => `<span>${w}</span>`).join(' ');
             $('#helpResult').textContent = '';
-            STATE.helpChosen = null;
+            state.helpChosen = null;
             $('#helpDict').onclick = function() {
-                STATE.helpChosen = '查字典';
+                state.helpChosen = '查字典';
                 $('#helpResult').textContent = '📖 建议：使用字典查阅不熟悉的字词！';
             };
             $('#helpTeacher').onclick = function() {
-                STATE.helpChosen = '询问老师';
+                state.helpChosen = '询问老师';
                 $('#helpResult').textContent = '👩‍🏫 建议：向老师请教，老师会耐心解答！';
             };
             $('#helpClassmate').onclick = function() {
-                STATE.helpChosen = '询问同学';
+                state.helpChosen = '询问同学';
                 $('#helpResult').textContent = '🤝 建议：和同学讨论，互相学习共同进步！';
             };
         }
 
-        $('#helpBack').addEventListener('click', () => { showPage('page-understand');
-            initUnderstandPage(); });
+        $('#helpBack').addEventListener('click', () => { showPage('page-understand'); initUnderstandPage(); });
         $('#helpNext').addEventListener('click', function() {
-            if (!STATE.helpChosen) { alert('请选择一种求助方式！'); return; }
+            if (!currentState || !currentState.helpChosen) { alert('请选择一种求助方式！'); return; }
             goNext();
         });
 
         // ====================================================================
-        //  第七页：自我评估 + 完成功能
+        //  第七页：自我评估
         // ====================================================================
         function initEvalPage() {
-            if (STATE.difficulty) {
+            if (!currentState) return;
+            const state = currentState;
+            if (state.difficulty) {
                 $$('input[name="difficulty"]').forEach(el => {
-                    el.checked = (el.value === STATE.difficulty);
+                    el.checked = (el.value === state.difficulty);
                     el.closest('.eval-option').classList.toggle('selected', el.checked);
                 });
             }
-            if (STATE.feelings.length > 0) {
+            if (state.feelings && state.feelings.length > 0) {
                 $$('input[name="feeling"]').forEach(el => {
-                    el.checked = STATE.feelings.includes(el.value);
+                    el.checked = state.feelings.includes(el.value);
                     el.closest('.eval-option').classList.toggle('selected', el.checked);
                 });
             }
-            generateReport();
+            generateReport(state);
             $$('input[name="difficulty"]').forEach(el => {
                 el.addEventListener('change', function() {
-                    $$('input[name="difficulty"]').forEach(e => e.closest('.eval-option').classList.toggle(
-                        'selected', e.checked));
-                    if (this.checked) STATE.difficulty = this.value;
-                    generateReport();
+                    $$('input[name="difficulty"]').forEach(e => e.closest('.eval-option').classList.toggle('selected', e.checked));
+                    if (this.checked) state.difficulty = this.value;
+                    generateReport(state);
+                    saveCurrentState();
                 });
             });
             $$('input[name="feeling"]').forEach(el => {
                 el.addEventListener('change', function() {
                     this.closest('.eval-option').classList.toggle('selected', this.checked);
-                    STATE.feelings = $$('input[name="feeling"]:checked').map(e => e.value);
-                    generateReport();
+                    state.feelings = $$('input[name="feeling"]:checked').map(e => e.value);
+                    generateReport(state);
+                    saveCurrentState();
                 });
             });
 
-            // 完成闯关按钮
             $('#finishGameBtn').onclick = function() {
-                if (STATE.role === 'student') {
-                    const report = generateReportText();
-                    STATE.studentReports.push({
-                        name: STATE.studentName,
-                        grade: STATE.teacher.grade,
-                        class: STATE.teacher.class,
-                        subject: STATE.teacher.subject,
-                        date: getDateStr(),
-                        report: report,
-                        difficulty: STATE.difficulty || '未评估',
-                        feelings: STATE.feelings.join('、') || '无'
-                    });
+                if (currentUser && currentUser.role === 'student') {
+                    const reportText = generateReportText(state);
+                    const reports = getReports();
+                    const existing = reports.find(r => r.username === currentUser.username);
+                    if (existing) {
+                        if (!confirm('您已提交过报告，是否覆盖？')) return;
+                        Object.assign(existing, {
+                            report: reportText,
+                            difficulty: state.difficulty || '未评估',
+                            feelings: (state.feelings || []).join('、') || '无',
+                            date: getDateStr()
+                        });
+                    } else {
+                        reports.push({
+                            username: currentUser.username,
+                            name: currentUser.username,
+                            grade: currentUser.grade || '二年级',
+                            class: currentUser.class || '二班',
+                            subject: currentUser.subject || '语文',
+                            date: getDateStr(),
+                            report: reportText,
+                            difficulty: state.difficulty || '未评估',
+                            feelings: (state.feelings || []).join('、') || '无'
+                        });
+                    }
+                    saveReports(reports);
                     alert('✅ 闯关完成！报告已提交给老师。');
-                    // 自动跳转到班级总览（但学生看不到隐藏页，只提示）
-                    showPage('page-eval');
-                    initEvalPage();
                 } else {
                     alert('👩‍🏫 教师模式：您无需提交报告，可查看班级总览。');
-                    showPage('page-class-overview');
-                    initClassOverviewPage();
                 }
             };
 
-            // 班级总览按钮（教师可见）
             $('#gotoClassOverviewBtn').onclick = function() {
-                if (STATE.role === 'teacher') {
+                if (currentUser && currentUser.role === 'teacher') {
                     showPage('page-class-overview');
                     initClassOverviewPage();
                 } else {
@@ -3059,46 +2959,43 @@
             };
         }
 
-        function generateReport() {
-            const html = generateReportHTML();
+        function generateReport(state) {
+            const html = generateReportHTML(state);
             $('#reportContent').innerHTML = html;
-            STATE.reportGenerated = true;
+            state.reportGenerated = true;
         }
 
-        function generateReportHTML() {
-            const correctChars = STATE.bricks.filter(b => b.char).map(b => b.char);
-            const pinyinCorrect = STATE.pinyinPairs.filter(p => p.matched).map(p => p.char);
-            const understoodWords = STATE.understandWords.filter(item => item.methodIndex !== null).map(item => item.word);
-            const pinyinErrors = Object.entries(STATE.pinyinErrorCount).filter(([_, count]) => count >= 3).map(([char]) =>
-                char);
-            const treasureWords = STATE.treasureWords.filter(w => w.trim() !== '');
+        function generateReportHTML(state) {
+            const correctChars = state.bricks.filter(b => b.char).map(b => b.char);
+            const pinyinCorrect = state.pinyinPairs.filter(p => p.matched).map(p => p.char);
+            const understoodWords = state.understandWords.filter(item => item.methodIndex !== null).map(item => item.word);
+            const pinyinErrors = Object.entries(state.pinyinErrorCount || {}).filter(([_, count]) => count >= 3).map(([char]) => char);
+            const treasureWords = (state.treasureWords || []).filter(w => w.trim() !== '');
             let html = '';
             html += `<div><span class="good">✅ 正确认识汉字：</span> ${correctChars.length > 0 ? correctChars.join('、') : '暂无'}</div>`;
-            html +=
-                `<div><span class="good">✅ 拼音搭配正确：</span> ${pinyinCorrect.length > 0 ? pinyinCorrect.join('、') : '暂无'}</div>`;
-            html +=
-                `<div><span class="good">✅ 词语理解：</span> ${understoodWords.length > 0 ? understoodWords.join('、') : '暂无'}</div>`;
-            html +=
-                `<div><span class="bad">❌ 待进步（拼音错3次）：</span> ${pinyinErrors.length > 0 ? pinyinErrors.join('、') : '无'}</div>`;
-            html +=
-                `<div><span class="bad">❌ 待进步（百宝箱词语）：</span> ${treasureWords.length > 0 ? treasureWords.join('、') : '无'}</div>`;
-            if (STATE.difficulty) html += `<div>📊 难度评估：${STATE.difficulty}</div>`;
-            if (STATE.feelings.length > 0) html += `<div>💭 学习感受：${STATE.feelings.join('、')}</div>`;
+            html += `<div><span class="good">✅ 拼音搭配正确：</span> ${pinyinCorrect.length > 0 ? pinyinCorrect.join('、') : '暂无'}</div>`;
+            html += `<div><span class="good">✅ 词语理解：</span> ${understoodWords.length > 0 ? understoodWords.join('、') : '暂无'}</div>`;
+            html += `<div><span class="bad">❌ 待进步（拼音错3次）：</span> ${pinyinErrors.length > 0 ? pinyinErrors.join('、') : '无'}</div>`;
+            html += `<div><span class="bad">❌ 待进步（百宝箱词语）：</span> ${treasureWords.length > 0 ? treasureWords.join('、') : '无'}</div>`;
+            if (state.difficulty) html += `<div>📊 难度评估：${state.difficulty}</div>`;
+            if (state.feelings && state.feelings.length > 0) html += `<div>💭 学习感受：${state.feelings.join('、')}</div>`;
             return html;
         }
 
-        function generateReportText() {
-            const html = generateReportHTML();
+        function generateReportText(state) {
+            const html = generateReportHTML(state);
             return html.replace(/<[^>]+>/g, '\n').replace(/&nbsp;/g, ' ').replace(/\n+/g, '\n').trim();
         }
 
         $('#showReportBtn').addEventListener('click', function() {
-            generateReport();
+            if (!currentState) return;
+            generateReport(currentState);
             alert('📋 报告已更新，请查看下方学习报告区域。');
         });
 
         $('#exportReportBtn').addEventListener('click', function() {
-            generateReport();
+            if (!currentState) return;
+            generateReport(currentState);
             const content = $('#reportContent').innerHTML;
             const text = content.replace(/<[^>]+>/g, '\n').replace(/&nbsp;/g, ' ').replace(/\n+/g, '\n').trim();
             const htmlContent = `
@@ -3106,10 +3003,10 @@
                 <head><meta charset="utf-8"><title>识字报告</title></head>
                 <body>
                     <h2>📚 自主识字学习报告</h2>
-                    <p><strong>姓名：</strong>${STATE.studentName}</p>
-                    <p><strong>年级：</strong>${STATE.teacher.grade}</p>
-                    <p><strong>班级：</strong>${STATE.teacher.class}</p>
-                    <p><strong>学科：</strong>${STATE.teacher.subject}</p>
+                    <p><strong>姓名：</strong>${currentUser.username}</p>
+                    <p><strong>年级：</strong>${currentUser.grade || '二年级'}</p>
+                    <p><strong>班级：</strong>${currentUser.class || '二班'}</p>
+                    <p><strong>学科：</strong>${currentUser.subject || '语文'}</p>
                     <p><strong>日期：</strong>${getDateStr()}</p>
                     <hr>
                     ${content.replace(/<div>/g, '<p>').replace(/<\/div>/g, '</p>')}
@@ -3120,41 +3017,172 @@
             const url = URL.createObjectURL(blob);
             const a = document.createElement('a');
             a.href = url;
-            a.download = `识字报告_${STATE.studentName}_${getDateStr()}.doc`;
+            a.download = `识字报告_${currentUser.username}_${getDateStr()}.doc`;
             a.click();
             URL.revokeObjectURL(url);
         });
 
         $('#resetGameBtn').addEventListener('click', function() {
+            if (!currentUser) return;
             if (confirm('确定要重新开始闯关吗？所有进度将重置！')) {
-                STATE.attempts = { literacy: 0, pinyin: 0, words: 0, understand: 0 };
-                STATE.treasureWords = [];
-                STATE.pinyinErrorCount = {};
-                STATE.difficulty = null;
-                STATE.feelings = [];
-                STATE.reportGenerated = false;
-                initAllData();
-                showPage('page-login');
-                initLogin();
+                const template = getTemplate();
+                const newState = template ? JSON.parse(JSON.stringify(template)) : createDefaultTemplate();
+                if (currentUser.role === 'student') {
+                    saveStudentState(currentUser.username, newState);
+                } else {
+                    saveTemplate(newState);
+                }
+                currentState = newState;
+                showPage('page-literacy');
+                initLiteracyPage();
                 alert('🔄 已重置，可以重新闯关了！');
             }
         });
 
-        $('#evalBack').addEventListener('click', () => { showPage('page-help');
-            initHelpPage(); });
+        $('#evalBack').addEventListener('click', () => { showPage('page-help'); initHelpPage(); });
 
         // ====================================================================
-        //  第八页：班级总览（可隐藏/显示）
+        //  第八页：学生管理
+        // ====================================================================
+        function initStudentManagement() {
+            if (!currentUser || currentUser.role !== 'teacher') {
+                alert('只有老师可以管理学生');
+                return;
+            }
+            renderStudentTable();
+            const addBtn = $('#addStudentBtn');
+            const newAddBtn = addBtn.cloneNode(true);
+            addBtn.parentNode.replaceChild(newAddBtn, addBtn);
+            newAddBtn.addEventListener('click', function() {
+                const username = $('#newStudentUsername').value.trim();
+                const password = $('#newStudentPassword').value.trim();
+                if (!username || !password) {
+                    alert('请输入用户名和密码');
+                    return;
+                }
+                let users = getUsers();
+                if (users.find(u => u.username === username)) {
+                    alert('用户名已存在');
+                    return;
+                }
+                const newUser = {
+                    id: Date.now(),
+                    username: username,
+                    password: password,
+                    role: 'student',
+                    grade: currentUser.grade || '二年级',
+                    class: currentUser.class || '二班',
+                    subject: currentUser.subject || '语文'
+                };
+                users.push(newUser);
+                saveUsers(users);
+                const template = getTemplate();
+                if (template) {
+                    saveStudentState(username, JSON.parse(JSON.stringify(template)));
+                }
+                renderStudentTable();
+                $('#newStudentUsername').value = '';
+                $('#newStudentPassword').value = '';
+                alert('✅ 学生添加成功！');
+            });
+
+            const resetBtn = $('#resetAllStudentsBtn');
+            const newResetBtn = resetBtn.cloneNode(true);
+            resetBtn.parentNode.replaceChild(newResetBtn, resetBtn);
+            newResetBtn.addEventListener('click', function() {
+                if (!confirm('确定要重置所有学生的闯关状态吗？')) return;
+                const template = getTemplate();
+                if (!template) { alert('没有模板数据'); return; }
+                const users = getUsers();
+                const students = users.filter(u => u.role === 'student');
+                students.forEach(s => {
+                    saveStudentState(s.username, JSON.parse(JSON.stringify(template)));
+                });
+                alert(`✅ 已重置 ${students.length} 位学生的状态。`);
+            });
+        }
+
+        function renderStudentTable() {
+            const users = getUsers();
+            const students = users.filter(u => u.role === 'student');
+            const tbody = $('#studentTableBody');
+            tbody.innerHTML = '';
+            students.forEach(s => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td>${s.username}</td>
+                    <td>${s.grade || ''}</td>
+                    <td>${s.class || ''}</td>
+                    <td><span class="qr-cell" data-username="${s.username}">📱 查看二维码</span></td>
+                    <td><button class="del-btn" data-username="${s.username}">删除</button></td>
+                `;
+                tbody.appendChild(tr);
+            });
+            tbody.querySelectorAll('.qr-cell').forEach(span => {
+                span.addEventListener('click', function() {
+                    const username = this.dataset.username;
+                    showStudentQR(username);
+                });
+            });
+            tbody.querySelectorAll('.del-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const username = this.dataset.username;
+                    if (!confirm(`确定要删除学生 "${username}" 吗？`)) return;
+                    let users = getUsers();
+                    users = users.filter(u => u.username !== username);
+                    saveUsers(users);
+                    removeStudentState(username);
+                    let reports = getReports();
+                    reports = reports.filter(r => r.username !== username);
+                    saveReports(reports);
+                    renderStudentTable();
+                });
+            });
+        }
+
+        function showStudentQR(username) {
+            const popup = $('#qrPopup');
+            const container = $('#qrPopupContainer');
+            const label = $('#qrPopupLabel');
+            label.textContent = `👤 ${username} 的二维码`;
+            container.innerHTML = '';
+            const url = window.location.origin + window.location.pathname + '?student=' + encodeURIComponent(username);
+            try {
+                new QRCode(container, {
+                    text: url,
+                    width: 200,
+                    height: 200,
+                    colorDark: '#2d1a06',
+                    colorLight: '#ffffff',
+                    correctLevel: QRCode.CorrectLevel.H
+                });
+            } catch (e) {
+                container.innerHTML = '<div style="color:red;">生成失败</div>';
+            }
+            popup.classList.add('show');
+        }
+
+        $('#qrPopupClose').addEventListener('click', function() {
+            $('#qrPopup').classList.remove('show');
+        });
+        $('#qrPopup').addEventListener('click', function(e) {
+            if (e.target === this) this.classList.remove('show');
+        });
+
+        $('#studentMgmtBack').addEventListener('click', () => { showPage('page-literacy'); initLiteracyPage(); });
+
+        // ====================================================================
+        //  第九页：班级总览
         // ====================================================================
         function initClassOverviewPage() {
             const container = $('#classOverviewContainer');
-            if (STATE.studentReports.length === 0) {
+            const reports = getReports();
+            if (reports.length === 0) {
                 container.innerHTML = '<p style="color:#6b4a2c;">📭 暂无学生提交报告。</p>';
                 return;
             }
             let html = '<div class="class-overview">';
-            STATE.studentReports.forEach((r, i) => {
-                // 提取进步项（正确认识汉字、拼音搭配正确、词语理解）
+            reports.forEach(r => {
                 const proMatch = r.report.match(/✅ 正确认识汉字：([^\n]*)/);
                 const proPinyin = r.report.match(/✅ 拼音搭配正确：([^\n]*)/);
                 const proWord = r.report.match(/✅ 词语理解：([^\n]*)/);
@@ -3164,7 +3192,6 @@
                 if (proWord && proWord[1].trim() !== '暂无') pros.push(`理解：${proWord[1].trim()}`);
                 const proStr = pros.length ? pros.join('；') : '暂无明显进步';
 
-                // 提取待改进项（拼音错3次、百宝箱）
                 const impMatch = r.report.match(/❌ 待进步（拼音错3次）：([^\n]*)/);
                 const impTreasure = r.report.match(/❌ 待进步（百宝箱词语）：([^\n]*)/);
                 const imps = [];
@@ -3174,10 +3201,10 @@
 
                 html += `
                     <div class="student-item">
-                        <span><strong>${r.name}</strong> (${r.grade} ${r.class})</span>
+                        <span><strong>${r.name || r.username}</strong> (${r.grade || ''} ${r.class || ''})</span>
                         <span class="pro">✅ 进步：${proStr}</span>
                         <span class="imp">⚠️ 待改进：${impStr}</span>
-                        <span style="font-size:0.8rem;color:#6b4a2c;">${r.date}</span>
+                        <span style="font-size:0.8rem;color:#6b4a2c;">${r.date || ''}</span>
                     </div>
                 `;
             });
@@ -3185,7 +3212,6 @@
             container.innerHTML = html;
         }
 
-        // 隐藏/显示总览
         let overviewVisible = false;
         $('#toggleOverviewBtn').addEventListener('click', function() {
             const page = $('#page-class-overview');
@@ -3199,9 +3225,7 @@
                 overviewVisible = false;
             }
         });
-
-        $('#overviewBack').addEventListener('click', () => { showPage('page-eval');
-            initEvalPage(); });
+        $('#overviewBack').addEventListener('click', () => { showPage('page-eval'); initEvalPage(); });
 
         // ====================================================================
         //  键盘事件
@@ -3210,7 +3234,7 @@
             if (e.key === 'Enter') {
                 const active = document.activeElement;
                 if (active && active.tagName === 'INPUT') {
-                    const page = STATE.currentPage;
+                    const page = currentPageId();
                     if (page === 'page-login') $('#loginBtn').click();
                     else if (page === 'page-literacy') $('#literacyNext').click();
                     else if (page === 'page-pinyin') $('#pinyinNext').click();
@@ -3225,16 +3249,9 @@
         //  启动
         // ====================================================================
         initLogin();
-        setTimeout(() => { updateQRCode(); }, 100);
-        setInterval(() => {
-            const d = getDateStr();
-            const el = $('#loginDate');
-            if (el) el.textContent = '📅 ' + d;
-        }, 60000);
-        console.log('🌈 自主识字闯关游戏已启动！');
-        console.log('👩‍🏫 教师：苏老师，可导入文档预设内容。学生扫码后独立闯关。');
-        console.log('🧑‍🎓 学生：完成闯关后点击「完成闯关」提交报告，教师可在班级总览查看。');
-        console.log('📊 班级总览默认隐藏，教师可通过「班级总览」按钮显示/隐藏。');
+        console.log('🌈 自主识字闯关 完整版已启动！');
+        console.log('👩‍🏫 教师：苏老师 / 123456 ，可管理学生并查看二维码。');
+        console.log('🧑‍🎓 学生：扫描个人二维码自动登录，或使用账号密码登录。');
     </script>
 </body>
 </html>
