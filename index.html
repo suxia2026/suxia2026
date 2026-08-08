@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>🌈 自主识字闯关 · 完整增强版</title>
+    <title>🌈 自主识字闯关 · 完整界面版</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js">
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js">
@@ -11,7 +11,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js">
     </script>
     <style>
-        /* ===== 全局重置 & 基础 ===== */
+        /* ========== 全部样式完整保留 ========== */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -150,10 +150,7 @@
             min-width: 100px;
             justify-content: center;
         }
-        .hidden-page {
-            display: none !important;
-        }
-        /* ===== 登录页 ===== */
+        /* 登录页 */
         .login-box {
             max-width: 620px;
             margin: 10px auto 0;
@@ -209,7 +206,7 @@
             margin-top: 30px;
         }
 
-        /* ===== 云朵 ===== */
+        /* 云朵 */
         .cloud {
             padding: 10px 22px;
             border-radius: 80px 80px 80px 12px;
@@ -262,47 +259,21 @@
             font-weight: 400;
             font-size: 0.8rem;
         }
-        .cloud-color-1 {
-            background: #f7c5cc;
-        }
-        .cloud-color-2 {
-            background: #b5d9e8;
-        }
-        .cloud-color-3 {
-            background: #c9e4b5;
-        }
-        .cloud-color-4 {
-            background: #f7e3a5;
-        }
-        .cloud-color-5 {
-            background: #e8c8f0;
-        }
-        .cloud-color-6 {
-            background: #fbc8a0;
-        }
-        .cloud-color-7 {
-            background: #a8d8d0;
-        }
-        .cloud-color-8 {
-            background: #f7b8a0;
-        }
-        .cloud-color-9 {
-            background: #d4c4a8;
-        }
-        .cloud-color-10 {
-            background: #f5c8d8;
-        }
-        .cloud-color-11 {
-            background: #b8d9e8;
-        }
-        .cloud-color-12 {
-            background: #d4e4b5;
-        }
-        .cloud-color-13 {
-            background: #f5d8b8;
-        }
+        .cloud-color-1 { background: #f7c5cc; }
+        .cloud-color-2 { background: #b5d9e8; }
+        .cloud-color-3 { background: #c9e4b5; }
+        .cloud-color-4 { background: #f7e3a5; }
+        .cloud-color-5 { background: #e8c8f0; }
+        .cloud-color-6 { background: #fbc8a0; }
+        .cloud-color-7 { background: #a8d8d0; }
+        .cloud-color-8 { background: #f7b8a0; }
+        .cloud-color-9 { background: #d4c4a8; }
+        .cloud-color-10 { background: #f5c8d8; }
+        .cloud-color-11 { background: #b8d9e8; }
+        .cloud-color-12 { background: #d4e4b5; }
+        .cloud-color-13 { background: #f5d8b8; }
 
-        /* ===== 第二页：自主识字 ===== */
+        /* 第二页：自主识字 */
         .cloud-grid {
             display: flex;
             flex-wrap: wrap;
@@ -337,9 +308,7 @@
             align-items: center;
             gap: 6px;
         }
-        .import-area input[type="file"] {
-            display: none;
-        }
+        .import-area input[type="file"] { display: none; }
         .import-area .file-btn {
             background: #ffb882;
             border: none;
@@ -546,7 +515,7 @@
             gap: 6px;
         }
 
-        /* ===== 第三页：拼音搭配 ===== */
+        /* 第三页：拼音搭配 */
         .apple-tree-area {
             background: radial-gradient(ellipse at bottom, #7cb87a 0%, #4d8a4a 100%);
             border-radius: 100px 100px 40px 40px;
@@ -638,12 +607,8 @@
             opacity: 0.85;
         }
         @keyframes glowGreen {
-            0% {
-                box-shadow: 0 0 20px rgba(0, 255, 100, 0.4), 0 6px 0 #1a5a1a;
-            }
-            100% {
-                box-shadow: 0 0 50px rgba(0, 255, 100, 0.9), 0 6px 0 #1a5a1a;
-            }
+            0% { box-shadow: 0 0 20px rgba(0, 255, 100, 0.4), 0 6px 0 #1a5a1a; }
+            100% { box-shadow: 0 0 50px rgba(0, 255, 100, 0.9), 0 6px 0 #1a5a1a; }
         }
         .pinyin-pair .leaf {
             width: 64px;
@@ -665,9 +630,7 @@
             touch-action: none;
             user-select: none;
         }
-        .pinyin-pair .leaf:active {
-            cursor: grabbing;
-        }
+        .pinyin-pair .leaf:active { cursor: grabbing; }
         .pinyin-pair .leaf.dragging {
             opacity: 0.5;
             transform: scale(0.80) rotate(-10deg);
@@ -681,14 +644,7 @@
             pointer-events: none;
             transform: rotate(0deg) scale(0.88);
         }
-        .pinyin-pair .leaf.selected-leaf {
-            border: 4px solid #ff8c1a;
-            box-shadow: 0 0 20px rgba(255, 140, 26, 0.6);
-            transform: scale(1.05);
-        }
-        .pinyin-pair .leaf.hidden-leaf {
-            display: none;
-        }
+        .pinyin-pair .leaf.hidden-leaf { display: none; }
         .pinyin-pair .answer-row {
             display: flex;
             gap: 6px;
@@ -702,15 +658,9 @@
             visibility: hidden;
             margin-top: 2px;
         }
-        .pinyin-pair .answer-row.show {
-            visibility: visible;
-        }
-        .pinyin-pair .answer-row .ans-char {
-            color: #1a5a1a;
-        }
-        .pinyin-pair .answer-row .ans-pinyin {
-            color: #b33a3a;
-        }
+        .pinyin-pair .answer-row.show { visibility: visible; }
+        .pinyin-pair .answer-row .ans-char { color: #1a5a1a; }
+        .pinyin-pair .answer-row .ans-pinyin { color: #b33a3a; }
         .pinyin-stats {
             display: flex;
             justify-content: center;
@@ -737,7 +687,7 @@
             font-size: 1.2rem;
         }
 
-        /* ===== 第四页：词语寻宝 ===== */
+        /* 第四页：词语寻宝 */
         .word-search-area {
             background: rgba(200, 180, 140, 0.1);
             border-radius: 40px;
@@ -889,7 +839,7 @@
             color: #1a5a1a;
         }
 
-        /* ===== 第五页：词语理解 ===== */
+        /* 第五页：词语理解 */
         .method-clouds {
             display: flex;
             flex-wrap: wrap;
@@ -1019,7 +969,7 @@
             box-shadow: 0 0 0 3px rgba(255, 140, 26, 0.2);
         }
 
-        /* ===== 第六页：寻求帮助 ===== */
+        /* 第六页：寻求帮助 */
         .help-stats {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -1070,7 +1020,7 @@
             margin-right: 6px;
         }
 
-        /* ===== 第七页：自我评估 ===== */
+        /* 第七页：自我评估 */
         .eval-group {
             display: flex;
             flex-wrap: wrap;
@@ -1119,15 +1069,9 @@
             max-height: 220px;
             overflow-y: auto;
         }
-        .report-area strong {
-            color: #4d2f12;
-        }
-        .report-area .good {
-            color: #2a7a2a;
-        }
-        .report-area .bad {
-            color: #b33a3a;
-        }
+        .report-area strong { color: #4d2f12; }
+        .report-area .good { color: #2a7a2a; }
+        .report-area .bad { color: #b33a3a; }
         .export-btn-wrap {
             display: flex;
             justify-content: center;
@@ -1146,6 +1090,12 @@
             display: inline-block;
             margin-bottom: 8px;
         }
+        .flex-center { display: flex; justify-content: center; align-items: center; }
+        .gap-8 { gap: 8px; }
+        .gap-16 { gap: 16px; }
+        .mt-8 { margin-top: 8px; }
+        .mb-8 { margin-bottom: 8px; }
+        .text-center { text-align: center; }
         .hint-text {
             font-size: 0.85rem;
             color: #6b4a2c;
@@ -1155,79 +1105,53 @@
             margin: 4px 0;
         }
 
-        /* ===== 文件资料库选择器 ===== */
-        .file-library-selector {
+        /* 班级总览 */
+        .report-card {
+            background: rgba(255, 248, 230, 0.7);
+            border-radius: 30px;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: 2px solid #dba570;
+        }
+        .report-card h4 { color: #4d2f12; margin-bottom: 4px; }
+        .report-card .detail { font-size: 0.9rem; color: #3d2a12; }
+        .class-overview {
+            background: rgba(255, 240, 210, 0.4);
+            border-radius: 30px;
+            padding: 16px 20px;
+            border: 3px solid #b8956a;
+            margin: 12px 0;
+        }
+        .class-overview .student-item {
             display: flex;
             flex-wrap: wrap;
-            align-items: center;
-            gap: 12px 20px;
-            background: rgba(255, 235, 200, 0.3);
-            padding: 8px 18px;
-            border-radius: 50px;
-            margin-bottom: 14px;
-            border: 2px solid #dba570;
-        }
-        .file-library-selector select {
-            padding: 6px 14px;
-            border-radius: 30px;
-            border: 2px solid #dba570;
-            font-weight: 600;
-            background: rgba(255, 250, 240, 0.85);
-            outline: none;
-            font-size: 0.95rem;
-            min-width: 120px;
-        }
-        .file-library-selector .load-btn {
-            background: #7ec8e3;
-            border: none;
-            padding: 4px 18px;
-            border-radius: 30px;
-            font-weight: 700;
-            color: #0d2b3a;
-            cursor: pointer;
-            box-shadow: 0 3px 0 #2a6f8f;
-            transition: 0.05s linear;
-        }
-        .file-library-selector .load-btn:active {
-            transform: translateY(3px);
-            box-shadow: 0 0px 0 #2a6f8f;
-        }
-
-        /* ===== 保存/重置栏 ===== */
-        .save-reset-bar {
-            display: flex;
-            justify-content: flex-end;
-            gap: 12px;
-            margin-top: 16px;
+            justify-content: space-between;
+            border-bottom: 1px dashed #dba570;
             padding: 8px 0;
-            border-top: 2px dashed rgba(200, 180, 140, 0.4);
         }
-        .save-reset-bar .btn-small {
+        .class-overview .student-item:last-child { border-bottom: none; }
+        .class-overview .pro { color: #2a7a2a; }
+        .class-overview .imp { color: #b33a3a; }
+        .hidden-page { display: none !important; }
+        .toggle-btn {
             background: #d4b08a;
             border: none;
-            padding: 4px 18px;
-            border-radius: 30px;
+            border-radius: 40px;
+            padding: 6px 20px;
             font-weight: 700;
             color: #4d2f12;
             cursor: pointer;
-            box-shadow: 0 3px 0 #8a6a4a;
+            box-shadow: 0 4px 0 #8a6a4a;
             transition: 0.05s linear;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
+            margin-left: 12px;
         }
-        .save-reset-bar .btn-small:active {
-            transform: translateY(3px);
+        .toggle-btn:active {
+            transform: translateY(4px);
             box-shadow: 0 0px 0 #8a6a4a;
         }
-        .save-reset-bar .btn-small.save {
-            background: #8bc98e;
-            box-shadow: 0 3px 0 #2f7a3d;
-        }
-        .save-reset-bar .btn-small.reset {
-            background: #f7a1c4;
-            box-shadow: 0 3px 0 #b34a72;
-        }
 
-        /* ===== 学生管理 ===== */
+        /* 学生管理表格 */
         .user-table {
             width: 100%;
             border-collapse: collapse;
@@ -1245,9 +1169,7 @@
             background: #d4b08a;
             color: #4d2f12;
         }
-        .user-table tr:last-child td {
-            border-bottom: none;
-        }
+        .user-table tr:last-child td { border-bottom: none; }
         .user-table .del-btn {
             background: #e8709a;
             border: none;
@@ -1296,29 +1218,11 @@
             transform: translateY(4px);
             box-shadow: 0 0px 0 #2f7a3d;
         }
-        .assign-file-select {
-            padding: 4px 10px;
-            border-radius: 20px;
-            border: 2px solid #b8956a;
-            font-weight: 600;
-            background: rgba(255, 250, 240, 0.9);
-        }
-        .assign-btn {
-            background: #7ec8e3;
-            border: none;
-            padding: 2px 12px;
-            border-radius: 20px;
-            font-weight: 700;
-            color: #0d2b3a;
-            cursor: pointer;
-        }
         .qr-cell {
             cursor: pointer;
             color: #4a9fc7;
             font-weight: 700;
         }
-
-        /* ===== 二维码弹窗 ===== */
         .qr-popup {
             position: fixed;
             top: 50%;
@@ -1327,7 +1231,7 @@
             background: white;
             padding: 20px;
             border-radius: 30px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
             z-index: 999;
             border: 4px solid #ffb882;
             display: none;
@@ -1335,9 +1239,7 @@
             align-items: center;
             gap: 10px;
         }
-        .qr-popup.show {
-            display: flex;
-        }
+        .qr-popup.show { display: flex; }
         .qr-popup .close-btn {
             background: #e8709a;
             border: none;
@@ -1356,191 +1258,46 @@
             height: 100% !important;
         }
 
-        /* ===== 班级总览 ===== */
-        .report-card {
-            background: rgba(255, 248, 230, 0.7);
-            border-radius: 30px;
-            padding: 14px 20px;
-            margin: 8px 0;
-            border: 2px solid #dba570;
-        }
-        .report-card h4 {
-            color: #4d2f12;
-            margin-bottom: 4px;
-        }
-        .report-card .detail {
-            font-size: 0.9rem;
-            color: #3d2a12;
-        }
-        .class-overview {
-            background: rgba(255, 240, 210, 0.4);
-            border-radius: 30px;
-            padding: 16px 20px;
-            border: 3px solid #b8956a;
-            margin: 12px 0;
-        }
-        .class-overview .student-item {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            border-bottom: 1px dashed #dba570;
-            padding: 8px 0;
-        }
-        .class-overview .student-item:last-child {
-            border-bottom: none;
-        }
-        .class-overview .pro {
-            color: #2a7a2a;
-        }
-        .class-overview .imp {
-            color: #b33a3a;
-        }
-        .toggle-btn {
-            background: #d4b08a;
-            border: none;
-            border-radius: 40px;
-            padding: 6px 20px;
-            font-weight: 700;
-            color: #4d2f12;
-            cursor: pointer;
-            box-shadow: 0 4px 0 #8a6a4a;
-            transition: 0.05s linear;
-            font-size: 0.95rem;
-            margin-left: 12px;
-        }
-        .toggle-btn:active {
-            transform: translateY(4px);
-            box-shadow: 0 0px 0 #8a6a4a;
-        }
-
-        /* ===== 响应式 ===== */
+        /* 响应式 */
         @media (max-width:720px) {
-            .app-container {
-                padding: 12px 14px 14px;
-                border-radius: 32px;
-            }
-            .page-title {
-                font-size: 1.8rem;
-            }
-            .login-box {
-                padding: 24px 18px;
-                border-radius: 40px;
-            }
-            .cloud {
-                font-size: 0.85rem;
-                padding: 6px 14px;
-            }
-            .brick-wrapper {
-                min-width: 70px;
-            }
-            .brick {
-                width: 64px;
-                height: 50px;
-            }
-            .brick .brick-input {
-                font-size: 1.2rem;
-            }
-            .method-selector select {
-                font-size: 0.7rem;
-                max-width: 80px;
-            }
-            .word-chip {
-                font-size: 1rem;
-                padding: 6px 14px;
-            }
-            .understand-word {
-                font-size: 1.2rem;
-            }
-            .help-stats {
-                grid-template-columns: 1fr;
-            }
-            .nav-row .btn {
-                font-size: 0.9rem;
-                padding: 8px 18px;
-                min-width: 70px;
-            }
-            .eval-option {
-                font-size: 0.95rem;
-                padding: 8px 18px;
-            }
-            .manual-word-area .manual-input-group input {
-                width: 80px;
-                font-size: 0.9rem;
-                min-width: 60px;
-            }
+            .app-container { padding: 12px 14px 14px; border-radius: 32px; }
+            .page-title { font-size: 1.8rem; }
+            .login-box { padding: 24px 18px; border-radius: 40px; }
+            .cloud { font-size: 0.85rem; padding: 6px 14px; }
+            .brick-wrapper { min-width: 70px; }
+            .brick { width: 64px; height: 50px; }
+            .brick .brick-input { font-size: 1.2rem; }
+            .method-selector select { font-size: 0.7rem; max-width: 80px; }
+            .word-chip { font-size: 1rem; padding: 6px 14px; }
+            .understand-word { font-size: 1.2rem; }
+            .help-stats { grid-template-columns: 1fr; }
+            .nav-row .btn { font-size: 0.9rem; padding: 8px 18px; min-width: 70px; }
+            .eval-option { font-size: 0.95rem; padding: 8px 18px; }
+            .manual-word-area .manual-input-group input { width: 80px; font-size: 0.9rem; min-width: 60px; }
         }
         @media (max-width:480px) {
-            .app-container {
-                padding: 8px 8px 12px;
-                border-radius: 24px;
-            }
-            .page-title {
-                font-size: 1.4rem;
-            }
-            .login-box input,
-            .login-box select {
-                font-size: 1rem;
-                padding: 10px 14px;
-            }
-            .cloud {
-                font-size: 0.75rem;
-                padding: 4px 10px;
-                min-height: 34px;
-            }
-            .brick-wrapper {
-                min-width: 60px;
-            }
-            .brick {
-                width: 56px;
-                height: 44px;
-            }
-            .brick .brick-input {
-                font-size: 1rem;
-            }
-            .method-selector select {
-                font-size: 0.6rem;
-                max-width: 70px;
-            }
-            .word-chip {
-                font-size: 0.9rem;
-                padding: 4px 12px;
-            }
-            .understand-word {
-                font-size: 1rem;
-            }
-            .nav-row .btn {
-                font-size: 0.8rem;
-                padding: 6px 14px;
-                min-width: 60px;
-            }
-            .treasure-box .treasure-inputs input {
-                width: 80px;
-                font-size: 0.85rem;
-            }
-            .manual-word-area .manual-input-group input {
-                width: 70px;
-                font-size: 0.8rem;
-                min-width: 50px;
-                padding: 6px 8px;
-            }
+            .app-container { padding: 8px 8px 12px; border-radius: 24px; }
+            .page-title { font-size: 1.4rem; }
+            .login-box input, .login-box select { font-size: 1rem; padding: 10px 14px; }
+            .cloud { font-size: 0.75rem; padding: 4px 10px; min-height: 34px; }
+            .brick-wrapper { min-width: 60px; }
+            .brick { width: 56px; height: 44px; }
+            .brick .brick-input { font-size: 1rem; }
+            .method-selector select { font-size: 0.6rem; max-width: 70px; }
+            .word-chip { font-size: 0.9rem; padding: 4px 12px; }
+            .understand-word { font-size: 1rem; }
+            .nav-row .btn { font-size: 0.8rem; padding: 6px 14px; min-width: 60px; }
+            .treasure-box .treasure-inputs input { width: 80px; font-size: 0.85rem; }
+            .manual-word-area .manual-input-group input { width: 70px; font-size: 0.8rem; min-width: 50px; padding: 6px 8px; }
         }
-        .report-area::-webkit-scrollbar {
-            width: 6px;
-        }
-        .report-area::-webkit-scrollbar-track {
-            background: rgba(200, 180, 140, 0.2);
-            border-radius: 10px;
-        }
-        .report-area::-webkit-scrollbar-thumb {
-            background: #dba570;
-            border-radius: 10px;
-        }
+        .report-area::-webkit-scrollbar { width: 6px; }
+        .report-area::-webkit-scrollbar-track { background: rgba(200, 180, 140, 0.2); border-radius: 10px; }
+        .report-area::-webkit-scrollbar-thumb { background: #dba570; border-radius: 10px; }
     </style>
 </head>
 <body>
     <div class="app-container" id="app">
-
-        <!-- ========== 登录页 ========== -->
+        <!-- 登录页 -->
         <div class="page active" id="page-login">
             <h1 class="page-title">📚 自主识字闯关</h1>
             <div class="text-center"><span class="page-sub">🌟 教师 / 学生 双模式</span></div>
@@ -1554,7 +1311,7 @@
             </div>
         </div>
 
-        <!-- ========== 第二页：自主识字 ========== -->
+        <!-- 第二页：自主识字 -->
         <div class="page" id="page-literacy">
             <h1 class="page-title">🧩 自主识字闯关游戏</h1>
             <div class="text-center"><span class="attempt-badge" id="attemptBadge1">🏆 第 1 次</span></div>
@@ -1568,11 +1325,6 @@
                     <span class="status" id="importStatus">未导入</span>
                     <span style="font-size:0.8rem;color:#6b4a2c;">自动提取汉字填入砖块</span>
                 </div>
-                <div class="file-library-selector" id="librarySelectorLiteracy">
-                    <label>📂 资料库：</label>
-                    <select id="libraryFileSelect"></select>
-                    <button class="load-btn" id="loadLibraryFileBtn">加载</button>
-                </div>
                 <div style="display:flex;justify-content:space-between;flex-wrap:wrap;align-items:center;margin-bottom:6px;">
                     <span style="font-weight:700;color:#4d2f12;">🧱 汉字砖块（下方选择序号配对）</span>
                     <span style="font-size:0.8rem;color:#6b4a2c;">点击文本框可修改汉字</span>
@@ -1584,32 +1336,23 @@
                 <div class="pair-stats" id="pairStats"></div>
                 <div class="pair-list" id="pairList"></div>
             </div>
-            <div class="save-reset-bar">
-                <button class="btn-small save" id="saveProgressBtn">💾 保存进度</button>
-                <button class="btn-small reset" id="resetPageBtn">🔄 重新完成</button>
-            </div>
             <div class="nav-row">
                 <button class="btn btn-secondary" id="literacyBack">← 返回</button>
                 <button class="btn" id="literacyNext">下一关 →</button>
             </div>
         </div>
 
-        <!-- ========== 第三页：拼音搭配 ========== -->
+        <!-- 第三页：拼音搭配 -->
         <div class="page" id="page-pinyin">
             <h1 class="page-title">🍎 拼音搭配游戏</h1>
             <div class="text-center"><span class="attempt-badge" id="attemptBadge2">🏆 第 1 次</span></div>
-            <div class="hint-text">🍃 拖拽叶子到苹果上配对，或 <strong>先点击叶子、再点击苹果</strong> 进行点击配对（适合触摸屏）</div>
+            <div class="hint-text">🍃 将下方 <strong>打乱顺序</strong> 的拼音叶子拖到对应的汉字苹果上，匹配成功会发光！</div>
             <div class="import-area" style="margin:6px 0 12px;">
                 <label>📄 导入拼音文档 <span style="font-weight:400;font-size:0.85rem;">(.docx / .pdf)</span></label>
                 <input type="file" id="pinyinFileInput" accept=".docx,.pdf,.doc">
                 <button class="file-btn" id="pinyinFileBtn">选择文件</button>
                 <span class="status" id="pinyinImportStatus">未导入</span>
                 <span style="font-size:0.8rem;color:#6b4a2c;">自动提取拼音与汉字，叶子顺序自动打乱</span>
-            </div>
-            <div class="file-library-selector" id="librarySelectorPinyin">
-                <label>📂 资料库：</label>
-                <select id="pinyinLibraryFileSelect"></select>
-                <button class="load-btn" id="pinyinLoadLibraryBtn">加载</button>
             </div>
             <div class="apple-tree-area">
                 <div class="tree-canopy" id="treeCanopy"></div>
@@ -1618,21 +1361,17 @@
                 <div class="stat-item">✨ 已点亮 <span class="count" id="pinyinMatchCount">0</span> 个</div>
                 <div class="stat-item">📚 总汉字 <span class="count" id="pinyinTotalCount">0</span></div>
             </div>
-            <div class="save-reset-bar">
-                <button class="btn-small save" id="saveProgressBtnPinyin">💾 保存进度</button>
-                <button class="btn-small reset" id="resetPageBtnPinyin">🔄 重新完成</button>
-            </div>
             <div class="nav-row">
                 <button class="btn btn-secondary" id="pinyinBack">← 返回</button>
                 <button class="btn" id="pinyinNext">下一关 →</button>
             </div>
         </div>
 
-        <!-- ========== 第四页：词语寻宝 ========== -->
+        <!-- 第四页：词语寻宝 -->
         <div class="page" id="page-words">
             <h1 class="page-title">🔎 词语寻宝游戏</h1>
             <div class="text-center"><span class="attempt-badge" id="attemptBadge3">🏆 第 1 次</span></div>
-            <div class="hint-text">👆 点击词语卡片即可「找到」它，全部找到后会有惊喜！</div>
+            <div class="hint-text">👆 点击词语卡片即可「找到」它，全部找到后会有惊喜！也可直接进入下一关。</div>
             <div class="word-search-area">
                 <div class="import-area" style="margin-bottom:12px;">
                     <label>📄 导入词语文档 <span style="font-weight:400;font-size:0.85rem;">(.docx / .pdf) 逗号或空格分隔</span></label>
@@ -1640,11 +1379,6 @@
                     <button class="file-btn" id="wordFileBtn">选择文件</button>
                     <span class="status" id="wordImportStatus">未导入</span>
                     <span style="font-size:0.8rem;color:#6b4a2c;">自动提取词语并打乱顺序</span>
-                </div>
-                <div class="file-library-selector" id="librarySelectorWords">
-                    <label>📂 资料库：</label>
-                    <select id="wordLibraryFileSelect"></select>
-                    <button class="load-btn" id="wordLoadLibraryBtn">加载</button>
                 </div>
                 <div class="word-grid" id="wordGrid"></div>
                 <div class="manual-word-area" id="manualWordArea">
@@ -1664,17 +1398,13 @@
                 <div class="stat-item">📚 总词语 <span class="count" id="wordTotalCount">0</span></div>
             </div>
             <div class="word-found-list" id="wordFoundList"></div>
-            <div class="save-reset-bar">
-                <button class="btn-small save" id="saveProgressBtnWords">💾 保存进度</button>
-                <button class="btn-small reset" id="resetPageBtnWords">🔄 重新完成</button>
-            </div>
             <div class="nav-row">
                 <button class="btn btn-secondary" id="wordsBack">← 返回</button>
                 <button class="btn" id="wordsNext">下一关 →</button>
             </div>
         </div>
 
-        <!-- ========== 第五页：词语理解 ========== -->
+        <!-- 第五页：词语理解 -->
         <div class="page" id="page-understand">
             <h1 class="page-title">🎈 词语理解闯关</h1>
             <div class="text-center"><span class="attempt-badge" id="attemptBadge4">🏆 第 1 次</span></div>
@@ -1691,11 +1421,6 @@
                     <button class="file-btn" id="understandFileBtn">选择文件</button>
                     <span class="status" id="understandImportStatus">未导入</span>
                     <span style="font-size:0.8rem;color:#6b4a2c;">自动提取词语（至少2个汉字）</span>
-                </div>
-                <div class="file-library-selector" id="librarySelectorUnderstand">
-                    <label>📂 资料库：</label>
-                    <select id="understandLibraryFileSelect"></select>
-                    <button class="load-btn" id="understandLoadLibraryBtn">加载</button>
                 </div>
                 <div class="manual-word-area" id="understandManualArea">
                     <span class="label">✏️ 手动添加词语</span>
@@ -1719,17 +1444,13 @@
                 <span class="box-label">🤝 百宝箱（不理解的词）</span>
                 <div class="treasure-inputs" id="treasureInputs"></div>
             </div>
-            <div class="save-reset-bar">
-                <button class="btn-small save" id="saveProgressBtnUnderstand">💾 保存进度</button>
-                <button class="btn-small reset" id="resetPageBtnUnderstand">🔄 重新完成</button>
-            </div>
             <div class="nav-row">
                 <button class="btn btn-secondary" id="understandBack">← 返回</button>
                 <button class="btn" id="understandNext">下一关 →</button>
             </div>
         </div>
 
-        <!-- ========== 第六页：寻求帮助 ========== -->
+        <!-- 第六页：寻求帮助 -->
         <div class="page" id="page-help">
             <h1 class="page-title">🤝 寻求帮助</h1>
             <div class="help-stats">
@@ -1749,17 +1470,13 @@
                 <button class="btn btn-green" id="helpClassmate"><span class="icon">🤝</span> 询问同学</button>
             </div>
             <div id="helpResult" style="text-align:center;margin-top:12px;font-weight:700;color:#4d2f12;min-height:30px;"></div>
-            <div class="save-reset-bar">
-                <button class="btn-small save" id="saveProgressBtnHelp">💾 保存进度</button>
-                <button class="btn-small reset" id="resetPageBtnHelp">🔄 重新完成</button>
-            </div>
             <div class="nav-row">
                 <button class="btn btn-secondary" id="helpBack">← 返回</button>
                 <button class="btn" id="helpNext">下一关 →</button>
             </div>
         </div>
 
-        <!-- ========== 第七页：自我评估 ========== -->
+        <!-- 第七页：自我评估 -->
         <div class="page" id="page-eval">
             <h1 class="page-title">🌟 自我评估</h1>
             <div style="font-weight:700;color:#4d2f12;font-size:1.05rem;text-align:center;">本次闯关难度</div>
@@ -1786,20 +1503,16 @@
                 <button class="btn btn-pink" id="resetGameBtn">🔄 重新闯关</button>
                 <button class="btn" id="finishGameBtn" style="background:linear-gradient(145deg,#f7c948,#f5a623);">✅ 完成闯关</button>
             </div>
-            <div class="save-reset-bar">
-                <button class="btn-small save" id="saveProgressBtnEval">💾 保存进度</button>
-                <button class="btn-small reset" id="resetPageBtnEval">🔄 重新完成</button>
-            </div>
             <div class="nav-row">
                 <button class="btn btn-secondary" id="evalBack">← 返回</button>
                 <button class="btn btn-secondary" id="gotoClassOverviewBtn" style="background:linear-gradient(145deg,#b8d9a8,#7aaa6a);">📊 班级总览</button>
             </div>
         </div>
 
-        <!-- ========== 第八页：学生管理 ========== -->
+        <!-- 第八页：学生管理（仅教师） -->
         <div class="page hidden-page" id="page-student-management">
             <h1 class="page-title">👥 学生管理</h1>
-            <div class="text-center"><span class="page-sub">👩‍🏫 管理本班学生账号 & 分配资料</span></div>
+            <div class="text-center"><span class="page-sub">👩‍🏫 管理本班学生账号</span></div>
             <div class="add-student-form">
                 <input type="text" id="newStudentUsername" placeholder="学生用户名" value="小明">
                 <input type="password" id="newStudentPassword" placeholder="密码" value="123456">
@@ -1808,7 +1521,7 @@
             </div>
             <div style="overflow-x:auto;">
                 <table class="user-table" id="studentTable">
-                    <thead><tr><th>用户名</th><th>年级</th><th>班级</th><th>分配资料</th><th>二维码</th><th>操作</th></tr></thead>
+                    <thead><tr><th>用户名</th><th>年级</th><th>班级</th><th>二维码</th><th>操作</th></tr></thead>
                     <tbody id="studentTableBody"></tbody>
                 </table>
             </div>
@@ -1817,7 +1530,7 @@
             </div>
         </div>
 
-        <!-- ========== 第九页：班级总览 ========== -->
+        <!-- 第九页：班级总览 -->
         <div class="page hidden-page" id="page-class-overview">
             <h1 class="page-title">📊 班级总览</h1>
             <div class="text-center">
@@ -1845,73 +1558,50 @@
         //  数据层 (localStorage)
         // ====================================================================
         function getUsers() { return JSON.parse(localStorage.getItem('users') || '[]'); }
-
         function saveUsers(users) { localStorage.setItem('users', JSON.stringify(users)); }
-
         function getReports() { return JSON.parse(localStorage.getItem('reports') || '[]'); }
-
         function saveReports(reports) { localStorage.setItem('reports', JSON.stringify(reports)); }
-
         function getTemplate() { return JSON.parse(localStorage.getItem('template') || 'null'); }
-
         function saveTemplate(template) { localStorage.setItem('template', JSON.stringify(template)); }
-
         function getStudentState(username) {
             const key = 'student_state_' + username;
             return JSON.parse(localStorage.getItem(key) || 'null');
         }
-
         function saveStudentState(username, state) {
             const key = 'student_state_' + username;
             localStorage.setItem(key, JSON.stringify(state));
         }
-
         function removeStudentState(username) {
             localStorage.removeItem('student_state_' + username);
         }
 
-        // ---- 文件资料库 ----
-        function getFileLibrary(teacherUsername) {
-            const key = 'fileLibrary_' + teacherUsername;
-            return JSON.parse(localStorage.getItem(key) || '[]');
-        }
-
-        function saveFileLibrary(teacherUsername, library) {
-            const key = 'fileLibrary_' + teacherUsername;
-            localStorage.setItem(key, JSON.stringify(library));
-        }
-
-        function addFileToLibrary(teacherUsername, fileName, content) {
-            const library = getFileLibrary(teacherUsername);
-            const existing = library.find(f => f.name === fileName);
-            if (existing) {
-                existing.content = content;
-                existing.date = new Date().toISOString();
-            } else {
-                library.push({ name: fileName, content: content, date: new Date().toISOString() });
+        function initDefaultUsers() {
+            let users = getUsers();
+            if (users.length === 0) {
+                users = [
+                    { id: 1, username: '苏老师', password: '123456', role: 'teacher', grade: '二年级', class: '二班', subject: '语文' },
+                    { id: 2, username: '小智', password: '123456', role: 'student', grade: '二年级', class: '二班', subject: '语文' }
+                ];
+                saveUsers(users);
+                if (!getTemplate()) {
+                    saveTemplate(createDefaultTemplate());
+                }
+                const template = getTemplate();
+                if (template) {
+                    saveStudentState('小智', JSON.parse(JSON.stringify(template)));
+                }
             }
-            saveFileLibrary(teacherUsername, library);
-            return library;
         }
+        initDefaultUsers();
 
-        function getStudentAssignedFile(username) {
-            const key = 'assignedFile_' + username;
-            return localStorage.getItem(key) || null;
-        }
-
-        function setStudentAssignedFile(username, fileName) {
-            const key = 'assignedFile_' + username;
-            if (fileName) localStorage.setItem(key, fileName);
-            else localStorage.removeItem(key);
-        }
+        let currentUser = null;
+        let currentState = null;
 
         // ====================================================================
         //  辅助工具
         // ====================================================================
-        function $(sel, ctx) { return (ctx || document).querySelector(sel); }
-
-        function $$(sel, ctx) { return [...(ctx || document).querySelectorAll(sel)]; }
-
+        function $(sel, ctx = document) { return ctx.querySelector(sel); }
+        function $$(sel, ctx = document) { return [...ctx.querySelectorAll(sel)]; }
         function shuffle(arr) {
             for (let i = arr.length - 1; i > 0; i--) {
                 const j = Math.floor(Math.random() * (i + 1));
@@ -1919,13 +1609,10 @@
             }
             return arr;
         }
-
         function getDateStr() {
             const d = new Date();
-            return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2,
-                '0');
+            return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
         }
-
         const CLOUD_CLASSES = [
             'cloud-color-1', 'cloud-color-2', 'cloud-color-3', 'cloud-color-4',
             'cloud-color-5', 'cloud-color-6', 'cloud-color-7', 'cloud-color-8',
@@ -1935,7 +1622,6 @@
             '字理识字', '形声字', '偏旁归类', '加一加', '减一减',
             '换偏旁', '比较识字', '生活中识字', '图片识字', '语境识字'
         ];
-
         function playMatchSound() {
             try {
                 const ctx = new(window.AudioContext || window.webkitAudioContext)();
@@ -1955,8 +1641,7 @@
         function createDefaultTemplate() {
             const bricks = [];
             for (let i = 0; i < 20; i++) bricks.push({ char: '', methodIndex: null });
-            const methods = DEFAULT_METHODS.map((name, idx) => ({ name, colorClass: CLOUD_CLASSES[idx % CLOUD_CLASSES
-                    .length] }));
+            const methods = DEFAULT_METHODS.map((name, idx) => ({ name, colorClass: CLOUD_CLASSES[idx % CLOUD_CLASSES.length] }));
             const pinyinPairs = ['日', '月', '花', '鸟', '树', '山', '水', '火'].map((ch, i) => ({
                 char: ch,
                 pinyin: ['ri', 'yue', 'hua', 'niao', 'shu', 'shan', 'shui', 'huo'][i] || '?',
@@ -1973,31 +1658,18 @@
                 { name: '', colorClass: CLOUD_CLASSES[5] },
                 { name: '', colorClass: CLOUD_CLASSES[6] }
             ];
-            const understandWords = ['太阳', '月亮', '花朵', '小鸟', '大树', '草地', '快乐', '美丽'].map(w => ({ word: w,
-                methodIndex: null }));
+            const understandWords = ['太阳', '月亮', '花朵', '小鸟', '大树', '草地', '快乐', '美丽'].map(w => ({ word: w, methodIndex: null }));
             return {
-                bricks,
-                methods,
-                customMethods: ['', '', ''],
-                pinyinPairs,
-                wordList,
-                wordFound: new Array(wordList.length).fill(false),
-                understandMethods,
-                understandWords,
-                treasureWords: [],
-                pinyinErrorCount: {},
-                partnerName: '小雅',
-                difficulty: null,
-                feelings: []
+                bricks, methods, customMethods: ['', '', ''],
+                pinyinPairs, wordList, wordFound: new Array(wordList.length).fill(false),
+                understandMethods, understandWords, treasureWords: [],
+                pinyinErrorCount: {}, partnerName: '小雅', difficulty: null, feelings: []
             };
         }
 
         // ====================================================================
-        //  全局状态
+        //  导航
         // ====================================================================
-        let currentUser = null;
-        let currentState = null;
-
         const pageOrder = ['page-login', 'page-literacy', 'page-pinyin', 'page-words', 'page-understand', 'page-help',
             'page-eval', 'page-student-management', 'page-class-overview'
         ];
@@ -2013,7 +1685,6 @@
                 el.classList.add('active');
             }
             updateTopNav();
-            populateLibrarySelectors();
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
@@ -2041,7 +1712,6 @@
                         return;
                     }
                 }
-                saveCurrentState();
                 showPage(next);
                 if (next === 'page-literacy') initLiteracyPage();
                 else if (next === 'page-pinyin') initPinyinPage();
@@ -2056,7 +1726,6 @@
             const idx = pageOrder.indexOf(currentPageId());
             if (idx > 0) {
                 const prev = pageOrder[idx - 1];
-                saveCurrentState();
                 showPage(prev);
                 if (prev === 'page-literacy') initLiteracyPage();
                 else if (prev === 'page-pinyin') initPinyinPage();
@@ -2066,15 +1735,6 @@
                 else if (prev === 'page-eval') initEvalPage();
                 else if (prev === 'page-student-management') initStudentManagement();
                 else if (prev === 'page-class-overview') initClassOverviewPage();
-            }
-        }
-
-        function saveCurrentState() {
-            if (!currentUser || !currentState) return;
-            if (currentUser.role === 'teacher') {
-                saveTemplate(currentState);
-            } else {
-                saveStudentState(currentUser.username, currentState);
             }
         }
 
@@ -2091,8 +1751,7 @@
             if (!nav) {
                 nav = document.createElement('div');
                 nav.id = 'topNav';
-                nav.style.cssText =
-                    'display:flex;justify-content:space-between;align-items:center;background:rgba(255,235,200,0.6);border-radius:50px;padding:8px 20px;margin-bottom:12px;border:2px solid #ffd699;flex-wrap:wrap;';
+                nav.style.cssText = 'display:flex;justify-content:space-between;align-items:center;background:rgba(255,235,200,0.6);border-radius:50px;padding:8px 20px;margin-bottom:12px;border:2px solid #ffd699;flex-wrap:wrap;';
                 document.querySelector('.app-container').prepend(nav);
             }
             nav.style.display = 'flex';
@@ -2114,7 +1773,6 @@
 
         function logout() {
             if (confirm('确定要退出吗？')) {
-                saveCurrentState();
                 currentUser = null;
                 currentState = null;
                 showPage('page-login');
@@ -2128,6 +1786,7 @@
         function initLogin() {
             $('#loginUsername').value = '苏老师';
             $('#loginPassword').value = '123456';
+            // 检测URL参数 ?student=xxx
             const params = new URLSearchParams(window.location.search);
             const student = params.get('student');
             if (student) {
@@ -2164,20 +1823,7 @@
                 showPage('page-literacy');
                 initLiteracyPage();
             } else {
-                // 学生：检查分配的文件
-                let assignedFile = getStudentAssignedFile(user.username);
                 let state = getStudentState(user.username);
-                if (assignedFile) {
-                    const teacher = users.find(u => u.role === 'teacher');
-                    if (teacher) {
-                        const library = getFileLibrary(teacher.username);
-                        const file = library.find(f => f.name === assignedFile);
-                        if (file && !state) {
-                            state = JSON.parse(JSON.stringify(file.content));
-                            saveStudentState(user.username, state);
-                        }
-                    }
-                }
                 if (!state) {
                     const template = getTemplate();
                     state = template ? JSON.parse(JSON.stringify(template)) : createDefaultTemplate();
@@ -2190,230 +1836,30 @@
         });
 
         // ====================================================================
-        //  资料库选择器
+        //  保存当前状态
         // ====================================================================
-        function populateLibrarySelectors() {
-            if (!currentUser) return;
-            const teacherUsername = currentUser.role === 'teacher' ? currentUser.username : (getUsers().find(u => u
-                .role === 'teacher')?.username || '苏老师');
-            const library = getFileLibrary(teacherUsername);
-            const selectors = [
-                'libraryFileSelect', 'pinyinLibraryFileSelect', 'wordLibraryFileSelect', 'understandLibraryFileSelect'
-            ];
-            selectors.forEach(id => {
-                const sel = document.getElementById(id);
-                if (!sel) return;
-                const currentVal = sel.value;
-                sel.innerHTML = '<option value="">-- 选择资料 --</option>';
-                library.forEach(f => {
-                    const opt = document.createElement('option');
-                    opt.value = f.name;
-                    opt.textContent = f.name + ' (' + new Date(f.date).toLocaleDateString() + ')';
-                    sel.appendChild(opt);
-                });
-                if (currentVal && library.find(f => f.name === currentVal)) {
-                    sel.value = currentVal;
-                }
-            });
-        }
-
-        function loadLibraryFileToState(fileName, pageType) {
-            if (!currentUser) return;
-            const teacherUsername = currentUser.role === 'teacher' ? currentUser.username : (getUsers().find(u => u
-                .role === 'teacher')?.username || '苏老师');
-            const library = getFileLibrary(teacherUsername);
-            const file = library.find(f => f.name === fileName);
-            if (!file) { alert('未找到该资料文件'); return; }
-            if (!confirm('加载资料将重置当前页面的进度，确定继续吗？')) return;
-            const content = file.content;
-            const state = currentState;
-            if (pageType === 'literacy') {
-                state.bricks = content.bricks.map(b => ({ char: b.char || '', methodIndex: null }));
-                state.methods = content.methods || DEFAULT_METHODS.map((name, idx) => ({ name,
-                    colorClass: CLOUD_CLASSES[idx % CLOUD_CLASSES.length] }));
-                state.customMethods = content.customMethods || ['', '', ''];
-                renderBricks(state);
-                renderPairStats(state);
-            } else if (pageType === 'pinyin') {
-                state.pinyinPairs = content.pinyinPairs.map(p => ({ char: p.char, pinyin: p.pinyin, matched: false }));
-                renderPinyinTreeNew(state);
-                updatePinyinStats(state);
-                setupPinyinDragAndClick(state);
-            } else if (pageType === 'words') {
-                state.wordList = content.wordList || [];
-                state.wordFound = new Array(state.wordList.length).fill(false);
-                renderWordGrid(state);
-                updateWordStats(state);
-            } else if (pageType === 'understand') {
-                state.understandWords = content.understandWords.map(w => ({ word: w.word, methodIndex: null }));
-                state.understandMethods = content.understandMethods || [
-                    { name: '借图理解', colorClass: CLOUD_CLASSES[0] },
-                    { name: '联系上下文', colorClass: CLOUD_CLASSES[1] },
-                    { name: '联系实际生活', colorClass: CLOUD_CLASSES[2] },
-                    { name: '拆字理解', colorClass: CLOUD_CLASSES[3] },
-                    { name: '语境联想', colorClass: CLOUD_CLASSES[4] },
-                    { name: '', colorClass: CLOUD_CLASSES[5] },
-                    { name: '', colorClass: CLOUD_CLASSES[6] }
-                ];
-                renderUnderstandGrid(state);
-                renderUnderstandStats(state);
+        function saveCurrentState() {
+            if (!currentUser || !currentState) return;
+            if (currentUser.role === 'teacher') {
+                saveTemplate(currentState);
             } else {
-                alert('当前页面不支持加载资料');
-                return;
+                saveStudentState(currentUser.username, currentState);
             }
-            saveCurrentState();
-            alert('✅ 资料加载成功！');
         }
 
         // ====================================================================
-        //  保存 & 重置
-        // ====================================================================
-        function saveProgress() {
-            saveCurrentState();
-            alert('✅ 进度已保存！');
-        }
-
-        function resetCurrentPage() {
-            if (!currentState) return;
-            if (!confirm('确定要重置当前页面的所有进度吗？')) return;
-            const page = currentPageId();
-            const state = currentState;
-            if (page === 'page-literacy') {
-                state.bricks.forEach(b => { b.methodIndex = null; });
-                renderBricks(state);
-                renderPairStats(state);
-            } else if (page === 'page-pinyin') {
-                state.pinyinPairs.forEach(p => { p.matched = false; });
-                renderPinyinTreeNew(state);
-                updatePinyinStats(state);
-                setupPinyinDragAndClick(state);
-            } else if (page === 'page-words') {
-                state.wordFound.fill(false);
-                renderWordGrid(state);
-                updateWordStats(state);
-            } else if (page === 'page-understand') {
-                state.understandWords.forEach(w => { w.methodIndex = null; });
-                renderUnderstandGrid(state);
-                renderUnderstandStats(state);
-            } else if (page === 'page-help') {
-                alert('帮助页无需重置');
-                return;
-            } else if (page === 'page-eval') {
-                state.difficulty = null;
-                state.feelings = [];
-                $$('input[name="difficulty"]').forEach(el => el.checked = false);
-                $$('input[name="feeling"]').forEach(el => el.checked = false);
-                $$('.eval-option').forEach(el => el.classList.remove('selected'));
-                generateReport(state);
-            } else {
-                alert('当前页面不支持重置');
-                return;
-            }
-            saveCurrentState();
-            alert('✅ 已重置当前页面进度！');
-        }
-
-        function bindSaveResetButtons() {
-            document.querySelectorAll('.save-reset-bar .save').forEach(btn => { btn.onclick = saveProgress; });
-            document.querySelectorAll('.save-reset-bar .reset').forEach(btn => { btn.onclick = resetCurrentPage; });
-        }
-
-        // ====================================================================
-        //  导入文件（自动保存到资料库）
-        // ====================================================================
-        function setupFileImportWithLibrary(fileInputId, selectBtnId, statusId, extractFunc, pageType) {
-            const fileInput = document.getElementById(fileInputId);
-            const selectBtn = document.getElementById(selectBtnId);
-            const status = document.getElementById(statusId);
-            if (!fileInput || !selectBtn) return;
-            const newBtn = selectBtn.cloneNode(true);
-            selectBtn.parentNode.replaceChild(newBtn, selectBtn);
-            const newFileInput = fileInput.cloneNode(true);
-            fileInput.parentNode.replaceChild(newFileInput, fileInput);
-            newBtn.addEventListener('click', () => newFileInput.click());
-            newFileInput.addEventListener('change', async function(e) {
-                const file = this.files[0];
-                if (!file) return;
-                status.textContent = '解析中...';
-                status.style.color = '#b87a3a';
-                try {
-                    let text = '';
-                    const ext = file.name.split('.').pop().toLowerCase();
-                    if (ext === 'docx') {
-                        const arrayBuffer = await file.arrayBuffer();
-                        const result = await mammoth.extractRawText({ arrayBuffer });
-                        text = result.value;
-                    } else if (ext === 'pdf') {
-                        const arrayBuffer = await file.arrayBuffer();
-                        const pdf = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
-                        for (let i = 1; i <= pdf.numPages; i++) {
-                            const page = await pdf.getPage(i);
-                            const content = await page.getTextContent();
-                            text += content.items.map(item => item.str).join(' ');
-                        }
-                    } else if (ext === 'doc') { text = await file.text(); } else {
-                        alert('不支持的文件格式');
-                        status.textContent = '不支持格式';
-                        status.style.color = '#b33a3a';
-                        return;
-                    }
-                    const extracted = extractFunc(text);
-                    if (!extracted || (Array.isArray(extracted) && extracted.length === 0)) {
-                        status.textContent = '提取失败，请检查文件内容';
-                        status.style.color = '#b33a3a';
-                        return;
-                    }
-                    const state = currentState;
-                    if (pageType === 'literacy') {
-                        state.bricks = extracted.map(ch => ({ char: ch, methodIndex: null }));
-                        renderBricks(state);
-                        renderPairStats(state);
-                    } else if (pageType === 'pinyin') {
-                        state.pinyinPairs = extracted.map(p => ({ char: p.char, pinyin: p.pinyin, matched: false }));
-                        renderPinyinTreeNew(state);
-                        updatePinyinStats(state);
-                        setupPinyinDragAndClick(state);
-                    } else if (pageType === 'words') {
-                        state.wordList = extracted;
-                        state.wordFound = new Array(state.wordList.length).fill(false);
-                        renderWordGrid(state);
-                        updateWordStats(state);
-                    } else if (pageType === 'understand') {
-                        state.understandWords = extracted.map(w => ({ word: w, methodIndex: null }));
-                        renderUnderstandGrid(state);
-                        renderUnderstandStats(state);
-                    }
-                    saveCurrentState();
-                    const teacherUsername = currentUser.role === 'teacher' ? currentUser.username : (getUsers().find(
-                        u => u.role === 'teacher')?.username || '苏老师');
-                    const library = addFileToLibrary(teacherUsername, file.name, JSON.parse(JSON.stringify(state)));
-                    populateLibrarySelectors();
-                    status.textContent = `✅ 导入成功，已保存到资料库 (共 ${library.length} 个文件)`;
-                    status.style.color = '#2a7a2a';
-                } catch (err) {
-                    console.error(err);
-                    status.textContent = '解析失败，请检查文件';
-                    status.style.color = '#b33a3a';
-                }
-                this.value = '';
-            });
-        }
-
-        // ====================================================================
-        //  各页面初始化
+        //  第二页：自主识字
         // ====================================================================
         function initLiteracyPage() {
             if (!currentUser || !currentState) return;
             const state = currentState;
-            $('#attemptBadge1').textContent = `🏆 第 1 次`;
+            const attempt = 1;
+            $('#attemptBadge1').textContent = `🏆 第 ${attempt} 次`;
             updateMethodsFromCustom(state);
             renderClouds(state);
             renderBricks(state);
             renderPairStats(state);
-            setupFileImportWithLibrary('fileInput', 'fileSelectBtn', 'importStatus',
-                (text) => { const chars = text.match(/[\u4e00-\u9fff]/g) || []; return chars; },
-                'literacy'
-            );
+            setupFileImport(state);
             $$('.custom-method-input').forEach((inp, idx) => {
                 inp.value = state.customMethods[idx] || '';
                 inp.removeEventListener('change', function() {});
@@ -2426,218 +1872,12 @@
                     saveCurrentState();
                 });
             });
-            populateLibrarySelectors();
-            document.getElementById('loadLibraryFileBtn').onclick = function() {
-                const sel = document.getElementById('libraryFileSelect');
-                if (!sel.value) { alert('请先选择资料'); return; }
-                loadLibraryFileToState(sel.value, 'literacy');
-            };
-            bindSaveResetButtons();
         }
 
-        function initPinyinPage() {
-            if (!currentState) return;
-            const state = currentState;
-            if (!state.pinyinPairs || state.pinyinPairs.length === 0) {
-                const defaultChars = ['日', '月', '花', '鸟', '树', '山', '水', '火'];
-                const defaultPinyins = ['ri', 'yue', 'hua', 'niao', 'shu', 'shan', 'shui', 'huo'];
-                state.pinyinPairs = defaultChars.map((ch, i) => ({ char: ch, pinyin: defaultPinyins[i] || '?',
-                    matched: false }));
-                shuffle(state.pinyinPairs);
-                saveCurrentState();
-            }
-            renderPinyinTreeNew(state);
-            updatePinyinStats(state);
-            setupPinyinDragAndClick(state);
-            setupPinyinFileImport(state);
-            populateLibrarySelectors();
-            document.getElementById('pinyinLoadLibraryBtn').onclick = function() {
-                const sel = document.getElementById('pinyinLibraryFileSelect');
-                if (!sel.value) { alert('请先选择资料'); return; }
-                loadLibraryFileToState(sel.value, 'pinyin');
-            };
-            bindSaveResetButtons();
-        }
-
-        function initWordsPage() {
-            if (!currentState) return;
-            const state = currentState;
-            if (!state.wordList || state.wordList.length === 0) {
-                state.wordList = shuffle(['太阳', '月亮', '花朵', '小鸟', '大树', '草地', '快乐', '美丽', '勇敢', '善良']);
-                state.wordFound = new Array(state.wordList.length).fill(false);
-                saveCurrentState();
-            }
-            renderWordGrid(state);
-            updateWordStats(state);
-            setupWordFileImport(state);
-            setupManualWords(state);
-            $$('.manual-word-input').forEach(inp => inp.value = '');
-            populateLibrarySelectors();
-            document.getElementById('wordLoadLibraryBtn').onclick = function() {
-                const sel = document.getElementById('wordLibraryFileSelect');
-                if (!sel.value) { alert('请先选择资料'); return; }
-                loadLibraryFileToState(sel.value, 'words');
-            };
-            bindSaveResetButtons();
-        }
-
-        function initUnderstandPage() {
-            if (!currentState) return;
-            const state = currentState;
-            $('#partnerName').value = state.partnerName || '小雅';
-            state.partnerName = $('#partnerName').value;
-
-            if (!state.understandMethods || state.understandMethods.length < 7) {
-                state.understandMethods = [
-                    { name: '借图理解', colorClass: CLOUD_CLASSES[0] },
-                    { name: '联系上下文', colorClass: CLOUD_CLASSES[1] },
-                    { name: '联系实际生活', colorClass: CLOUD_CLASSES[2] },
-                    { name: '拆字理解', colorClass: CLOUD_CLASSES[3] },
-                    { name: '语境联想', colorClass: CLOUD_CLASSES[4] },
-                    { name: '', colorClass: CLOUD_CLASSES[5] },
-                    { name: '', colorClass: CLOUD_CLASSES[6] }
-                ];
-            }
-            if (!state.understandWords || state.understandWords.length === 0) {
-                state.understandWords = ['太阳', '月亮', '花朵', '小鸟', '大树', '草地', '快乐', '美丽'].map(w => ({ word: w,
-                    methodIndex: null }));
-            }
-            renderUnderstandMethods(state);
-            renderUnderstandGrid(state);
-            renderUnderstandStats(state);
-            setupUnderstandFileImport(state);
-            setupUnderstandManualWords(state);
-            renderTreasureInputs(state);
-            saveCurrentState();
-
-            $('#partnerName').addEventListener('change', function() {
-                state.partnerName = this.value.trim() || '小雅';
-                saveCurrentState();
-            });
-            populateLibrarySelectors();
-            document.getElementById('understandLoadLibraryBtn').onclick = function() {
-                const sel = document.getElementById('understandLibraryFileSelect');
-                if (!sel.value) { alert('请先选择资料'); return; }
-                loadLibraryFileToState(sel.value, 'understand');
-            };
-            bindSaveResetButtons();
-        }
-
-        function initHelpPage() {
-            if (!currentState) return;
-            const state = currentState;
-            const errors = Object.entries(state.pinyinErrorCount || {}).filter(([_, count]) => count >= 3).map(([char]) =>
-                char);
-            const errorEl = $('#helpPinyinErrors');
-            if (errors.length === 0) errorEl.innerHTML = '<span style="color:#2a7a2a;">✅ 没有错3次以上的字</span>';
-            else errorEl.innerHTML = errors.map(c => `<span>${c}</span>`).join(' ');
-            const treasureEl = $('#helpTreasureWords');
-            const treasureWords = (state.treasureWords || []).filter(w => w.trim() !== '');
-            if (treasureWords.length === 0) treasureEl.innerHTML = '<span style="color:#2a7a2a;">📦 百宝箱是空的</span>';
-            else treasureEl.innerHTML = treasureWords.map(w => `<span>${w}</span>`).join(' ');
-            $('#helpResult').textContent = '';
-            state.helpChosen = null;
-            $('#helpDict').onclick = function() {
-                state.helpChosen = '查字典';
-                $('#helpResult').textContent = '📖 建议：使用字典查阅不熟悉的字词！';
-            };
-            $('#helpTeacher').onclick = function() {
-                state.helpChosen = '询问老师';
-                $('#helpResult').textContent = '👩‍🏫 建议：向老师请教，老师会耐心解答！';
-            };
-            $('#helpClassmate').onclick = function() {
-                state.helpChosen = '询问同学';
-                $('#helpResult').textContent = '🤝 建议：和同学讨论，互相学习共同进步！';
-            };
-            bindSaveResetButtons();
-        }
-
-        function initEvalPage() {
-            if (!currentState) return;
-            const state = currentState;
-            if (state.difficulty) {
-                $$('input[name="difficulty"]').forEach(el => {
-                    el.checked = (el.value === state.difficulty);
-                    el.closest('.eval-option').classList.toggle('selected', el.checked);
-                });
-            }
-            if (state.feelings && state.feelings.length > 0) {
-                $$('input[name="feeling"]').forEach(el => {
-                    el.checked = state.feelings.includes(el.value);
-                    el.closest('.eval-option').classList.toggle('selected', el.checked);
-                });
-            }
-            generateReport(state);
-            $$('input[name="difficulty"]').forEach(el => {
-                el.addEventListener('change', function() {
-                    $$('input[name="difficulty"]').forEach(e => e.closest('.eval-option').classList.toggle(
-                        'selected', e.checked));
-                    if (this.checked) state.difficulty = this.value;
-                    generateReport(state);
-                    saveCurrentState();
-                });
-            });
-            $$('input[name="feeling"]').forEach(el => {
-                el.addEventListener('change', function() {
-                    this.closest('.eval-option').classList.toggle('selected', this.checked);
-                    state.feelings = $$('input[name="feeling"]:checked').map(e => e.value);
-                    generateReport(state);
-                    saveCurrentState();
-                });
-            });
-            bindSaveResetButtons();
-
-            $('#finishGameBtn').onclick = function() {
-                if (currentUser && currentUser.role === 'student') {
-                    const reportText = generateReportText(state);
-                    const reports = getReports();
-                    const existing = reports.find(r => r.username === currentUser.username);
-                    if (existing) {
-                        if (!confirm('您已提交过报告，是否覆盖？')) return;
-                        Object.assign(existing, {
-                            report: reportText,
-                            difficulty: state.difficulty || '未评估',
-                            feelings: (state.feelings || []).join('、') || '无',
-                            date: getDateStr()
-                        });
-                    } else {
-                        reports.push({
-                            username: currentUser.username,
-                            name: currentUser.username,
-                            grade: currentUser.grade || '二年级',
-                            class: currentUser.class || '二班',
-                            subject: currentUser.subject || '语文',
-                            date: getDateStr(),
-                            report: reportText,
-                            difficulty: state.difficulty || '未评估',
-                            feelings: (state.feelings || []).join('、') || '无'
-                        });
-                    }
-                    saveReports(reports);
-                    alert('✅ 闯关完成！报告已提交给老师。');
-                } else {
-                    alert('👩‍🏫 教师模式：您无需提交报告，可查看班级总览。');
-                }
-            };
-            $('#gotoClassOverviewBtn').onclick = function() {
-                if (currentUser && currentUser.role === 'teacher') {
-                    showPage('page-class-overview');
-                    initClassOverviewPage();
-                } else {
-                    alert('🧑‍🎓 学生请先完成闯关提交报告。');
-                }
-            };
-        }
-
-        // ====================================================================
-        //  渲染函数（自主识字）
-        // ====================================================================
         function updateMethodsFromCustom(state) {
-            const base = DEFAULT_METHODS.map((name, idx) => ({ name, colorClass: CLOUD_CLASSES[idx % CLOUD_CLASSES
-                    .length] }));
+            const base = DEFAULT_METHODS.map((name, idx) => ({ name, colorClass: CLOUD_CLASSES[idx % CLOUD_CLASSES.length] }));
             const customNames = state.customMethods.filter(m => m.trim() !== '');
-            const customMethods = customNames.map((name, idx) => ({ name, colorClass: CLOUD_CLASSES[(base.length + idx) %
-                    CLOUD_CLASSES.length] }));
+            const customMethods = customNames.map((name, idx) => ({ name, colorClass: CLOUD_CLASSES[(base.length + idx) % CLOUD_CLASSES.length] }));
             state.methods = [...base, ...customMethods];
         }
 
@@ -2794,9 +2034,97 @@
             countSpan.textContent = total;
         }
 
+        function setupFileImport(state) {
+            const fileInput = $('#fileInput');
+            const selectBtn = $('#fileSelectBtn');
+            const status = $('#importStatus');
+            const newBtn = selectBtn.cloneNode(true);
+            selectBtn.parentNode.replaceChild(newBtn, selectBtn);
+            const newFileInput = fileInput.cloneNode(true);
+            fileInput.parentNode.replaceChild(newFileInput, fileInput);
+            newBtn.addEventListener('click', () => newFileInput.click());
+            newFileInput.addEventListener('change', async function(e) {
+                const file = this.files[0];
+                if (!file) return;
+                status.textContent = '解析中...';
+                status.style.color = '#b87a3a';
+                try {
+                    let text = '';
+                    const ext = file.name.split('.').pop().toLowerCase();
+                    if (ext === 'docx') {
+                        const arrayBuffer = await file.arrayBuffer();
+                        const result = await mammoth.extractRawText({ arrayBuffer });
+                        text = result.value;
+                    } else if (ext === 'pdf') {
+                        const arrayBuffer = await file.arrayBuffer();
+                        const pdf = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
+                        for (let i = 1; i <= pdf.numPages; i++) {
+                            const page = await pdf.getPage(i);
+                            const content = await page.getTextContent();
+                            text += content.items.map(item => item.str).join(' ');
+                        }
+                    } else if (ext === 'doc') { text = await file.text(); } else {
+                        alert('不支持的文件格式，请上传 .docx 或 .pdf');
+                        status.textContent = '不支持格式';
+                        status.style.color = '#b33a3a';
+                        return;
+                    }
+                    const chineseChars = text.match(/[\u4e00-\u9fff]/g) || [];
+                    if (chineseChars.length === 0) {
+                        status.textContent = '未提取到汉字';
+                        status.style.color = '#b33a3a';
+                        return;
+                    }
+                    const count = Math.min(chineseChars.length, state.bricks.length);
+                    for (let i = 0; i < count; i++) {
+                        state.bricks[i].char = chineseChars[i];
+                        state.bricks[i].methodIndex = null;
+                    }
+                    for (let i = count; i < state.bricks.length; i++) {
+                        state.bricks[i].char = '';
+                        state.bricks[i].methodIndex = null;
+                    }
+                    renderBricks(state);
+                    renderPairStats(state);
+                    saveCurrentState();
+                    status.textContent = `✅ 成功导入 ${count} 个汉字`;
+                    status.style.color = '#2a7a2a';
+                } catch (err) {
+                    console.error(err);
+                    status.textContent = '解析失败，请检查文件';
+                    status.style.color = '#b33a3a';
+                }
+                this.value = '';
+            });
+        }
+
+        $('#literacyBack').addEventListener('click', () => { showPage('page-login'); initLogin(); });
+        $('#literacyNext').addEventListener('click', function() {
+            if (!currentState) return;
+            const filled = currentState.bricks.filter(b => b.char).length;
+            if (filled < 5) { alert('至少输入5个汉字到砖块中才能继续！'); return; }
+            goNext();
+        });
+
         // ====================================================================
-        //  拼音搭配：拖拽 + 点击（消消乐风格）
+        //  第三页：拼音搭配
         // ====================================================================
+        function initPinyinPage() {
+            if (!currentState) return;
+            const state = currentState;
+            if (!state.pinyinPairs || state.pinyinPairs.length === 0) {
+                const defaultChars = ['日', '月', '花', '鸟', '树', '山', '水', '火'];
+                const defaultPinyins = ['ri', 'yue', 'hua', 'niao', 'shu', 'shan', 'shui', 'huo'];
+                state.pinyinPairs = defaultChars.map((ch, i) => ({ char: ch, pinyin: defaultPinyins[i] || '?', matched: false }));
+                shuffle(state.pinyinPairs);
+                saveCurrentState();
+            }
+            renderPinyinTreeNew(state);
+            updatePinyinStats(state);
+            setupPinyinDragNew(state);
+            setupPinyinFileImport(state);
+        }
+
         function renderPinyinTreeNew(state) {
             const canopy = $('#treeCanopy');
             canopy.innerHTML = '';
@@ -2828,7 +2156,7 @@
             leafRow.id = 'leafRow';
             const label = document.createElement('div');
             label.className = 'leaf-row-label';
-            label.textContent = '🍃 拼音叶子（点击选中后点击苹果配对，或拖拽）';
+            label.textContent = '🍃 拼音叶子（拖到上方对应的苹果上）';
             leafRow.appendChild(label);
 
             const unmatched = [];
@@ -2848,14 +2176,13 @@
                 leaf.dataset.idx = item.idx;
                 leaf.dataset.pinyin = item.pinyin;
                 leaf.draggable = false;
-                leaf.style.cursor = 'pointer';
+                leaf.style.cursor = 'grab';
                 wrapper.appendChild(leaf);
                 leafRow.appendChild(wrapper);
             });
             if (unmatched.length === 0) {
                 const doneMsg = document.createElement('div');
-                doneMsg.style.cssText =
-                    'width:100%;text-align:center;font-size:1.2rem;font-weight:700;color:#d4f0c8;padding:12px 0;';
+                doneMsg.style.cssText = 'width:100%;text-align:center;font-size:1.2rem;font-weight:700;color:#d4f0c8;padding:12px 0;';
                 doneMsg.textContent = '🎉 太棒啦！所有拼音都已匹配！点击下方「下一关」继续～';
                 leafRow.appendChild(doneMsg);
             }
@@ -2869,147 +2196,80 @@
             $('#pinyinTotalCount').textContent = total;
         }
 
-        let selectedLeaf = null;
-
-        function setupPinyinDragAndClick(state) {
-            // 清除旧事件
-            const allLeaves = $$('.leaf:not(.matched)');
-            const allApples = $$('.apple:not(.matched)');
-
-            // 点击配对逻辑
-            allLeaves.forEach(el => {
-                el.removeEventListener('click', onLeafClick);
-                el.removeEventListener('mousedown', onLeafDragStart);
-                el.removeEventListener('touchstart', onLeafDragStart);
-                el.addEventListener('click', onLeafClick);
-                el.addEventListener('mousedown', onLeafDragStart);
-                el.addEventListener('touchstart', onLeafDragStart, { passive: false });
+        let leafDragDataNew = null;
+        function setupPinyinDragNew(state) {
+            const leaves = $$('.leaf:not(.matched)');
+            leaves.forEach(el => {
+                el.removeEventListener('mousedown', onLeafStartNew);
+                el.removeEventListener('touchstart', onLeafStartNew);
+                el.addEventListener('mousedown', onLeafStartNew);
+                el.addEventListener('touchstart', onLeafStartNew, { passive: false });
             });
-            allApples.forEach(el => {
-                el.removeEventListener('click', onAppleClick);
-                el.removeEventListener('mouseup', onLeafDrop);
-                el.removeEventListener('touchend', onLeafDrop);
-                el.addEventListener('click', onAppleClick);
-                el.addEventListener('mouseup', onLeafDrop);
-                el.addEventListener('touchend', onLeafDrop, { passive: false });
+            const apples = $$('.apple:not(.matched)');
+            apples.forEach(el => {
+                el.removeEventListener('mouseup', onLeafDropNew);
+                el.removeEventListener('touchend', onLeafDropNew);
+                el.addEventListener('mouseup', onLeafDropNew);
+                el.addEventListener('touchend', onLeafDropNew, { passive: false });
             });
-            $$('.apple.matched').forEach(el => {
-                el.removeEventListener('click', onMatchedAppleClick);
-                el.addEventListener('click', onMatchedAppleClick);
+            const matchedApples = $$('.apple.matched');
+            matchedApples.forEach(el => {
+                el.removeEventListener('click', onMatchedAppleClickNew);
+                el.addEventListener('click', onMatchedAppleClickNew);
             });
+            window._pinyinState = state;
 
-            let dragData = null;
-            let cloneEl = null;
-
-            function onLeafClick(e) {
-                const el = e.currentTarget;
-                if (el.classList.contains('matched')) return;
-                if (selectedLeaf === el) {
-                    el.classList.remove('selected-leaf');
-                    selectedLeaf = null;
-                    return;
-                }
-                if (selectedLeaf) selectedLeaf.classList.remove('selected-leaf');
-                el.classList.add('selected-leaf');
-                selectedLeaf = el;
-            }
-
-            function onAppleClick(e) {
-                if (!selectedLeaf) return;
-                const apple = e.currentTarget;
-                if (apple.classList.contains('matched')) {
-                    selectedLeaf.classList.remove('selected-leaf');
-                    selectedLeaf = null;
-                    return;
-                }
-                const leafIdx = parseInt(selectedLeaf.dataset.idx);
-                const appleIdx = parseInt(apple.dataset.idx);
-                if (isNaN(leafIdx) || isNaN(appleIdx)) {
-                    selectedLeaf.classList.remove('selected-leaf');
-                    selectedLeaf = null;
-                    return;
-                }
-                const leafPair = state.pinyinPairs[leafIdx];
-                const applePair = state.pinyinPairs[appleIdx];
-                if (!leafPair || !applePair || leafPair.matched || applePair.matched) {
-                    selectedLeaf.classList.remove('selected-leaf');
-                    selectedLeaf = null;
-                    return;
-                }
-                if (leafPair.pinyin === applePair.pinyin) {
-                    applePair.matched = true;
-                    leafPair.matched = true;
-                    playMatchSound();
-                    state.pinyinErrorCount[applePair.char] = 0;
-                    renderPinyinTreeNew(state);
-                    updatePinyinStats(state);
-                    setupPinyinDragAndClick(state);
-                    saveCurrentState();
-                    if (state.pinyinPairs.every(p => p.matched)) {
-                        setTimeout(() => alert('🎉 太棒了！所有拼音都搭配正确！'), 300);
-                    }
-                } else {
-                    const char = applePair.char;
-                    state.pinyinErrorCount[char] = (state.pinyinErrorCount[char] || 0) + 1;
-                    apple.style.transform = 'scale(0.85)';
-                    setTimeout(() => { apple.style.transform = ''; }, 200);
-                    if (state.pinyinErrorCount[char] >= 3) {
-                        setTimeout(() => alert(`💡 "${char}" 已经错了3次，可以寻求帮助哦！`), 300);
-                    }
-                    saveCurrentState();
-                }
-                selectedLeaf.classList.remove('selected-leaf');
-                selectedLeaf = null;
-            }
-
-            function onLeafDragStart(e) {
-                if (e.type === 'click') return;
+            function onLeafStartNew(e) {
+                e.preventDefault();
                 const el = e.currentTarget;
                 if (el.classList.contains('matched')) return;
                 const idx = parseInt(el.dataset.idx);
                 if (isNaN(idx)) return;
                 const pair = state.pinyinPairs[idx];
                 if (!pair || pair.matched) return;
-                dragData = { idx, pinyin: pair.pinyin, char: pair.char, el };
+                leafDragDataNew = { idx, pinyin: pair.pinyin, char: pair.char, el };
                 el.classList.add('dragging');
-                cloneEl = el.cloneNode(true);
-                cloneEl.style.position = 'fixed';
-                cloneEl.style.pointerEvents = 'none';
-                cloneEl.style.zIndex = '9999';
-                cloneEl.style.width = el.offsetWidth + 'px';
-                cloneEl.style.height = el.offsetHeight + 'px';
-                cloneEl.style.opacity = '0.8';
-                cloneEl.id = 'leafCloneDrag';
-                document.body.appendChild(cloneEl);
-                moveClone(e);
+                const clone = el.cloneNode(true);
+                clone.style.position = 'fixed';
+                clone.style.pointerEvents = 'none';
+                clone.style.zIndex = '9999';
+                clone.style.width = el.offsetWidth + 'px';
+                clone.style.height = el.offsetHeight + 'px';
+                clone.style.opacity = '0.8';
+                clone.id = 'leafCloneNew';
+                document.body.appendChild(clone);
+                moveLeafCloneNew(e);
             }
 
-            function moveClone(e) {
-                if (!cloneEl) return;
+            function moveLeafCloneNew(e) {
+                const clone = document.getElementById('leafCloneNew');
+                if (!clone) return;
                 const cx = e.clientX || e.touches?.[0]?.clientX || 0;
                 const cy = e.clientY || e.touches?.[0]?.clientY || 0;
-                cloneEl.style.left = (cx - 28) + 'px';
-                cloneEl.style.top = (cy - 24) + 'px';
+                clone.style.left = (cx - 28) + 'px';
+                clone.style.top = (cy - 24) + 'px';
             }
-            document.addEventListener('mousemove', moveClone);
-            document.addEventListener('touchmove', moveClone, { passive: false });
+            document.addEventListener('mousemove', moveLeafCloneNew);
+            document.addEventListener('touchmove', moveLeafCloneNew, { passive: false });
 
-            function onLeafDrop(e) {
-                if (!dragData) return;
+            function onLeafDropNew(e) {
+                if (!leafDragDataNew) return;
                 e.preventDefault();
                 const targetEl = e.currentTarget;
                 const idx = parseInt(targetEl.dataset.idx);
-                if (isNaN(idx)) { cleanup(); return; }
+                if (isNaN(idx)) return;
                 const targetPair = state.pinyinPairs[idx];
-                if (!targetPair || targetPair.matched) { cleanup(); return; }
-                if (dragData.pinyin === targetPair.pinyin) {
+                if (!targetPair || targetPair.matched) {
+                    cleanupLeafDragNew();
+                    return;
+                }
+                if (leafDragDataNew.pinyin === targetPair.pinyin) {
                     targetPair.matched = true;
-                    dragData.el.classList.add('matched');
                     playMatchSound();
                     state.pinyinErrorCount[targetPair.char] = 0;
                     renderPinyinTreeNew(state);
                     updatePinyinStats(state);
-                    setupPinyinDragAndClick(state);
+                    setupPinyinDragNew(state);
                     saveCurrentState();
                     if (state.pinyinPairs.every(p => p.matched)) {
                         setTimeout(() => alert('🎉 太棒了！所有拼音都搭配正确！'), 300);
@@ -3024,10 +2284,10 @@
                     }
                     saveCurrentState();
                 }
-                cleanup();
+                cleanupLeafDragNew();
             }
 
-            function onMatchedAppleClick(e) {
+            function onMatchedAppleClickNew(e) {
                 const el = e.currentTarget;
                 const idx = parseInt(el.dataset.idx);
                 if (isNaN(idx)) return;
@@ -3036,25 +2296,21 @@
                     pair.matched = false;
                     renderPinyinTreeNew(state);
                     updatePinyinStats(state);
-                    setupPinyinDragAndClick(state);
+                    setupPinyinDragNew(state);
                     saveCurrentState();
                 }
             }
 
-            function cleanup() {
-                if (cloneEl) { cloneEl.remove();
-                    cloneEl = null; }
-                if (dragData && dragData.el) {
-                    dragData.el.classList.remove('dragging');
+            function cleanupLeafDragNew() {
+                const clone = document.getElementById('leafCloneNew');
+                if (clone) clone.remove();
+                if (leafDragDataNew && leafDragDataNew.el) {
+                    leafDragDataNew.el.classList.remove('dragging');
                 }
-                dragData = null;
-                if (selectedLeaf) {
-                    selectedLeaf.classList.remove('selected-leaf');
-                    selectedLeaf = null;
-                }
+                leafDragDataNew = null;
             }
-            document.addEventListener('mouseup', cleanup);
-            document.addEventListener('touchend', cleanup);
+            document.addEventListener('mouseup', cleanupLeafDragNew);
+            document.addEventListener('touchend', cleanupLeafDragNew);
         }
 
         function setupPinyinFileImport(state) {
@@ -3087,7 +2343,7 @@
                             text += content.items.map(item => item.str).join(' ');
                         }
                     } else if (ext === 'doc') { text = await file.text(); } else {
-                        alert('不支持的文件格式');
+                        alert('不支持的文件格式，请上传 .docx 或 .pdf');
                         status.textContent = '不支持格式';
                         status.style.color = '#b33a3a';
                         return;
@@ -3102,20 +2358,15 @@
                     }
                     const pairs = [];
                     for (let i = 0; i < count; i++) {
-                        pairs.push({ char: chineseMatches[i], pinyin: pinyinMatches[i].toLowerCase(),
-                        matched: false });
+                        pairs.push({ char: chineseMatches[i], pinyin: pinyinMatches[i].toLowerCase(), matched: false });
                     }
                     shuffle(pairs);
                     state.pinyinPairs = pairs;
                     renderPinyinTreeNew(state);
                     updatePinyinStats(state);
-                    setupPinyinDragAndClick(state);
+                    setupPinyinDragNew(state);
                     saveCurrentState();
-                    const teacherUsername = currentUser.role === 'teacher' ? currentUser.username : (getUsers().find(
-                        u => u.role === 'teacher')?.username || '苏老师');
-                    const library = addFileToLibrary(teacherUsername, file.name, JSON.parse(JSON.stringify(state)));
-                    populateLibrarySelectors();
-                    status.textContent = `✅ 导入成功，已保存到资料库 (共 ${library.length} 个文件)`;
+                    status.textContent = `✅ 成功导入 ${count} 个拼音配对（叶子已打乱）`;
                     status.style.color = '#2a7a2a';
                 } catch (err) {
                     console.error(err);
@@ -3126,9 +2377,32 @@
             });
         }
 
+        $('#pinyinBack').addEventListener('click', () => { showPage('page-literacy'); initLiteracyPage(); });
+        $('#pinyinNext').addEventListener('click', function() {
+            if (!currentState) return;
+            const matched = currentState.pinyinPairs.filter(p => p.matched).length;
+            if (matched < 2) { alert('至少正确匹配2个拼音才能继续！'); return; }
+            goNext();
+        });
+
         // ====================================================================
-        //  词语寻宝
+        //  第四页：词语寻宝
         // ====================================================================
+        function initWordsPage() {
+            if (!currentState) return;
+            const state = currentState;
+            if (!state.wordList || state.wordList.length === 0) {
+                state.wordList = shuffle(['太阳', '月亮', '花朵', '小鸟', '大树', '草地', '快乐', '美丽', '勇敢', '善良']);
+                state.wordFound = new Array(state.wordList.length).fill(false);
+                saveCurrentState();
+            }
+            renderWordGrid(state);
+            updateWordStats(state);
+            setupWordFileImport(state);
+            setupManualWords(state);
+            $$('.manual-word-input').forEach(inp => inp.value = '');
+        }
+
         function renderWordGrid(state) {
             const grid = $('#wordGrid');
             grid.innerHTML = '';
@@ -3198,7 +2472,7 @@
                             text += content.items.map(item => item.str).join(' ');
                         }
                     } else if (ext === 'doc') { text = await file.text(); } else {
-                        alert('不支持的文件格式');
+                        alert('不支持的文件格式，请上传 .docx 或 .pdf');
                         status.textContent = '不支持格式';
                         status.style.color = '#b33a3a';
                         return;
@@ -3217,11 +2491,7 @@
                     renderWordGrid(state);
                     updateWordStats(state);
                     saveCurrentState();
-                    const teacherUsername = currentUser.role === 'teacher' ? currentUser.username : (getUsers().find(
-                        u => u.role === 'teacher')?.username || '苏老师');
-                    const library = addFileToLibrary(teacherUsername, file.name, JSON.parse(JSON.stringify(state)));
-                    populateLibrarySelectors();
-                    status.textContent = `✅ 导入成功，已保存到资料库 (共 ${library.length} 个文件)`;
+                    status.textContent = `✅ 成功导入 ${unique.length} 个词语`;
                     status.style.color = '#2a7a2a';
                 } catch (err) {
                     console.error(err);
@@ -3275,9 +2545,46 @@
             });
         }
 
+        $('#wordsBack').addEventListener('click', () => { showPage('page-pinyin'); initPinyinPage(); });
+        $('#wordsNext').addEventListener('click', function() { goNext(); });
+
         // ====================================================================
-        //  词语理解
+        //  第五页：词语理解
         // ====================================================================
+        function initUnderstandPage() {
+            if (!currentState) return;
+            const state = currentState;
+            $('#partnerName').value = state.partnerName || '小雅';
+            state.partnerName = $('#partnerName').value;
+
+            if (!state.understandMethods || state.understandMethods.length < 7) {
+                state.understandMethods = [
+                    { name: '借图理解', colorClass: CLOUD_CLASSES[0] },
+                    { name: '联系上下文', colorClass: CLOUD_CLASSES[1] },
+                    { name: '联系实际生活', colorClass: CLOUD_CLASSES[2] },
+                    { name: '拆字理解', colorClass: CLOUD_CLASSES[3] },
+                    { name: '语境联想', colorClass: CLOUD_CLASSES[4] },
+                    { name: '', colorClass: CLOUD_CLASSES[5] },
+                    { name: '', colorClass: CLOUD_CLASSES[6] }
+                ];
+            }
+            if (!state.understandWords || state.understandWords.length === 0) {
+                state.understandWords = ['太阳', '月亮', '花朵', '小鸟', '大树', '草地', '快乐', '美丽'].map(w => ({ word: w, methodIndex: null }));
+            }
+            renderUnderstandMethods(state);
+            renderUnderstandGrid(state);
+            renderUnderstandStats(state);
+            setupUnderstandFileImport(state);
+            setupUnderstandManualWords(state);
+            renderTreasureInputs(state);
+            saveCurrentState();
+
+            $('#partnerName').addEventListener('change', function() {
+                state.partnerName = this.value.trim() || '小雅';
+                saveCurrentState();
+            });
+        }
+
         function renderUnderstandMethods(state) {
             const container = $('#methodClouds');
             container.innerHTML = '';
@@ -3461,7 +2768,7 @@
                             text += content.items.map(item => item.str).join(' ');
                         }
                     } else if (ext === 'doc') { text = await file.text(); } else {
-                        alert('不支持的文件格式');
+                        alert('不支持的文件格式，请上传 .docx 或 .pdf');
                         status.textContent = '不支持格式';
                         status.style.color = '#b33a3a';
                         return;
@@ -3479,11 +2786,7 @@
                     renderUnderstandGrid(state);
                     renderUnderstandStats(state);
                     saveCurrentState();
-                    const teacherUsername = currentUser.role === 'teacher' ? currentUser.username : (getUsers().find(
-                        u => u.role === 'teacher')?.username || '苏老师');
-                    const library = addFileToLibrary(teacherUsername, file.name, JSON.parse(JSON.stringify(state)));
-                    populateLibrarySelectors();
-                    status.textContent = `✅ 导入成功，已保存到资料库 (共 ${library.length} 个文件)`;
+                    status.textContent = `✅ 成功导入 ${unique.length} 个词语`;
                     status.style.color = '#2a7a2a';
                 } catch (err) {
                     console.error(err);
@@ -3530,9 +2833,132 @@
             });
         }
 
+        $('#understandBack').addEventListener('click', () => { showPage('page-words'); initWordsPage(); });
+        $('#understandNext').addEventListener('click', function() {
+            if (!currentState) return;
+            const hasPaired = currentState.understandWords.some(item => item.methodIndex !== null);
+            if (!hasPaired) {
+                alert('请至少为一个词语选择一种理解方法！');
+                return;
+            }
+            goNext();
+        });
+
         // ====================================================================
-        //  自我评估报告
+        //  第六页：寻求帮助
         // ====================================================================
+        function initHelpPage() {
+            if (!currentState) return;
+            const state = currentState;
+            const errors = Object.entries(state.pinyinErrorCount || {}).filter(([_, count]) => count >= 3).map(([char]) => char);
+            const errorEl = $('#helpPinyinErrors');
+            if (errors.length === 0) errorEl.innerHTML = '<span style="color:#2a7a2a;">✅ 没有错3次以上的字</span>';
+            else errorEl.innerHTML = errors.map(c => `<span>${c}</span>`).join(' ');
+            const treasureEl = $('#helpTreasureWords');
+            const treasureWords = (state.treasureWords || []).filter(w => w.trim() !== '');
+            if (treasureWords.length === 0) treasureEl.innerHTML = '<span style="color:#2a7a2a;">📦 百宝箱是空的</span>';
+            else treasureEl.innerHTML = treasureWords.map(w => `<span>${w}</span>`).join(' ');
+            $('#helpResult').textContent = '';
+            state.helpChosen = null;
+            $('#helpDict').onclick = function() {
+                state.helpChosen = '查字典';
+                $('#helpResult').textContent = '📖 建议：使用字典查阅不熟悉的字词！';
+            };
+            $('#helpTeacher').onclick = function() {
+                state.helpChosen = '询问老师';
+                $('#helpResult').textContent = '👩‍🏫 建议：向老师请教，老师会耐心解答！';
+            };
+            $('#helpClassmate').onclick = function() {
+                state.helpChosen = '询问同学';
+                $('#helpResult').textContent = '🤝 建议：和同学讨论，互相学习共同进步！';
+            };
+        }
+
+        $('#helpBack').addEventListener('click', () => { showPage('page-understand'); initUnderstandPage(); });
+        $('#helpNext').addEventListener('click', function() {
+            if (!currentState || !currentState.helpChosen) { alert('请选择一种求助方式！'); return; }
+            goNext();
+        });
+
+        // ====================================================================
+        //  第七页：自我评估
+        // ====================================================================
+        function initEvalPage() {
+            if (!currentState) return;
+            const state = currentState;
+            if (state.difficulty) {
+                $$('input[name="difficulty"]').forEach(el => {
+                    el.checked = (el.value === state.difficulty);
+                    el.closest('.eval-option').classList.toggle('selected', el.checked);
+                });
+            }
+            if (state.feelings && state.feelings.length > 0) {
+                $$('input[name="feeling"]').forEach(el => {
+                    el.checked = state.feelings.includes(el.value);
+                    el.closest('.eval-option').classList.toggle('selected', el.checked);
+                });
+            }
+            generateReport(state);
+            $$('input[name="difficulty"]').forEach(el => {
+                el.addEventListener('change', function() {
+                    $$('input[name="difficulty"]').forEach(e => e.closest('.eval-option').classList.toggle('selected', e.checked));
+                    if (this.checked) state.difficulty = this.value;
+                    generateReport(state);
+                    saveCurrentState();
+                });
+            });
+            $$('input[name="feeling"]').forEach(el => {
+                el.addEventListener('change', function() {
+                    this.closest('.eval-option').classList.toggle('selected', this.checked);
+                    state.feelings = $$('input[name="feeling"]:checked').map(e => e.value);
+                    generateReport(state);
+                    saveCurrentState();
+                });
+            });
+
+            $('#finishGameBtn').onclick = function() {
+                if (currentUser && currentUser.role === 'student') {
+                    const reportText = generateReportText(state);
+                    const reports = getReports();
+                    const existing = reports.find(r => r.username === currentUser.username);
+                    if (existing) {
+                        if (!confirm('您已提交过报告，是否覆盖？')) return;
+                        Object.assign(existing, {
+                            report: reportText,
+                            difficulty: state.difficulty || '未评估',
+                            feelings: (state.feelings || []).join('、') || '无',
+                            date: getDateStr()
+                        });
+                    } else {
+                        reports.push({
+                            username: currentUser.username,
+                            name: currentUser.username,
+                            grade: currentUser.grade || '二年级',
+                            class: currentUser.class || '二班',
+                            subject: currentUser.subject || '语文',
+                            date: getDateStr(),
+                            report: reportText,
+                            difficulty: state.difficulty || '未评估',
+                            feelings: (state.feelings || []).join('、') || '无'
+                        });
+                    }
+                    saveReports(reports);
+                    alert('✅ 闯关完成！报告已提交给老师。');
+                } else {
+                    alert('👩‍🏫 教师模式：您无需提交报告，可查看班级总览。');
+                }
+            };
+
+            $('#gotoClassOverviewBtn').onclick = function() {
+                if (currentUser && currentUser.role === 'teacher') {
+                    showPage('page-class-overview');
+                    initClassOverviewPage();
+                } else {
+                    alert('🧑‍🎓 学生请先完成闯关提交报告。');
+                }
+            };
+        }
+
         function generateReport(state) {
             const html = generateReportHTML(state);
             $('#reportContent').innerHTML = html;
@@ -3542,22 +2968,15 @@
         function generateReportHTML(state) {
             const correctChars = state.bricks.filter(b => b.char).map(b => b.char);
             const pinyinCorrect = state.pinyinPairs.filter(p => p.matched).map(p => p.char);
-            const understoodWords = state.understandWords.filter(item => item.methodIndex !== null).map(item => item
-            .word);
-            const pinyinErrors = Object.entries(state.pinyinErrorCount || {}).filter(([_, count]) => count >= 3).map(([
-                char
-            ]) => char);
+            const understoodWords = state.understandWords.filter(item => item.methodIndex !== null).map(item => item.word);
+            const pinyinErrors = Object.entries(state.pinyinErrorCount || {}).filter(([_, count]) => count >= 3).map(([char]) => char);
             const treasureWords = (state.treasureWords || []).filter(w => w.trim() !== '');
             let html = '';
             html += `<div><span class="good">✅ 正确认识汉字：</span> ${correctChars.length > 0 ? correctChars.join('、') : '暂无'}</div>`;
-            html +=
-                `<div><span class="good">✅ 拼音搭配正确：</span> ${pinyinCorrect.length > 0 ? pinyinCorrect.join('、') : '暂无'}</div>`;
-            html +=
-                `<div><span class="good">✅ 词语理解：</span> ${understoodWords.length > 0 ? understoodWords.join('、') : '暂无'}</div>`;
-            html +=
-                `<div><span class="bad">❌ 待进步（拼音错3次）：</span> ${pinyinErrors.length > 0 ? pinyinErrors.join('、') : '无'}</div>`;
-            html +=
-                `<div><span class="bad">❌ 待进步（百宝箱词语）：</span> ${treasureWords.length > 0 ? treasureWords.join('、') : '无'}</div>`;
+            html += `<div><span class="good">✅ 拼音搭配正确：</span> ${pinyinCorrect.length > 0 ? pinyinCorrect.join('、') : '暂无'}</div>`;
+            html += `<div><span class="good">✅ 词语理解：</span> ${understoodWords.length > 0 ? understoodWords.join('、') : '暂无'}</div>`;
+            html += `<div><span class="bad">❌ 待进步（拼音错3次）：</span> ${pinyinErrors.length > 0 ? pinyinErrors.join('、') : '无'}</div>`;
+            html += `<div><span class="bad">❌ 待进步（百宝箱词语）：</span> ${treasureWords.length > 0 ? treasureWords.join('、') : '无'}</div>`;
             if (state.difficulty) html += `<div>📊 难度评估：${state.difficulty}</div>`;
             if (state.feelings && state.feelings.length > 0) html += `<div>💭 学习感受：${state.feelings.join('、')}</div>`;
             return html;
@@ -3620,8 +3039,10 @@
             }
         });
 
+        $('#evalBack').addEventListener('click', () => { showPage('page-help'); initHelpPage(); });
+
         // ====================================================================
-        //  学生管理
+        //  第八页：学生管理
         // ====================================================================
         function initStudentManagement() {
             if (!currentUser || currentUser.role !== 'teacher') {
@@ -3686,39 +3107,17 @@
             const students = users.filter(u => u.role === 'student');
             const tbody = $('#studentTableBody');
             tbody.innerHTML = '';
-            const teacherUsername = currentUser.username;
-            const library = getFileLibrary(teacherUsername);
-
             students.forEach(s => {
-                const assigned = getStudentAssignedFile(s.username) || '';
                 const tr = document.createElement('tr');
                 tr.innerHTML = `
                     <td>${s.username}</td>
                     <td>${s.grade || ''}</td>
                     <td>${s.class || ''}</td>
-                    <td>
-                        <select class="assign-file-select" data-username="${s.username}">
-                            <option value="">-- 无 --</option>
-                            ${library.map(f => `<option value="${f.name}" ${f.name === assigned ? 'selected' : ''}>${f.name}</option>`).join('')}
-                        </select>
-                        <button class="assign-btn" data-username="${s.username}">分配</button>
-                    </td>
                     <td><span class="qr-cell" data-username="${s.username}">📱 查看二维码</span></td>
                     <td><button class="del-btn" data-username="${s.username}">删除</button></td>
                 `;
                 tbody.appendChild(tr);
             });
-
-            tbody.querySelectorAll('.assign-btn').forEach(btn => {
-                btn.addEventListener('click', function() {
-                    const username = this.dataset.username;
-                    const select = this.parentNode.querySelector('.assign-file-select');
-                    const fileName = select.value;
-                    setStudentAssignedFile(username, fileName);
-                    alert(`✅ 已为学生 "${username}" 分配资料 "${fileName || '无'}"`);
-                });
-            });
-
             tbody.querySelectorAll('.qr-cell').forEach(span => {
                 span.addEventListener('click', function() {
                     const username = this.dataset.username;
@@ -3741,8 +3140,39 @@
             });
         }
 
+        function showStudentQR(username) {
+            const popup = $('#qrPopup');
+            const container = $('#qrPopupContainer');
+            const label = $('#qrPopupLabel');
+            label.textContent = `👤 ${username} 的二维码`;
+            container.innerHTML = '';
+            const url = window.location.origin + window.location.pathname + '?student=' + encodeURIComponent(username);
+            try {
+                new QRCode(container, {
+                    text: url,
+                    width: 200,
+                    height: 200,
+                    colorDark: '#2d1a06',
+                    colorLight: '#ffffff',
+                    correctLevel: QRCode.CorrectLevel.H
+                });
+            } catch (e) {
+                container.innerHTML = '<div style="color:red;">生成失败</div>';
+            }
+            popup.classList.add('show');
+        }
+
+        $('#qrPopupClose').addEventListener('click', function() {
+            $('#qrPopup').classList.remove('show');
+        });
+        $('#qrPopup').addEventListener('click', function(e) {
+            if (e.target === this) this.classList.remove('show');
+        });
+
+        $('#studentMgmtBack').addEventListener('click', () => { showPage('page-literacy'); initLiteracyPage(); });
+
         // ====================================================================
-        //  班级总览
+        //  第九页：班级总览
         // ====================================================================
         function initClassOverviewPage() {
             const container = $('#classOverviewContainer');
@@ -3782,82 +3212,6 @@
             container.innerHTML = html;
         }
 
-        // ====================================================================
-        //  二维码
-        // ====================================================================
-        function showStudentQR(username) {
-            const popup = $('#qrPopup');
-            const container = $('#qrPopupContainer');
-            const label = $('#qrPopupLabel');
-            label.textContent = `👤 ${username} 的二维码`;
-            container.innerHTML = '';
-            const url = window.location.origin + window.location.pathname + '?student=' + encodeURIComponent(username);
-            try {
-                new QRCode(container, {
-                    text: url,
-                    width: 200,
-                    height: 200,
-                    colorDark: '#2d1a06',
-                    colorLight: '#ffffff',
-                    correctLevel: QRCode.CorrectLevel.H
-                });
-            } catch (e) {
-                container.innerHTML = '<div style="color:red;">生成失败</div>';
-            }
-            popup.classList.add('show');
-        }
-
-        $('#qrPopupClose').addEventListener('click', function() {
-            $('#qrPopup').classList.remove('show');
-        });
-        $('#qrPopup').addEventListener('click', function(e) {
-            if (e.target === this) this.classList.remove('show');
-        });
-
-        // ====================================================================
-        //  导航按钮绑定
-        // ====================================================================
-        $('#literacyBack').addEventListener('click', () => { showPage('page-login');
-            initLogin(); });
-        $('#literacyNext').addEventListener('click', function() {
-            if (!currentState) return;
-            const filled = currentState.bricks.filter(b => b.char).length;
-            if (filled < 5) { alert('至少输入5个汉字到砖块中才能继续！'); return; }
-            goNext();
-        });
-        $('#pinyinBack').addEventListener('click', () => { showPage('page-literacy');
-            initLiteracyPage(); });
-        $('#pinyinNext').addEventListener('click', function() {
-            if (!currentState) return;
-            const matched = currentState.pinyinPairs.filter(p => p.matched).length;
-            if (matched < 2) { alert('至少正确匹配2个拼音才能继续！'); return; }
-            goNext();
-        });
-        $('#wordsBack').addEventListener('click', () => { showPage('page-pinyin');
-            initPinyinPage(); });
-        $('#wordsNext').addEventListener('click', function() { goNext(); });
-        $('#understandBack').addEventListener('click', () => { showPage('page-words');
-            initWordsPage(); });
-        $('#understandNext').addEventListener('click', function() {
-            if (!currentState) return;
-            const hasPaired = currentState.understandWords.some(item => item.methodIndex !== null);
-            if (!hasPaired) {
-                alert('请至少为一个词语选择一种理解方法！');
-                return;
-            }
-            goNext();
-        });
-        $('#helpBack').addEventListener('click', () => { showPage('page-understand');
-            initUnderstandPage(); });
-        $('#helpNext').addEventListener('click', function() {
-            if (!currentState || !currentState.helpChosen) { alert('请选择一种求助方式！'); return; }
-            goNext();
-        });
-        $('#evalBack').addEventListener('click', () => { showPage('page-help');
-            initHelpPage(); });
-        $('#studentMgmtBack').addEventListener('click', () => { showPage('page-literacy');
-            initLiteracyPage(); });
-
         let overviewVisible = false;
         $('#toggleOverviewBtn').addEventListener('click', function() {
             const page = $('#page-class-overview');
@@ -3871,8 +3225,7 @@
                 overviewVisible = false;
             }
         });
-        $('#overviewBack').addEventListener('click', () => { showPage('page-eval');
-            initEvalPage(); });
+        $('#overviewBack').addEventListener('click', () => { showPage('page-eval'); initEvalPage(); });
 
         // ====================================================================
         //  键盘事件
@@ -3896,16 +3249,9 @@
         //  启动
         // ====================================================================
         initLogin();
-        setTimeout(() => {
-            populateLibrarySelectors();
-            bindSaveResetButtons();
-        }, 100);
-        console.log('🌈 自主识字闯关 完整增强版已启动！');
-        console.log('👩‍🏫 教师：苏老师 / 123456 ，可管理学生、资料库。');
+        console.log('🌈 自主识字闯关 完整版已启动！');
+        console.log('👩‍🏫 教师：苏老师 / 123456 ，可管理学生并查看二维码。');
         console.log('🧑‍🎓 学生：扫描个人二维码自动登录，或使用账号密码登录。');
-        console.log('📂 资料库：导入的文件自动保存，可随时加载。');
-        console.log('👆 拼音搭配：支持点击和拖拽两种配对方式（消消乐风格）。');
-        console.log('💾 每个页面右下角有保存进度和重置按钮。');
     </script>
 </body>
 </html>
